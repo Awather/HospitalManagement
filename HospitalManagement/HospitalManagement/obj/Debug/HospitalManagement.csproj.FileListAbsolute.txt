@@ -1,0 +1,16 @@
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\bin\Debug\HospitalManagement.exe
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.Login.resources
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.Properties.Resources.resources
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csproj.GenerateResource.Cache
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csproj.CoreCompileInputs.cache
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.exe
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.pdb
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.MainMenu.resources
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.TestPatientRegistration.resources
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\HospitalManagement.exe.config
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\HospitalManagement.exe
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\HospitalManagement.pdb
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\bin\Release\HospitalManagement.exe.config
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\bin\Release\HospitalManagement.exe
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\bin\Release\HospitalManagement.pdb
+C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csprojResolveAssemblyReference.cache
