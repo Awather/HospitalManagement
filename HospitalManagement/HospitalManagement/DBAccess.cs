@@ -119,7 +119,125 @@ namespace HospitalManagement
             return ds;
         }
 
-        //public static bool InsertUpdatePatient(Patient myPatient)
+        public static bool InsertUpdatePatient(Patient myPatient, int registerORupdate)
+        {
+            
+
+            SqlConnection myConnection = new SqlConnection();
+
+            myConnection.ConnectionString = "Integrated Security=true;database=dblHospitalManagement;User ID=DBO;Data Source=.\\SQLEXPRESS";
+
+
+            SqlCommand myCommand = new SqlCommand();
+            myCommand.Connection = myConnection;
+
+            SqlParameter workparameter10 = new SqlParameter();
+
+            if (registerORupdate =='R')
+
+            {
+                myCommand.CommandText = "spInsertPatients";
+
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter workparameter1 = new SqlParameter();
+                SqlParameter workparameter2 = new SqlParameter();
+                SqlParameter workparameter3 = new SqlParameter();
+                SqlParameter workparameter4 = new SqlParameter();
+                SqlParameter workparameter5 = new SqlParameter();
+                SqlParameter workparameter6 = new SqlParameter();
+                SqlParameter workparameter7 = new SqlParameter();
+                SqlParameter workparameter8 = new SqlParameter();
+                SqlParameter workparameter9 = new SqlParameter();
+
+
+                workparameter1 = myCommand.Parameters.Add("@FirstName", SqlDbType.VarChar);
+                workparameter1.Value = myPatient.FirstName;
+                workparameter2 = myCommand.Parameters.Add("@LastName", SqlDbType.VarChar);
+                workparameter2.Value = myPatient.LastName;
+                workparameter3 = myCommand.Parameters.Add("@PersonNumber", SqlDbType.Char);
+                workparameter3.Value = myPatient.PersonNumber;
+                workparameter4 = myCommand.Parameters.Add("@Gender", SqlDbType.Char);
+                workparameter4.Value = myPatient.Gender;
+                workparameter5 = myCommand.Parameters.Add("@Address", SqlDbType.VarChar);
+                workparameter5.Value = myPatient.Address;
+                workparameter6 = myCommand.Parameters.Add("@PostalNr", SqlDbType.Char);
+                workparameter6.Value = myPatient.PostalNumber;
+                workparameter7 = myCommand.Parameters.Add("@City", SqlDbType.VarChar);
+                workparameter7.Value = myPatient.City;
+                workparameter8 = myCommand.Parameters.Add("@PhoneNr", SqlDbType.VarChar);
+                workparameter8.Value = myPatient.PhoneNumber;
+                workparameter9 = myCommand.Parameters.Add("@Email", SqlDbType.VarChar);
+                workparameter9.Value = myPatient.EMail;
+
+                workparameter10 = myCommand.Parameters.Add("@AntalRader", SqlDbType.Int);
+                workparameter10.Direction = ParameterDirection.Output;
+
+            }
+
+            else
+
+            {
+
+                myCommand.CommandText = "spUpdatePatients";
+
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+
+                SqlParameter workparameter1 = new SqlParameter();
+                SqlParameter workparameter2 = new SqlParameter();
+                SqlParameter workparameter3 = new SqlParameter();
+                SqlParameter workparameter4 = new SqlParameter();
+                SqlParameter workparameter5 = new SqlParameter();
+                SqlParameter workparameter6 = new SqlParameter();
+                SqlParameter workparameter7 = new SqlParameter();
+                SqlParameter workparameter8 = new SqlParameter();
+                SqlParameter workparameter9 = new SqlParameter();
+
+
+                workparameter1 = myCommand.Parameters.Add("@FirstName", SqlDbType.VarChar);
+                workparameter1.Value = myPatient.FirstName;
+                workparameter2 = myCommand.Parameters.Add("@LastName", SqlDbType.VarChar);
+                workparameter2.Value = myPatient.LastName;
+                workparameter3 = myCommand.Parameters.Add("@PersonNumber", SqlDbType.Char);
+                workparameter3.Value = myPatient.PersonNumber;
+                workparameter4 = myCommand.Parameters.Add("@Gender", SqlDbType.Char);
+                workparameter4.Value = myPatient.Gender;
+                workparameter5 = myCommand.Parameters.Add("@Address", SqlDbType.VarChar);
+                workparameter5.Value = myPatient.Address;
+                workparameter6 = myCommand.Parameters.Add("@PostalNr", SqlDbType.Char);
+                workparameter6.Value = myPatient.PostalNumber;
+                workparameter7 = myCommand.Parameters.Add("@City", SqlDbType.VarChar);
+                workparameter7.Value = myPatient.City;
+                workparameter8 = myCommand.Parameters.Add("@PhoneNr", SqlDbType.VarChar);
+                workparameter8.Value = myPatient.PhoneNumber;
+                workparameter9 = myCommand.Parameters.Add("@Email", SqlDbType.VarChar);
+                workparameter9.Value = myPatient.EMail;
+
+                workparameter10 = myCommand.Parameters.Add("@AntalRader", SqlDbType.Int);
+                workparameter10.Direction = ParameterDirection.Output;
+
+            }
+
+            myConnection.Open();
+
+            myCommand.ExecuteNonQuery();
+
+            int svar = Convert.ToInt32(workparameter10.SqlValue.ToString());
+
+            myConnection.Close();
+
+            if (svar == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
 
     }
 }
