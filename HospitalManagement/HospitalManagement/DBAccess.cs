@@ -119,25 +119,21 @@ namespace HospitalManagement
             return ds;
         }
 
-        public static bool InsertUpdatePatient(Patient myPatient, int registerORupdate)
+        public static bool InsertUpdatePatient(Patient myPatient, char registerORupdate)
         {
-            
-
             SqlConnection myConnection = new SqlConnection();
 
-            myConnection.ConnectionString = "Integrated Security=true;database=dblHospitalManagement;User ID=DBO;Data Source=.\\SQLEXPRESS";
-
+            myConnection.ConnectionString = "Integrated Security=true;database=dbHospital;User ID=DBO;Data Source=.\\SQLEXPRESS";
 
             SqlCommand myCommand = new SqlCommand();
             myCommand.Connection = myConnection;
 
             SqlParameter workparameter10 = new SqlParameter();
 
-            if (registerORupdate =='R')
-
+            if (registerORupdate == 'R')
             {
-                myCommand.CommandText = "spInsertPatients";
 
+                myCommand.CommandText = "spInsertPatient";
                 myCommand.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter workparameter1 = new SqlParameter();
@@ -151,11 +147,12 @@ namespace HospitalManagement
                 SqlParameter workparameter9 = new SqlParameter();
 
 
+
                 workparameter1 = myCommand.Parameters.Add("@FirstName", SqlDbType.VarChar);
                 workparameter1.Value = myPatient.FirstName;
                 workparameter2 = myCommand.Parameters.Add("@LastName", SqlDbType.VarChar);
                 workparameter2.Value = myPatient.LastName;
-                workparameter3 = myCommand.Parameters.Add("@PersonNumber", SqlDbType.Char);
+                workparameter3 = myCommand.Parameters.Add("@PrsnNumber", SqlDbType.Char);
                 workparameter3.Value = myPatient.PersonNumber;
                 workparameter4 = myCommand.Parameters.Add("@Gender", SqlDbType.Char);
                 workparameter4.Value = myPatient.Gender;
@@ -171,15 +168,14 @@ namespace HospitalManagement
                 workparameter9.Value = myPatient.EMail;
 
                 workparameter10 = myCommand.Parameters.Add("@AntalRader", SqlDbType.Int);
-                workparameter10.Direction = ParameterDirection.Output;
+                workparameter10.Direction = ParameterDirection.Output;            // <---- Ask the meaning of this
 
             }
 
             else
-
             {
 
-                myCommand.CommandText = "spUpdatePatients";
+                myCommand.CommandText = "spUpdatePatient";
 
                 myCommand.CommandType = CommandType.StoredProcedure;
 
@@ -195,11 +191,12 @@ namespace HospitalManagement
                 SqlParameter workparameter9 = new SqlParameter();
 
 
+
                 workparameter1 = myCommand.Parameters.Add("@FirstName", SqlDbType.VarChar);
                 workparameter1.Value = myPatient.FirstName;
                 workparameter2 = myCommand.Parameters.Add("@LastName", SqlDbType.VarChar);
                 workparameter2.Value = myPatient.LastName;
-                workparameter3 = myCommand.Parameters.Add("@PersonNumber", SqlDbType.Char);
+                workparameter3 = myCommand.Parameters.Add("@PrsnNumber", SqlDbType.Char);
                 workparameter3.Value = myPatient.PersonNumber;
                 workparameter4 = myCommand.Parameters.Add("@Gender", SqlDbType.Char);
                 workparameter4.Value = myPatient.Gender;
@@ -221,6 +218,8 @@ namespace HospitalManagement
 
             myConnection.Open();
 
+
+
             myCommand.ExecuteNonQuery();
 
             int svar = Convert.ToInt32(workparameter10.SqlValue.ToString());
@@ -235,7 +234,6 @@ namespace HospitalManagement
             {
                 return false;
             }
-
 
         }
 

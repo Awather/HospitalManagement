@@ -34,19 +34,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbPermissions = new System.Windows.Forms.ComboBox();
             this.PnlDoc1 = new System.Windows.Forms.Panel();
-            this.PnlDoc2 = new System.Windows.Forms.Panel();
-            this.PnlDoc3 = new System.Windows.Forms.Panel();
-            this.btnChoose = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PnlDoc2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.PnlDoc3 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.btnChoose = new System.Windows.Forms.Button();
             this.PnlDoc4 = new System.Windows.Forms.Panel();
+            this.lblPatientRegis = new System.Windows.Forms.Label();
             this.txtPatPhoneNumbInput = new System.Windows.Forms.TextBox();
             this.txtPatLastNameInput = new System.Windows.Forms.TextBox();
             this.txtPatMiddleNameInput = new System.Windows.Forms.TextBox();
@@ -59,7 +60,6 @@
             this.lblPatientID = new System.Windows.Forms.Label();
             this.lblPatMiddleName = new System.Windows.Forms.Label();
             this.lblPatFirstName = new System.Windows.Forms.Label();
-            this.lblPatientRegis = new System.Windows.Forms.Label();
             this.PnlDoc1.SuspendLayout();
             this.PnlDoc2.SuspendLayout();
             this.PnlDoc3.SuspendLayout();
@@ -127,6 +127,33 @@
             this.PnlDoc1.Size = new System.Drawing.Size(296, 319);
             this.PnlDoc1.TabIndex = 8;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(65, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Release Patients";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(65, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Create Patients Journal";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(65, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Register Patients";
+            // 
             // PnlDoc2
             // 
             this.PnlDoc2.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -138,53 +165,14 @@
             this.PnlDoc2.Size = new System.Drawing.Size(296, 319);
             this.PnlDoc2.TabIndex = 9;
             // 
-            // PnlDoc3
+            // label8
             // 
-            this.PnlDoc3.BackColor = System.Drawing.Color.Beige;
-            this.PnlDoc3.Controls.Add(this.PnlDoc2);
-            this.PnlDoc3.Controls.Add(this.label11);
-            this.PnlDoc3.Controls.Add(this.label9);
-            this.PnlDoc3.Controls.Add(this.label10);
-            this.PnlDoc3.Location = new System.Drawing.Point(208, 39);
-            this.PnlDoc3.Name = "PnlDoc3";
-            this.PnlDoc3.Size = new System.Drawing.Size(296, 316);
-            this.PnlDoc3.TabIndex = 10;
-            // 
-            // btnChoose
-            // 
-            this.btnChoose.Location = new System.Drawing.Point(549, 39);
-            this.btnChoose.Name = "btnChoose";
-            this.btnChoose.Size = new System.Drawing.Size(75, 23);
-            this.btnChoose.TabIndex = 11;
-            this.btnChoose.Text = "Choose";
-            this.btnChoose.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Register Patients";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Create Patients Journal";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(65, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Release Patients";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(46, 113);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(200, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Search All The Patients And Their Status";
             // 
             // label6
             // 
@@ -204,14 +192,26 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Search All The Doctors";
             // 
-            // label8
+            // PnlDoc3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 113);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(200, 13);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Search All The Patients And Their Status";
+            this.PnlDoc3.BackColor = System.Drawing.Color.Beige;
+            this.PnlDoc3.Controls.Add(this.PnlDoc2);
+            this.PnlDoc3.Controls.Add(this.label11);
+            this.PnlDoc3.Controls.Add(this.label9);
+            this.PnlDoc3.Controls.Add(this.label10);
+            this.PnlDoc3.Location = new System.Drawing.Point(208, 39);
+            this.PnlDoc3.Name = "PnlDoc3";
+            this.PnlDoc3.Size = new System.Drawing.Size(296, 316);
+            this.PnlDoc3.TabIndex = 10;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(27, 99);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(102, 13);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "View Patients Room";
             // 
             // label9
             // 
@@ -231,14 +231,14 @@
             this.label10.TabIndex = 6;
             this.label10.Text = "View The Duty Schedule";
             // 
-            // label11
+            // btnChoose
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(27, 99);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 13);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "View Patients Room";
+            this.btnChoose.Location = new System.Drawing.Point(549, 39);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Size = new System.Drawing.Size(75, 23);
+            this.btnChoose.TabIndex = 11;
+            this.btnChoose.Text = "Choose";
+            this.btnChoose.UseVisualStyleBackColor = true;
             // 
             // PnlDoc4
             // 
@@ -260,6 +260,16 @@
             this.PnlDoc4.Name = "PnlDoc4";
             this.PnlDoc4.Size = new System.Drawing.Size(296, 319);
             this.PnlDoc4.TabIndex = 11;
+            // 
+            // lblPatientRegis
+            // 
+            this.lblPatientRegis.AutoSize = true;
+            this.lblPatientRegis.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientRegis.Location = new System.Drawing.Point(32, 25);
+            this.lblPatientRegis.Name = "lblPatientRegis";
+            this.lblPatientRegis.Size = new System.Drawing.Size(163, 21);
+            this.lblPatientRegis.TabIndex = 24;
+            this.lblPatientRegis.Text = "Patient Registration";
             // 
             // txtPatPhoneNumbInput
             // 
@@ -367,16 +377,6 @@
             this.lblPatFirstName.Size = new System.Drawing.Size(72, 17);
             this.lblPatFirstName.TabIndex = 12;
             this.lblPatFirstName.Text = "First Name:";
-            // 
-            // lblPatientRegis
-            // 
-            this.lblPatientRegis.AutoSize = true;
-            this.lblPatientRegis.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPatientRegis.Location = new System.Drawing.Point(32, 25);
-            this.lblPatientRegis.Name = "lblPatientRegis";
-            this.lblPatientRegis.Size = new System.Drawing.Size(163, 21);
-            this.lblPatientRegis.TabIndex = 24;
-            this.lblPatientRegis.Text = "Patient Registration";
             // 
             // MainMenu
             // 

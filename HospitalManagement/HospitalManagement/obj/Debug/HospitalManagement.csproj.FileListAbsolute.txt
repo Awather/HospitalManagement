@@ -14,3 +14,17 @@ C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\bin\Release\H
 C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\bin\Release\HospitalManagement.exe
 C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\bin\Release\HospitalManagement.pdb
 C:\Users\Awater\source\repos\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csprojResolveAssemblyReference.cache
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\bin\Release\HospitalManagement.exe.config
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\bin\Release\HospitalManagement.exe
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\bin\Release\HospitalManagement.pdb
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csprojResolveAssemblyReference.cache
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.Login.resources
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.MainMenu.resources
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.Properties.Resources.resources
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.RegisterPatients.resources
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csproj.GenerateResource.Cache
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csproj.CoreCompileInputs.cache
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.exe
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.pdb
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.LoginTest.resources
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.MainMenuTest.resources
