@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace HospitalManagement
 {
-    public partial class MainMenuTest : Form
+    public partial class MainMenu : Form
     {
         private DataSet dsPermissions = new DataSet();
 
-        public MainMenuTest()
+        public MainMenu()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace HospitalManagement
         //    lblEmpty.Text = Convert.ToString(Login.userID);  // Data placeras i label
         //}
 
-        private void MainMenuTest_Load(object sender, EventArgs e)
+        private void MainMenu_Load(object sender, EventArgs e)
         {
             lblEmpty.Text = Convert.ToString(Login.userID);   // Data placeras i labelxx
                                                               //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
@@ -38,18 +38,18 @@ namespace HospitalManagement
             label3.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]) + " at " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][3]);
 
 
-            ////Databasaccess här för att hämta permissions för denna user och lägga i en dropdown eller i annat
-            ////Här fylls en dropdown med permissions för denna user
-            //cmbPermissions.Items.Clear();
+            //Databasaccess här för att hämta permissions för denna user och lägga i en dropdown eller i annat
+            //Här fylls en dropdown med permissions för denna user
+            cmbPermissions.Items.Clear();
 
-            //dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
-            //cmbPermissions.DataSource = dsPermissions.Tables[0];
-            //cmbPermissions.DisplayMember = "Permission";
-            ////vill ha blankrad som första rad
-            //DataRow row = dsPermissions.Tables[0].NewRow();
-            //row["Permission"] = "-- Select --";                     //insert a blank row - you can even write something like = "Please select bellow...";
-            //dsPermissions.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
-            //cmbPermissions.SelectedIndex = 0;
+            dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
+            cmbPermissions.DataSource = dsPermissions.Tables[0];
+            cmbPermissions.DisplayMember = "Permission";
+            //vill ha blankrad som första rad
+            DataRow row = dsPermissions.Tables[0].NewRow();
+            row["Permission"] = "-- Select --";                     //insert a blank row - you can even write something like = "Please select bellow...";
+            dsPermissions.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
+            cmbPermissions.SelectedIndex = 0;
 
 
 
@@ -84,36 +84,36 @@ namespace HospitalManagement
         //        }
         //    }
 
-        //// Test for Receptionist
-        //private void btnChoose_Click(object sender, EventArgs e)
-        //{
-        //    string choice = (cmbPermissions.Text);
+        // Test for Receptionist
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            string choice = (cmbPermissions.Text);
 
-        //    if ((choice == "Register Patients") || (choice == "Create Patients Journal") || (choice == "Release Patients"))
-        //    {
-        //        PnlDoc1.BringToFront();
-        //        //pnlDoc01.Visible = false;s
-        //        //pnlDoc02.Visible = true;
-        //    }
-        //    if ((choice == "Set Patient’s Appointments With Doctors") || (choice == "Search All The Doctors") || (choice == "Search All The Patients And Their Status"))
-        //    {
-        //        PnlDoc2.BringToFront();
-        //        //pnlDoc02.Visible = false;
-        //        //pnlDoc01.Visible = true;
-        //    }
-        //    if ((choice == "View The Prescriptions") || (choice == "View The Duty Schedule") || (choice == "View Patients Room"))
-        //    {
-        //        PnlDoc3.BringToFront();
-        //        //pnlDoc02.Visible = false;
-        //        //pnlDoc01.Visible = true;
-        //    }
-        //    if ((choice == "Register Patients"))
-        //    {
-        //        PnlDoc4.BringToFront();
-        //        //pnlDoc02.Visible = false;
-        //        //pnlDoc01.Visible = true;
-        //    }
-        //}
+            if ((choice == "Register Patients") || (choice == "Create Patients Journal") || (choice == "Release Patients"))
+            {
+                PnlDoc1.BringToFront();
+                //pnlDoc01.Visible = false;s
+                //pnlDoc02.Visible = true;
+            }
+            if ((choice == "Set Patient’s Appointments With Doctors") || (choice == "Search All The Doctors") || (choice == "Search All The Patients And Their Status"))
+            {
+                PnlDoc2.BringToFront();
+                //pnlDoc02.Visible = false;
+                //pnlDoc01.Visible = true;
+            }
+            if ((choice == "View The Prescriptions") || (choice == "View The Duty Schedule") || (choice == "View Patients Room"))
+            {
+                PnlDoc3.BringToFront();
+                //pnlDoc02.Visible = false;
+                //pnlDoc01.Visible = true;
+            }
+            if ((choice == "Register Patients"))
+            {
+                PnlDoc4.BringToFront();
+                //pnlDoc02.Visible = false;
+                //pnlDoc01.Visible = true;
+            }
+        }
     }
 }
 
