@@ -30,18 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuTest));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblEmpty = new System.Windows.Forms.Label();
-            this.lblLoggedInAs = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblEmpty = new System.Windows.Forms.Label();
+            this.lblLoggedInAs = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox5 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox6 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,28 +52,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblEmpty);
             this.panel1.Controls.Add(this.lblLoggedInAs);
-            this.panel1.Location = new System.Drawing.Point(22, 103);
+            this.panel1.Location = new System.Drawing.Point(22, 102);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(751, 44);
+            this.panel1.Size = new System.Drawing.Size(751, 47);
             this.panel1.TabIndex = 0;
-            // 
-            // lblEmpty
-            // 
-            this.lblEmpty.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpty.Location = new System.Drawing.Point(651, 6);
-            this.lblEmpty.Name = "lblEmpty";
-            this.lblEmpty.Size = new System.Drawing.Size(98, 33);
-            this.lblEmpty.TabIndex = 3;
-            // 
-            // lblLoggedInAs
-            // 
-            this.lblLoggedInAs.AutoSize = true;
-            this.lblLoggedInAs.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoggedInAs.Location = new System.Drawing.Point(559, 9);
-            this.lblLoggedInAs.Name = "lblLoggedInAs";
-            this.lblLoggedInAs.Size = new System.Drawing.Size(95, 17);
-            this.lblLoggedInAs.TabIndex = 2;
-            this.lblLoggedInAs.Text = "Logged in as:";
             // 
             // label3
             // 
@@ -93,51 +76,79 @@
             this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 4;
             // 
+            // lblEmpty
+            // 
+            this.lblEmpty.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpty.Location = new System.Drawing.Point(651, 6);
+            this.lblEmpty.Name = "lblEmpty";
+            this.lblEmpty.Size = new System.Drawing.Size(98, 33);
+            this.lblEmpty.TabIndex = 3;
+            // 
+            // lblLoggedInAs
+            // 
+            this.lblLoggedInAs.AutoSize = true;
+            this.lblLoggedInAs.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedInAs.Location = new System.Drawing.Point(559, 9);
+            this.lblLoggedInAs.Name = "lblLoggedInAs";
+            this.lblLoggedInAs.Size = new System.Drawing.Size(95, 17);
+            this.lblLoggedInAs.TabIndex = 2;
+            this.lblLoggedInAs.Text = "Logged in as:";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.OldLace;
-            this.panel2.Controls.Add(this.menuStrip1);
-            this.panel2.Location = new System.Drawing.Point(22, 145);
+            this.panel2.Controls.Add(this.menuStrip2);
+            this.panel2.Location = new System.Drawing.Point(22, 143);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(751, 320);
+            this.panel2.Size = new System.Drawing.Size(751, 324);
             this.panel2.TabIndex = 8;
             // 
-            // menuStrip1
+            // menuStrip2
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Linen;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
-            this.toolStripTextBox2,
-            this.toolStripTextBox3});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(101, 320);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip2.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(0);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox4,
+            this.toolStripTextBox5,
+            this.toolStripTextBox6,
+            this.toolStripTextBox7});
+            this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.menuStrip2.Size = new System.Drawing.Size(100, 324);
+            this.menuStrip2.TabIndex = 0;
+            this.menuStrip2.Text = "menuStrip2";
             // 
-            // toolStripTextBox1
+            // toolStripTextBox4
             // 
-            this.toolStripTextBox1.BackColor = System.Drawing.Color.OldLace;
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(86, 23);
+            this.toolStripTextBox4.BackColor = System.Drawing.Color.OldLace;
+            this.toolStripTextBox4.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
+            this.toolStripTextBox4.MergeIndex = -5;
+            this.toolStripTextBox4.Name = "toolStripTextBox4";
+            this.toolStripTextBox4.Size = new System.Drawing.Size(99, 23);
             // 
-            // toolStripTextBox2
+            // toolStripTextBox5
             // 
-            this.toolStripTextBox2.BackColor = System.Drawing.Color.OldLace;
-            this.toolStripTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(86, 23);
+            this.toolStripTextBox5.BackColor = System.Drawing.Color.OldLace;
+            this.toolStripTextBox5.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
+            this.toolStripTextBox5.Name = "toolStripTextBox5";
+            this.toolStripTextBox5.Size = new System.Drawing.Size(99, 23);
             // 
-            // toolStripTextBox3
+            // toolStripTextBox6
             // 
-            this.toolStripTextBox3.BackColor = System.Drawing.Color.OldLace;
-            this.toolStripTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox3.Name = "toolStripTextBox3";
-            this.toolStripTextBox3.Size = new System.Drawing.Size(86, 23);
+            this.toolStripTextBox6.BackColor = System.Drawing.Color.OldLace;
+            this.toolStripTextBox6.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
+            this.toolStripTextBox6.Name = "toolStripTextBox6";
+            this.toolStripTextBox6.Size = new System.Drawing.Size(99, 23);
+            // 
+            // toolStripTextBox7
+            // 
+            this.toolStripTextBox7.BackColor = System.Drawing.Color.OldLace;
+            this.toolStripTextBox7.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
+            this.toolStripTextBox7.Name = "toolStripTextBox7";
+            this.toolStripTextBox7.Size = new System.Drawing.Size(99, 23);
             // 
             // MainMenuTest
             // 
@@ -148,14 +159,16 @@
             this.ClientSize = new System.Drawing.Size(785, 464);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MainMenuStrip = this.menuStrip2;
             this.Name = "MainMenuTest";
             this.Text = "MainMenuTest";
+            this.Load += new System.EventHandler(this.MainMenuTest_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -168,9 +181,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox5;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox6;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox7;
     }
 }

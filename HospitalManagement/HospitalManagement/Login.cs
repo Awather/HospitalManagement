@@ -36,7 +36,7 @@ namespace HospitalManagement
             {
                 userID = txtUsername.Text; // Värdet som ska skickas
 
-                MainMenu frmMainMenu = new MainMenu();
+                MainMenuTest frmMainMenu = new MainMenuTest();
                 frmMainMenu.Show();
 
                 this.Hide();

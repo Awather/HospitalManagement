@@ -118,9 +118,9 @@
             this.label1.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(460, 233);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 27);
+            this.label1.Size = new System.Drawing.Size(205, 27);
             this.label1.TabIndex = 17;
-            this.label1.Text = "\"Because we care about You\"";
+            this.label1.Text = "\"Because We care about You\"";
             // 
             // label4
             // 
