@@ -116,8 +116,8 @@
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.menuStrip2.Size = new System.Drawing.Size(100, 324);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(0);
+            this.menuStrip2.Size = new System.Drawing.Size(98, 324);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -127,28 +127,28 @@
             this.toolStripTextBox4.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox4.MergeIndex = -5;
             this.toolStripTextBox4.Name = "toolStripTextBox4";
-            this.toolStripTextBox4.Size = new System.Drawing.Size(99, 23);
+            this.toolStripTextBox4.Size = new System.Drawing.Size(97, 23);
             // 
             // toolStripTextBox5
             // 
             this.toolStripTextBox5.BackColor = System.Drawing.Color.OldLace;
             this.toolStripTextBox5.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox5.Name = "toolStripTextBox5";
-            this.toolStripTextBox5.Size = new System.Drawing.Size(99, 23);
+            this.toolStripTextBox5.Size = new System.Drawing.Size(97, 23);
             // 
             // toolStripTextBox6
             // 
             this.toolStripTextBox6.BackColor = System.Drawing.Color.OldLace;
             this.toolStripTextBox6.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox6.Name = "toolStripTextBox6";
-            this.toolStripTextBox6.Size = new System.Drawing.Size(99, 23);
+            this.toolStripTextBox6.Size = new System.Drawing.Size(97, 23);
             // 
             // toolStripTextBox7
             // 
             this.toolStripTextBox7.BackColor = System.Drawing.Color.OldLace;
             this.toolStripTextBox7.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox7.Name = "toolStripTextBox7";
-            this.toolStripTextBox7.Size = new System.Drawing.Size(99, 23);
+            this.toolStripTextBox7.Size = new System.Drawing.Size(97, 23);
             // 
             // MainMenuTest
             // 
@@ -162,7 +162,6 @@
             this.MainMenuStrip = this.menuStrip2;
             this.Name = "MainMenuTest";
             this.Text = "MainMenuTest";
-            this.Load += new System.EventHandler(this.MainMenuTest_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
