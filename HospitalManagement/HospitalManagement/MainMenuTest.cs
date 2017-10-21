@@ -13,24 +13,26 @@ namespace HospitalManagement
     public partial class MainMenuTest : Form
     {
         private DataSet dsPermissions = new DataSet();
+        const int MinPersNr = 19000101;
+        const int MaxPersNr = 20171231;
+
+        private string felMedd = "";
+        Control obj;
+        //bool notRunFirstTime;
+
 
         public MainMenuTest()
         {
             InitializeComponent();
         }
 
-        //private void MainMenu_Load(object sender, EventArgs e)
-        //{
-        //    lblEmpty.Text = Convert.ToString(Login.userID);  // Data placeras i label
-        //}
-
-
-        private void MainMenu_Load(object sender, EventArgs e)
+        private void Huvudmeny_Load(object sender, EventArgs e)
         {
-            lblEmpty.Text = Convert.ToString(LoginTest.userID);   // Data placeras i labelxx
-                                                              //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
-                                                              //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
+            lblEmpty.Text = Convert.ToString(lblLoggedInAs.UseCompatibleTextRendering);   // Data placeras i labelxx
+                                                               //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
+                                                               //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
 
+            //pnlNull.BringToFront();
 
             //Databasacccess här för att hämta info om inloggad
             DataSet dsUserInfo = new DataSet();
@@ -38,10 +40,6 @@ namespace HospitalManagement
             label2.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][0]) + " " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][1]);
             label3.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]) + " at " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][3]);
 
-
-
-
-            // AWE - Dropdown box for staff permissions - Change to MenuStrip
 
             //Databasaccess här för att hämta permissions för denna user och lägga i en dropdown eller i annat
             //Här fylls en dropdown med permissions för denna user
@@ -52,45 +50,50 @@ namespace HospitalManagement
             cmbPermissions.DisplayMember = "Permission";
             //vill ha blankrad som första rad
             DataRow row = dsPermissions.Tables[0].NewRow();
-            row["Permission"] = "-- Select --";                     //insert a blank row - you can even write something like = "Please select bellow...";
+            row["Permission"] = "";                     //insert a blank row - you can even write something like = "Please select bellow...";
             dsPermissions.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
             cmbPermissions.SelectedIndex = 0;
 
-
-
-            // FAILED ATTEMPTS
-
-
-            //MenuStrip menuStrpRolePermission = new MenuStrip();
-
-            //toolStripMenuItem1 = toolStripMenuItem1;
-            //Controls.Add(menuStrpRolePermission);
-
-            //MainMenuStrip.Name = "menuStrip2";
-
-            //ToolStripMenuItem FileMenu = new ToolStripMenuItem("File");
-
-
-
-
-            //menuStrpRolePermission.
-
-            //List<string> menuItems = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
-            //ContextMenuStrip menuStrpRolePermission = new ContextMenuStrip();
-
-            //foreach (var menuItem in menuItems)
-            //{
-            //    MenuItem item = new MenuItem(menuItem);
-            //    item.Text = menuItem;
-            //    item.Click += new EventHandler(item_Click);// item_click is event handler name
-            //                                                item.MenuItems.Add(); you could use this to add sub items
-            //}
-
-            //panel1.Controls.Add(menu);
-
+            //notRunFirstTime = false;
 
             //Gör en Person-patient-personal klass
         }
+
+
+
+        // FAILED ATTEMPTS
+
+
+        //MenuStrip menuStrpRolePermission = new MenuStrip();
+
+        //toolStripMenuItem1 = toolStripMenuItem1;
+        //Controls.Add(menuStrpRolePermission);
+
+        //MainMenuStrip.Name = "menuStrip2";
+
+        //ToolStripMenuItem FileMenu = new ToolStripMenuItem("File");
+
+
+
+
+        //menuStrpRolePermission.
+
+        //List<string> menuItems = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
+        //ContextMenuStrip menuStrpRolePermission = new ContextMenuStrip();
+
+        //foreach (var menuItem in menuItems)
+        //{
+        //    MenuItem item = new MenuItem(menuItem);
+        //    item.Text = menuItem;
+        //    item.Click += new EventHandler(item_Click);// item_click is event handler name
+        //                                                item.MenuItems.Add(); you could use this to add sub items
+        //}
+
+        //panel1.Controls.Add(menu);
+
+
+        //Gör en Person-patient-personal klass
+    }
 
         //private void BtnChoose_SelectedIndexChanged(object sender, EventArgs e)
         //{
@@ -153,5 +156,5 @@ namespace HospitalManagement
         //    }
         //}
     }
-}
+
 
