@@ -12,9 +12,74 @@ namespace HospitalManagement
 {
     public partial class LoginTest : Form
     {
+        public static string userID; // Global variabel
+
         public LoginTest()
         {
             InitializeComponent();
+        }
+
+        //private void LoginTest_Load(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            // Application is canceled
+            Application.Exit();
+        }
+
+        //private void BtnLogin_Click(object sender, EventArgs e)
+        //{
+        //    // Database access here
+
+        //    if (DBAccess.IsUserIdPassWdOK(txtUsername.Text, txtPassword.Text))
+
+        //    {
+        //        userID = txtUsername.Text; // Värdet som ska skickas
+
+        //        MainMenu frmMainMenu = new MainMenu();
+        //        frmMainMenu.Show();
+
+        //        this.Hide();
+        //    }
+        //    else
+        //    {
+        //        Application.Exit();
+        //    }
+
+        //}
+
+        private void txtForgotPass_Click(object sender, EventArgs e)
+        {
+            txtForgotPass.Text = "You're Fired!";
+
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+                // Database access here
+
+                if (DBAccess.IsUserIdPassWdOK(txtUsername.Text, txtPassword.Text))
+
+                {
+                    userID = txtUsername.Text; // Värdet som ska skickas
+
+                    MainMenuTest frmMainMenuTest = new MainMenuTest();
+                    frmMainMenuTest.Show();
+
+                    this.Hide();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+
+            
+
         }
     }
 }

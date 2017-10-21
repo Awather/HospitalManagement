@@ -26,14 +26,14 @@ namespace HospitalManagement
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            lblEmpty.Text = Convert.ToString(Login.userID);   // Data placeras i labelxx
+            /*lblEmpty.Text = Convert.ToString(Login.userID);*/   // Data placeras i labelxx
                                                               //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
                                                               //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
 
 
             //Databasacccess här för att hämta info om inloggad
             DataSet dsUserInfo = new DataSet();
-            dsUserInfo = DBAccess.GetUserInformation(Login.userID);
+            //dsUserInfo = DBAccess.GetUserInformation(Login.userID);
             label2.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][0]) + " " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][1]);
             label3.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]) + " at " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][3]);
 
@@ -113,6 +113,24 @@ namespace HospitalManagement
                 //pnlDoc02.Visible = false;
                 //pnlDoc01.Visible = true;
             }
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // MainMenu
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Name = "MainMenu";
+            this.Load += new System.EventHandler(this.MainMenu_Load_1);
+            this.ResumeLayout(false);
+
+        }
+
+        private void MainMenu_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

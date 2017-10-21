@@ -35,19 +35,19 @@
             this.lblEmpty = new System.Windows.Forms.Label();
             this.lblLoggedInAs = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.menuStrpRolePermission = new System.Windows.Forms.MenuStrip();
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox5 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox6 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
+            this.menuStrpRolePermission.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblEmpty);
@@ -96,59 +96,59 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.OldLace;
-            this.panel2.Controls.Add(this.menuStrip2);
+            this.panel2.BackColor = System.Drawing.Color.Linen;
+            this.panel2.Controls.Add(this.menuStrpRolePermission);
             this.panel2.Location = new System.Drawing.Point(22, 143);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(751, 324);
             this.panel2.TabIndex = 8;
             // 
-            // menuStrip2
+            // menuStrpRolePermission
             // 
-            this.menuStrip2.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(0);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrpRolePermission.BackColor = System.Drawing.Color.MistyRose;
+            this.menuStrpRolePermission.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrpRolePermission.GripMargin = new System.Windows.Forms.Padding(0);
+            this.menuStrpRolePermission.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox4,
             this.toolStripTextBox5,
             this.toolStripTextBox6,
             this.toolStripTextBox7});
-            this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(0);
-            this.menuStrip2.Size = new System.Drawing.Size(98, 324);
-            this.menuStrip2.TabIndex = 0;
-            this.menuStrip2.Text = "menuStrip2";
+            this.menuStrpRolePermission.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.menuStrpRolePermission.Location = new System.Drawing.Point(0, 0);
+            this.menuStrpRolePermission.Name = "menuStrpRolePermission";
+            this.menuStrpRolePermission.Padding = new System.Windows.Forms.Padding(0);
+            this.menuStrpRolePermission.Size = new System.Drawing.Size(97, 324);
+            this.menuStrpRolePermission.TabIndex = 0;
+            this.menuStrpRolePermission.Text = "menuStrip2";
             // 
             // toolStripTextBox4
             // 
-            this.toolStripTextBox4.BackColor = System.Drawing.Color.OldLace;
+            this.toolStripTextBox4.BackColor = System.Drawing.Color.Linen;
             this.toolStripTextBox4.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox4.MergeIndex = -5;
             this.toolStripTextBox4.Name = "toolStripTextBox4";
-            this.toolStripTextBox4.Size = new System.Drawing.Size(97, 23);
+            this.toolStripTextBox4.Size = new System.Drawing.Size(96, 23);
             // 
             // toolStripTextBox5
             // 
-            this.toolStripTextBox5.BackColor = System.Drawing.Color.OldLace;
+            this.toolStripTextBox5.BackColor = System.Drawing.Color.Linen;
             this.toolStripTextBox5.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox5.Name = "toolStripTextBox5";
-            this.toolStripTextBox5.Size = new System.Drawing.Size(97, 23);
+            this.toolStripTextBox5.Size = new System.Drawing.Size(96, 23);
             // 
             // toolStripTextBox6
             // 
-            this.toolStripTextBox6.BackColor = System.Drawing.Color.OldLace;
+            this.toolStripTextBox6.BackColor = System.Drawing.Color.Linen;
             this.toolStripTextBox6.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox6.Name = "toolStripTextBox6";
-            this.toolStripTextBox6.Size = new System.Drawing.Size(97, 23);
+            this.toolStripTextBox6.Size = new System.Drawing.Size(96, 23);
             // 
             // toolStripTextBox7
             // 
-            this.toolStripTextBox7.BackColor = System.Drawing.Color.OldLace;
+            this.toolStripTextBox7.BackColor = System.Drawing.Color.Linen;
             this.toolStripTextBox7.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox7.Name = "toolStripTextBox7";
-            this.toolStripTextBox7.Size = new System.Drawing.Size(97, 23);
+            this.toolStripTextBox7.Size = new System.Drawing.Size(96, 23);
             // 
             // MainMenuTest
             // 
@@ -156,18 +156,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(785, 464);
+            this.ClientSize = new System.Drawing.Size(797, 464);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.MainMenuStrip = this.menuStrip2;
+            this.MainMenuStrip = this.menuStrpRolePermission;
             this.Name = "MainMenuTest";
             this.Text = "MainMenuTest";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
+            this.menuStrpRolePermission.ResumeLayout(false);
+            this.menuStrpRolePermission.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -180,7 +180,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.MenuStrip menuStrpRolePermission;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox5;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox6;

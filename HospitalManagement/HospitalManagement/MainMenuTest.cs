@@ -24,16 +24,16 @@ namespace HospitalManagement
         //    lblEmpty.Text = Convert.ToString(Login.userID);  // Data placeras i label
         //}
 
-        private void MainMenu_Load(object sender, EventArgs e)
+        private void MainMenuTest_Load(object sender, EventArgs e)
         {
-            lblEmpty.Text = Convert.ToString(Login.userID);   // Data placeras i labelxx
+            lblEmpty.Text = Convert.ToString(LoginTest.userID);   // Data placeras i labelxx
                                                               //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
                                                               //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
 
 
             //Databasacccess här för att hämta info om inloggad
             DataSet dsUserInfo = new DataSet();
-            dsUserInfo = DBAccess.GetUserInformation(Login.userID);
+            dsUserInfo = DBAccess.GetUserInformation(LoginTest.userID);
             label2.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][0]) + " " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][1]);
             label3.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]) + " at " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][3]);
 
@@ -41,19 +41,46 @@ namespace HospitalManagement
 
             // AWE - Dropdown box for staff permissions - Change to MenuStrip
 
-            ////Databasaccess här för att hämta permissions för denna user och lägga i en dropdown eller i annat
-            ////Här fylls en dropdown med permissions för denna user
+            //Databasaccess här för att hämta permissions för denna user och lägga i en dropdown eller i annat
+            //Här fylls en dropdown med permissions för denna user
             //cmbPermissions.Items.Clear();
 
-            //dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
-            //cmbPermissions.DataSource = dsPermissions.Tables[0];
+            dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
+            //cmbPermissions.DataSource = menuStrpRolePermission.Tables[0];
             //cmbPermissions.DisplayMember = "Permission";
             ////vill ha blankrad som första rad
-            //DataRow row = dsPermissions.Tables[0].NewRow();
+            //DataRow row = menuStrpRolePermission.Tables[0].NewRow();
             //row["Permission"] = "-- Select --";                     //insert a blank row - you can even write something like = "Please select bellow...";
-            //dsPermissions.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
+            //menuStrpRolePermission.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
             //cmbPermissions.SelectedIndex = 0;
 
+
+            MenuStrip menuStrpRolePermission = new MenuStrip();
+
+            this.MainMenuStrip = menuStrpRolePermission;
+            Controls.Add(menuStrpRolePermission);
+
+            MainMenuStrip.Name = "menuStrip2";
+
+            ToolStripMenuItem FileMenu = new ToolStripMenuItem("File");
+
+           
+
+
+            //menuStrpRolePermission.
+
+            //List<string> menuItems = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
+            //ContextMenuStrip menuStrpRolePermission = new ContextMenuStrip();
+
+            //foreach (var menuItem in menuItems)
+            //{
+            //    MenuItem item = new MenuItem(menuItem);
+            //    item.Text = menuItem;
+            //    item.Click += new EventHandler(item_Click);// item_click is event handler name
+            //                                                item.MenuItems.Add(); you could use this to add sub items
+            //}
+
+            //panel1.Controls.Add(menu);
 
 
             //Gör en Person-patient-personal klass

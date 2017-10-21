@@ -18,8 +18,6 @@ C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\bin\Rel
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\bin\Release\HospitalManagement.exe
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\bin\Release\HospitalManagement.pdb
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csprojResolveAssemblyReference.cache
-C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.Login.resources
-C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.MainMenu.resources
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.RegisterPatients.resources
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csproj.GenerateResource.Cache
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csproj.CoreCompileInputs.cache

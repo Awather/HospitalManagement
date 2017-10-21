@@ -52,6 +52,7 @@
             this.txtForgotPass.Size = new System.Drawing.Size(91, 15);
             this.txtForgotPass.TabIndex = 15;
             this.txtForgotPass.Text = "Forgot Password?";
+            this.txtForgotPass.Click += new System.EventHandler(this.txtForgotPass_Click);
             // 
             // btnLogin
             // 
@@ -64,6 +65,7 @@
             this.btnLogin.TabIndex = 14;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label3
             // 
@@ -99,6 +101,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtPassword.Location = new System.Drawing.Point(142, 94);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(110, 20);
             this.txtPassword.TabIndex = 9;
@@ -134,7 +137,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.OldLace;
+            this.panel1.BackColor = System.Drawing.Color.Pink;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtUsername);
             this.panel1.Controls.Add(this.txtPassword);
@@ -151,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(781, 433);
             this.Controls.Add(this.panel1);
