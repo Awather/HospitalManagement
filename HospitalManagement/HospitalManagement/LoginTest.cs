@@ -68,10 +68,14 @@ namespace HospitalManagement
                 {
                     userID = txtUsername.Text; // Värdet som ska skickas
 
-                    MainMenuTest frmMainMenuTest = new MainMenuTest();
-                    frmMainMenuTest.Show();
 
-                    this.Hide();
+                Form1 frmForm1 = new Form1();
+                frmForm1.Show();
+
+                //MainMenuTest frmMainMenuTest = new MainMenuTest();
+                //frmMainMenuTest.Show();
+
+                this.Hide();
                 }
                 else
                 {
