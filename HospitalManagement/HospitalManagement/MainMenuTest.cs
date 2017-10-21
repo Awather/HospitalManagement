@@ -24,7 +24,8 @@ namespace HospitalManagement
         //    lblEmpty.Text = Convert.ToString(Login.userID);  // Data placeras i label
         //}
 
-        private void MainMenuTest_Load(object sender, EventArgs e)
+
+        private void MainMenu_Load(object sender, EventArgs e)
         {
             lblEmpty.Text = Convert.ToString(LoginTest.userID);   // Data placeras i labelxx
                                                               //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
@@ -39,32 +40,37 @@ namespace HospitalManagement
 
 
 
+
             // AWE - Dropdown box for staff permissions - Change to MenuStrip
 
             //Databasaccess här för att hämta permissions för denna user och lägga i en dropdown eller i annat
             //Här fylls en dropdown med permissions för denna user
-            //cmbPermissions.Items.Clear();
+            cmbPermissions.Items.Clear();
 
             dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
-            //cmbPermissions.DataSource = menuStrpRolePermission.Tables[0];
-            //cmbPermissions.DisplayMember = "Permission";
-            ////vill ha blankrad som första rad
-            //DataRow row = menuStrpRolePermission.Tables[0].NewRow();
-            //row["Permission"] = "-- Select --";                     //insert a blank row - you can even write something like = "Please select bellow...";
-            //menuStrpRolePermission.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
-            //cmbPermissions.SelectedIndex = 0;
+            cmbPermissions.DataSource = dsPermissions.Tables[0];
+            cmbPermissions.DisplayMember = "Permission";
+            //vill ha blankrad som första rad
+            DataRow row = dsPermissions.Tables[0].NewRow();
+            row["Permission"] = "-- Select --";                     //insert a blank row - you can even write something like = "Please select bellow...";
+            dsPermissions.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
+            cmbPermissions.SelectedIndex = 0;
 
 
-            MenuStrip menuStrpRolePermission = new MenuStrip();
 
-            this.MainMenuStrip = menuStrpRolePermission;
-            Controls.Add(menuStrpRolePermission);
+            // FAILED ATTEMPTS
 
-            MainMenuStrip.Name = "menuStrip2";
 
-            ToolStripMenuItem FileMenu = new ToolStripMenuItem("File");
+            //MenuStrip menuStrpRolePermission = new MenuStrip();
 
-           
+            //toolStripMenuItem1 = toolStripMenuItem1;
+            //Controls.Add(menuStrpRolePermission);
+
+            //MainMenuStrip.Name = "menuStrip2";
+
+            //ToolStripMenuItem FileMenu = new ToolStripMenuItem("File");
+
+
 
 
             //menuStrpRolePermission.
