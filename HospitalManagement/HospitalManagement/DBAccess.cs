@@ -236,7 +236,7 @@ namespace HospitalManagement
             }
         }
 
-        public static DataSet GetPatientInformation(string personNumber)
+        public static Patient GetPatientInformation(string personNumber)
         {
 
             DataSet ds = new DataSet();
@@ -262,7 +262,29 @@ namespace HospitalManagement
 
             adapter.Fill(ds);
 
-            return ds;
+            //return ds;
+
+            Patient getMyPatient;
+
+            if (ds.Tables[0].Rows.Count>0) // ASK Jan what this means
+            {
+
+                getMyPatient = new Patient(personNumber, Convert.ToString(ds.Tables[0].Rows[0][0]), Convert.ToString(ds.Tables[0].Rows[0][1]), // ASK JAN ABOUT THIS
+                 Convert.ToString(ds.Tables[0].Rows[0][3]), Convert.ToString(ds.Tables[0].Rows[0][4]), Convert.ToString(ds.Tables[0].Rows[0][5]),
+                  Convert.ToString(ds.Tables[0].Rows[0][6]), Convert.ToString(ds.Tables[0].Rows[0][7]),
+                   Convert.ToChar(ds.Tables[0].Rows[0][2]));
+
+            }
+            else
+            {
+
+                getMyPatient = new Patient();
+
+            }
+
+            return getMyPatient;
+
+
         }
 
 

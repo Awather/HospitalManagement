@@ -57,6 +57,10 @@ namespace HospitalManagement
 
         }
 
+        public Patient()
+
+        { }
+
         public string PersonNumber {get; set;}
         public string Address { get; set; }
         public string PostalNumber { get; set; }

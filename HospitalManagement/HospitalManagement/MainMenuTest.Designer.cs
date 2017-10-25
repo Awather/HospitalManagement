@@ -34,12 +34,12 @@
             this.lblEmpty = new System.Windows.Forms.Label();
             this.lblLoggedInAs = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbPermissions = new System.Windows.Forms.ComboBox();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox5 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox6 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
-            this.cmbPermissions = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -104,6 +104,14 @@
             this.panel2.Size = new System.Drawing.Size(751, 324);
             this.panel2.TabIndex = 10;
             // 
+            // cmbPermissions
+            // 
+            this.cmbPermissions.FormattingEnabled = true;
+            this.cmbPermissions.Location = new System.Drawing.Point(98, 0);
+            this.cmbPermissions.Name = "cmbPermissions";
+            this.cmbPermissions.Size = new System.Drawing.Size(150, 21);
+            this.cmbPermissions.TabIndex = 6;
+            // 
             // menuStrip2
             // 
             this.menuStrip2.BackColor = System.Drawing.Color.AntiqueWhite;
@@ -118,7 +126,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(0);
-            this.menuStrip2.Size = new System.Drawing.Size(96, 324);
+            this.menuStrip2.Size = new System.Drawing.Size(94, 324);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -128,36 +136,28 @@
             this.toolStripTextBox4.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox4.MergeIndex = -5;
             this.toolStripTextBox4.Name = "toolStripTextBox4";
-            this.toolStripTextBox4.Size = new System.Drawing.Size(95, 23);
+            this.toolStripTextBox4.Size = new System.Drawing.Size(93, 23);
             // 
             // toolStripTextBox5
             // 
             this.toolStripTextBox5.BackColor = System.Drawing.Color.OldLace;
             this.toolStripTextBox5.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox5.Name = "toolStripTextBox5";
-            this.toolStripTextBox5.Size = new System.Drawing.Size(95, 23);
+            this.toolStripTextBox5.Size = new System.Drawing.Size(93, 23);
             // 
             // toolStripTextBox6
             // 
             this.toolStripTextBox6.BackColor = System.Drawing.Color.OldLace;
             this.toolStripTextBox6.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox6.Name = "toolStripTextBox6";
-            this.toolStripTextBox6.Size = new System.Drawing.Size(95, 23);
+            this.toolStripTextBox6.Size = new System.Drawing.Size(93, 23);
             // 
             // toolStripTextBox7
             // 
             this.toolStripTextBox7.BackColor = System.Drawing.Color.OldLace;
             this.toolStripTextBox7.Margin = new System.Windows.Forms.Padding(1, 0, -1, 0);
             this.toolStripTextBox7.Name = "toolStripTextBox7";
-            this.toolStripTextBox7.Size = new System.Drawing.Size(95, 23);
-            // 
-            // cmbPermissions
-            // 
-            this.cmbPermissions.FormattingEnabled = true;
-            this.cmbPermissions.Location = new System.Drawing.Point(401, 126);
-            this.cmbPermissions.Name = "cmbPermissions";
-            this.cmbPermissions.Size = new System.Drawing.Size(150, 21);
-            this.cmbPermissions.TabIndex = 6;
+            this.toolStripTextBox7.Size = new System.Drawing.Size(93, 23);
             // 
             // MainMenuTest
             // 

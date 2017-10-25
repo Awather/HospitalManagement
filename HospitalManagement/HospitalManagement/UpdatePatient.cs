@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace HospitalManagement
 {
-    public partial class RegisterPatients : Form
+    public partial class UpdatePatient : Form
     {
+        Patient updatePatient = new Patient();
+
         const int MiniPersNumber = 19000101;
         const int MaxPersNumber = 20171231;
 
@@ -19,14 +21,39 @@ namespace HospitalManagement
         Control objct;
 
 
-        public RegisterPatients()
+        public UpdatePatient()
         {
             InitializeComponent();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void UpdatePatient_Load(object sender, EventArgs e)
         {
-            //kod här för att kolla indata
+            updatePatient = Form1.myPatient;
+
+            txtPersnNumber.Text = updatePatient.PersonNumber; // Borde inte den vara icke-updaterbar? Att inte inkludera i listan. El göra dess knapp inactive.
+            txtFirstName.Text = updatePatient.FirstName;
+            txtLastName.Text = updatePatient.LastName;
+            txtAddress.Text = updatePatient.Address;
+            txtPostalNumber.Text = updatePatient.PostalNumber;
+            txtCity.Text = updatePatient.City;
+            txtPhoneNumer.Text = updatePatient.PhoneNumber;
+            txtEmail.Text = updatePatient.EMail;
+
+            if (updatePatient.Gender == 'M')
+            {
+                chkMale.Checked = true;
+                chkFemale.Checked = false;
+            }
+            else
+            {
+                chkFemale.Checked = true;
+                chkMale.Checked = false;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
             if (TestingInData())
             {
                 MessageBox.Show(errorMessage);
@@ -51,26 +78,25 @@ namespace HospitalManagement
                     }
                 }
 
+                updatePatient.FirstName = txtFirstName.Text;
+                updatePatient.LastName = txtLastName.Text;
+                updatePatient.Address = txtAddress.Text;
+                updatePatient.PostalNumber = txtPostalNumber.Text;
+                updatePatient.City = txtCity.Text;
+                updatePatient.PhoneNumber = txtPhoneNumer.Text;
+                updatePatient.EMail = txtEmail.Text;
 
-                //här kan jag gå till db och registrera en patient
-                Patient newPatient = new Patient(txtPersnNumber.Text, txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtPostalNumber.Text, txtCity.Text, txtPhoneNumer.Text, txtEmail.Text, gender);
-                if (DBAccess.InsertUpdatePatient(newPatient, 'R'))
+                if (DBAccess.InsertUpdatePatient(updatePatient, 'U'))
                 {
-                    MessageBox.Show("Registration completed!");
-                    btnRegister.Enabled = false;
+                    MessageBox.Show("Patient updated successfully!");
                 }
                 else
-
                 {
-                    MessageBox.Show("Registration failed!");
+                    MessageBox.Show("Computer says No..."); // -- Failed to update patient.
                 }
-
-
             }
 
         }
-
-        //Double checks personnumber that user types in. 
 
         private bool TestingInData()
         {
@@ -178,46 +204,5 @@ namespace HospitalManagement
             return wrongWritten;
 
         }
-
-
-
-        private void btnAvbryt_Click(object sender, EventArgs e)
-        {
-
-
-            RegisterPatients.ActiveForm.Close();
-        }
-
-
-        private void chkMale_Click(object sender, EventArgs e)
-        {
-
-            if (chkMale.Checked)
-            {
-                chkMale.Checked = false;
-                chkFemale.Checked = true;
-            }
-            else
-            {
-                chkMale.Checked = true;
-                chkFemale.Checked = false;
-            }
-
-        }
-
-        private void chkFemail_Click(object sender, EventArgs e)
-        {
-            if (chkFemale.Checked)
-            {
-                chkFemale.Checked = false;
-                chkMale.Checked = true;
-            }
-            else
-            {
-                chkFemale.Checked = true;
-                chkMale.Checked = false;
-            }
-        }
-
     }
 }
