@@ -332,7 +332,39 @@ namespace HospitalManagement
 
         }
 
-    }
+        public static DataSet GetDoctorsNotes(string pNumber)
+        //public static DataSet GetPatientInfo(string pNr)
+        {
 
+            DataSet ds = new DataSet();
+
+            SqlConnection myConnection = new SqlConnection();
+
+            myConnection.ConnectionString = "Integrated Security=true;database=dbHospital;User ID=DBO;Data Source=.\\SQLEXPRESS";
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            SqlCommand myCommand = new SqlCommand();
+            myCommand.Connection = myConnection;
+            myCommand.CommandText = "spGetDoctorsNotes";
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+
+            SqlParameter workparameter1 = new SqlParameter();
+
+
+            workparameter1 = myCommand.Parameters.Add("@PrsnNumber", SqlDbType.Char);
+            workparameter1.Value = pNumber;
+
+
+            adapter.SelectCommand = myCommand;
+
+            adapter.Fill(ds);
+
+            return ds;
+
+
+        }
+    }
 }
 

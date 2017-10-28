@@ -23,6 +23,6 @@ C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Deb
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.exe
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.pdb
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.LoginTest.resources
-C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.MainMenuTest.resources
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.Form1.resources
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.Properties.Resources.resources
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.UpdatePatient.resources
