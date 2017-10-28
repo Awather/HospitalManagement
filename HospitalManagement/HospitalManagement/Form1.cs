@@ -82,14 +82,20 @@ namespace HospitalManagement
         private void btnChoose_Click(object sender, EventArgs e)
         {
             string choice = (cmbPermissions.Text);
-            //pnlEmpty.BringToFront();
+            pnlEmpty.BringToFront();
             switch (choice)
             {
                 case "Register Patients":  // Remove when panels work
-                    pnlRegisPatients.BringToFront();
+                    pnlRegisterPatients.BringToFront();
+                    break;
+                case "Update Patients":  // Remove when panels work
+                    pnlUpdPatients.BringToFront();
                     break;
                 case "Create Patients Journal":
                     pnlCreatePatJournal.BringToFront();
+                    break;
+                case "Update Patients Journal":
+                    pnlUpdPatJournal.BringToFront();
                     break;
             }
         }
@@ -110,15 +116,10 @@ namespace HospitalManagement
 
         //}
 
-        private void btnGetPatient_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void btnCreateJournal_Click(object sender, EventArgs e)
         {
-            myPatient = DBAccess.GetPatientInformation(txtPersNumber2.Text);
+            myPatient = DBAccess.GetPatientInformation(txtPersNumber2CreatJour.Text);
 
             if (myPatient.PersonNumber == null)
 
