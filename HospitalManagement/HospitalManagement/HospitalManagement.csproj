@@ -77,11 +77,11 @@
     <Compile Include="LoginTest.Designer.cs">
       <DependentUpon>LoginTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenuTest.cs">
+    <Compile Include="PatientGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenuTest.Designer.cs">
-      <DependentUpon>MainMenuTest.cs</DependentUpon>
+    <Compile Include="PatientGUI.Designer.cs">
+      <DependentUpon>PatientGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
@@ -99,14 +99,17 @@
     <Compile Include="RegisterPatients.Designer.cs">
       <DependentUpon>RegisterPatients.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdatePatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePatient.Designer.cs">
+      <DependentUpon>UpdatePatient.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginTest.resx">
       <DependentUpon>LoginTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainMenuTest.resx">
-      <DependentUpon>MainMenuTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterPatients.resx">
       <DependentUpon>RegisterPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePatient.resx">
+      <DependentUpon>UpdatePatient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

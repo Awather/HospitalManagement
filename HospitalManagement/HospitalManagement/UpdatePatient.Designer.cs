@@ -101,9 +101,9 @@
             this.label9.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(96, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(152, 25);
+            this.label9.Size = new System.Drawing.Size(162, 25);
             this.label9.TabIndex = 83;
-            this.label9.Text = "Update Patient";
+            this.label9.Text = "Register Patient";
             // 
             // btnUpdate
             // 
@@ -273,7 +273,6 @@
             this.txtPersnNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPersnNumber.Location = new System.Drawing.Point(181, 77);
             this.txtPersnNumber.Name = "txtPersnNumber";
-            this.txtPersnNumber.ReadOnly = true;
             this.txtPersnNumber.Size = new System.Drawing.Size(136, 20);
             this.txtPersnNumber.TabIndex = 65;
             // 

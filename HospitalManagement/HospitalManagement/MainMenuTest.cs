@@ -15,9 +15,10 @@ namespace HospitalManagement
         private DataSet dsPermissions = new DataSet();
         const int MinPersNr = 19000101;
         const int MaxPersNr = 20171231;
+        public static Patient myPatient;
 
-        private string felMedd = "";
-        Control obj;
+        //private string felMedd = "";
+        //Control obj;
         //bool notRunFirstTime;
 
 
@@ -28,11 +29,12 @@ namespace HospitalManagement
 
         private void Huvudmeny_Load(object sender, EventArgs e)
         {
-            lblEmpty.Text = Convert.ToString(lblLoggedInAs.UseCompatibleTextRendering);   // Data placeras i labelxx
-                                                               //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
-                                                               //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
+            lblEmpty.Text = Convert.ToString(LoginTest.userID);   // Data placeras i labelxx
+                                                                  //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
+                                                                  //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
 
-            //pnlNull.BringToFront();
+            pnlEmpty.BringToFront(); //-- Create empty panel as front.
+                                            //Comment in other panels aswell when GUI is set
 
             //Databasacccess här för att hämta info om inloggad
             DataSet dsUserInfo = new DataSet();
@@ -48,16 +50,109 @@ namespace HospitalManagement
             dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
             cmbPermissions.DataSource = dsPermissions.Tables[0];
             cmbPermissions.DisplayMember = "Permission";
+            
             //vill ha blankrad som första rad
             DataRow row = dsPermissions.Tables[0].NewRow();
             row["Permission"] = "";                     //insert a blank row - you can even write something like = "Please select bellow...";
             dsPermissions.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
             cmbPermissions.SelectedIndex = 0;
 
-            //notRunFirstTime = false;
+
+             lblNoPatient.Text = "";  // --Comment in
 
             //Gör en Person-patient-personal klass
         }
+
+        private void btnUppdPatJournal_Click(object sender, EventArgs e)
+        {
+
+            //if (TestaIndata())
+            //{
+            //    MessageBox.Show(felMedd);
+            //    obj.Focus();
+            //}
+            //else
+            //{
+            //    //här kan jag gå till db och hämta upp data om en patient
+
+            //}
+
+        }
+
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            string choice = (cmbPermissions.Text);
+            pnlEmpty.BringToFront();
+            switch (choice)
+            {
+                case "Set visiting Hours":
+                    pnlSetVisitingHours.BringToFront();
+                    break;
+                case "Set appointment hours":
+                    pnlSetAppointHour.BringToFront();
+                    break;
+                case "Update patient journal":
+                    pnlUppPatJournal.BringToFront();
+                    break;
+                case "Register patients":
+                    RegisterPatients frmRegisterPatients = new RegisterPatients();
+                    frmRegisterPatients.Show();
+                    break;
+                case "Update patients":
+                    pnlUppdtPatient.BringToFront();
+                    break;
+                case "Create patient journal":
+                    pnlCreatePatJournal.BringToFront();
+                    break;
+
+
+            }
+
+
+
+        }
+
+        private void btnGetPatient_Click(object sender, EventArgs e)
+        {
+            //DataSet dsPatientInfo = new DataSet();
+            //dsPatientInfo = dbAccess.GetPatientInfo(txtPersonnummer.Text);
+            //string vcd = Convert.ToString(dsPatientInfo.Tables[0].Rows[0][0]);
+
+            myPatient = DBAccess.GetPatientInformation(txtPersNumber.Text);
+
+            //
+            if (myPatient.PersonNumber == null )
+            {
+                lblNoPatient.Text = "Patients does not exsist in the registry!";
+            }
+            else
+            {
+                // if personnumber is in the database
+                UpdatePatient frmUpdatePatients = new UpdatePatient();
+                frmUpdatePatients.Show();
+            }
+
+
+        }
+
+        private void btnCreateJournal_Click(object sender, EventArgs e)
+        {
+            myPatient = DBAccess.GetPatientInformation(txtPersNumber2.Text);
+
+            if (myPatient.PersonNumber == null)
+
+            {
+                lblNoPatient.Text = "Patients does not exsist in the registry!";
+            }
+            else
+            {
+
+                PatientJournal frmPatienttJournal = new PatientJournal();
+                frmPatienttJournal.Show();
+            }
+
+        }
+
 
 
 
@@ -93,6 +188,9 @@ namespace HospitalManagement
 
 
         //Gör en Person-patient-personal klass
+
+
+
     }
 
         //private void BtnChoose_SelectedIndexChanged(object sender, EventArgs e)
