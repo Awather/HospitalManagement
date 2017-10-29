@@ -13,7 +13,6 @@ namespace HospitalManagement
     public partial class LoginTest : Form
     {
         public static string userID; // Global variabel
-        public static string Patient;
 
         public LoginTest()
         {
@@ -62,12 +61,12 @@ namespace HospitalManagement
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            // Database access here
+                // Database access here
 
-            if (DBAccess.IsUserIdPassWdOK(txtUsername.Text, txtPassword.Text))
+                if (DBAccess.IsUserIdPassWdOK(txtUsername.Text, txtPassword.Text))
 
-            {
-                userID = txtUsername.Text; // Värdet som ska skickas
+                {
+                    userID = txtUsername.Text; // Värdet som ska skickas
 
 
                 Form1 frmForm1 = new Form1();
@@ -77,32 +76,14 @@ namespace HospitalManagement
                 //frmMainMenuTest.Show();
 
                 this.Hide();
-
                 }
-
                 else
-
-                {
-
-                if (DBAccess.PatientLogin(txtUsername.Text, txtPassword.Text))
-
-                {
-                    Patient = txtUsername.Text; // Värdet som ska skickas
-
-
-                    PatientGUI frmPatientGUI = new PatientGUI();
-                    frmPatientGUI.Show();
-                }
-
-                else
-
                 {
                     Application.Exit();
                 }
 
+            
 
-
-            }
         }
     }
 }
