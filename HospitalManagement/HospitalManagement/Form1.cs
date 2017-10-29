@@ -21,8 +21,6 @@ namespace HospitalManagement
         private string errorMessage = "";
         Control objct;
 
-
-        //bool notRunFirstTime;
         public Form1()
         {
             InitializeComponent();
@@ -55,10 +53,9 @@ namespace HospitalManagement
 
             //vill ha blankrad som första rad
             DataRow row = dsPermissions.Tables[0].NewRow();
-            row["Permission"] = "";                     //insert a blank row - you can even write something like = "Please select bellow...";
+            row["Permission"] = "Empty";      // Remove "Empty" when working  //insert a blank row - you can even write something like = "Please select bellow...";
             dsPermissions.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
             cmbPermissions.SelectedIndex = 0;
-
 
             lblNoPatient.Text = "";  // --Comment in
 
@@ -81,65 +78,48 @@ namespace HospitalManagement
 
         }
 
+
         private void btnChoose_Click(object sender, EventArgs e)
         {
             string choice = (cmbPermissions.Text);
             pnlEmpty.BringToFront();
             switch (choice)
             {
-                case "Set visiting Hours":
-                    pnlSetVisitingHours.BringToFront();
+                case "Register Patients":  // Remove when panels work
+                    pnlRegisterPatients.BringToFront();
                     break;
-                case "Set appointment hours":
-                    pnlSetAppointHour.BringToFront();
+                case "Update Patients":  // Remove when panels work
+                    pnlUpdPatients.BringToFront();
                     break;
-                case "Update patient journal":
-                    pnlUppPatJournal.BringToFront();
-                    break;
-                case "Register patients":
-                    RegisterPatients frmRegisterPatients = new RegisterPatients();
-                    frmRegisterPatients.Show();
-                    break;
-                case "Update patients":
-                    pnlUppdtPatient.BringToFront();
-                    break;
-                case "Create patient journal":
+                case "Create Patients Journal":
                     pnlCreatePatJournal.BringToFront();
                     break;
-
-
+                case "Update Patients Journal":
+                    pnlUpdPatJournal.BringToFront();
+                    break;
             }
-
-
-
         }
 
-        private void btnGetPatient_Click(object sender, EventArgs e)
-        {
-            //DataSet dsPatientInfo = new DataSet();
-            //dsPatientInfo = dbAccess.GetPatientInfo(txtPersonnummer.Text);
-            //string vcd = Convert.ToString(dsPatientInfo.Tables[0].Rows[0][0]);
+        //private void btnChoose_Click(object sender, EventArgs e)
+        //{
+        //    string choice = (cmbPermissions.Text);
+            
+        //    if ( choice == ("Empty"))
+        //    {
+        //        pnlEmpty.BringToFront();
+        //    }
+        //    else
+        //        if ( choice == ("Update Patients Journal"))
+        //    {
+        //        pnlUppPatJournal.BringToFront();
+        //    }
 
-            myPatient = DBAccess.GetPatientInformation(txtPersNumber.Text);
+        //}
 
-            //
-            if (myPatient.PersonNumber == null)
-            {
-                lblNoPatient.Text = "Patients does not exsist in the registry!";
-            }
-            else
-            {
-                // if personnumber is in the database
-                UpdatePatient frmUpdatePatients = new UpdatePatient();
-                frmUpdatePatients.Show();
-            }
-
-
-        }
 
         private void btnCreateJournal_Click(object sender, EventArgs e)
         {
-            myPatient = DBAccess.GetPatientInformation(txtPersNumber2.Text);
+            myPatient = DBAccess.GetPatientInformation(txtPersNumber2CreatJour.Text);
 
             if (myPatient.PersonNumber == null)
 
@@ -154,107 +134,7 @@ namespace HospitalManagement
             }
 
         }
-
-
-
-
-        // FAILED ATTEMPTS
-
-
-        //MenuStrip menuStrpRolePermission = new MenuStrip();
-
-        //toolStripMenuItem1 = toolStripMenuItem1;
-        //Controls.Add(menuStrpRolePermission);
-
-        //MainMenuStrip.Name = "menuStrip2";
-
-        //ToolStripMenuItem FileMenu = new ToolStripMenuItem("File");
-
-
-
-
-        //menuStrpRolePermission.
-
-        //List<string> menuItems = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
-        //ContextMenuStrip menuStrpRolePermission = new ContextMenuStrip();
-
-        //foreach (var menuItem in menuItems)
-        //{
-        //    MenuItem item = new MenuItem(menuItem);
-        //    item.Text = menuItem;
-        //    item.Click += new EventHandler(item_Click);// item_click is event handler name
-        //                                                item.MenuItems.Add(); you could use this to add sub items
-        //}
-
-        //panel1.Controls.Add(menu);
-
-
-        //Gör en Person-patient-personal klass
-
-
-
     }
-
-    //private void BtnChoose_SelectedIndexChanged(object sender, EventArgs e)
-    //{
-    //        string choice = Convert.ToString(cmbPermissions.SelectedValue);
-
-    //private void btnChoose_Click(object sender, EventArgs e)
-    //{
-    //    string choice = (cmbPermissions.Text);
-
-    //    if (choice == "Set Appointment Hours") //"Set Visiting Hours" Ändra till korrekt om rätt
-    //        {
-    //            PnlDoc1.BringToFront();
-    //            //pnlDoc01.Visible = false;s
-    //            //pnlDoc02.Visible = true;
-    //        }
-    //        if (choice == "Register Patients")
-    //        {
-    //            PnlDoc2.BringToFront();
-    //            //pnlDoc02.Visible = false;
-    //            //pnlDoc01.Visible = true;
-    //        }
-    //        if (choice == "Create Patients Journal") // "Update patients journal" Ändra till korrekt om rätt
-    //    {
-    //            PnlDoc3.BringToFront();
-    //            //pnlDoc02.Visible = false;
-    //            //pnlDoc01.Visible = true;
-    //        }
-    //    }
-
-    // AWE - Different View panelt. - ALTER and put into current design
-
-    //// Test for Receptionist
-    //private void btnChoose_Click(object sender, EventArgs e)
-    //{
-    //    string choice = (cmbPermissions.Text);
-
-    //    if ((choice == "Register Patients") || (choice == "Create Patients Journal") || (choice == "Release Patients"))
-    //    {
-    //        PnlDoc1.BringToFront();
-    //        //pnlDoc01.Visible = false;s
-    //        //pnlDoc02.Visible = true;
-    //    }
-    //    if ((choice == "Set Patient’s Appointments With Doctors") || (choice == "Search All The Doctors") || (choice == "Search All The Patients And Their Status"))
-    //    {
-    //        PnlDoc2.BringToFront();
-    //        //pnlDoc02.Visible = false;
-    //        //pnlDoc01.Visible = true;
-    //    }
-    //    if ((choice == "View The Prescriptions") || (choice == "View The Duty Schedule") || (choice == "View Patients Room"))
-    //    {
-    //        PnlDoc3.BringToFront();
-    //        //pnlDoc02.Visible = false;
-    //        //pnlDoc01.Visible = true;
-    //    }
-    //    if ((choice == "Register Patients"))
-    //    {
-    //        PnlDoc4.BringToFront();
-    //        //pnlDoc02.Visible = false;
-    //        //pnlDoc01.Visible = true;
-    //    }
-    //}
 }
 
 

@@ -71,6 +71,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="InputUtility.cs" />
     <Compile Include="LoginTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +83,12 @@
     </Compile>
     <Compile Include="PatientGUI.Designer.cs">
       <DependentUpon>PatientGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientJournal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientJournal.Designer.cs">
+      <DependentUpon>PatientJournal.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
