@@ -86,7 +86,7 @@ namespace HospitalManagement
             string choice = (cmbPermissions.Text);
             pnlEmpty.BringToFront();
             switch (choice)
-            {              
+            {
                 case "Set Visiting Hours":
                     pnlSetVisitingHours.BringToFront();
                     break;
@@ -136,7 +136,7 @@ namespace HospitalManagement
 
         private void btnCreateJournal_Click(object sender, EventArgs e)
         {
-            myPatient = DBAccess.GetPatientInformation(txtPersN2UpdJour.Text);
+            myPatient = DBAccess.GetPatientInformation(txtPersN3CreatJour.Text); // txtPersN2UpdJour - For updating journals
 
             if (myPatient.PersonNumber == null)
 
@@ -146,8 +146,8 @@ namespace HospitalManagement
             else
             {
 
-                PatientJournal frmPatienttJournal = new PatientJournal();
-                frmPatienttJournal.Show();
+                PatientJournal frmPatientJournal = new PatientJournal();
+                frmPatientJournal.Show();
             }
 
         }

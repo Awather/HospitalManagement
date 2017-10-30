@@ -26,3 +26,5 @@ C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Deb
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.Form1.resources
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.Properties.Resources.resources
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.UpdatePatient.resources
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.DoctorNotes.resources
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.PatientJournal.resources

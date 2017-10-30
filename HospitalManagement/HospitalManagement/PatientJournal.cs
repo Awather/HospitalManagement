@@ -16,5 +16,32 @@ namespace HospitalManagement
         {
             InitializeComponent();
         }
+
+        private void PatientJournal_Load(object sender, EventArgs e)
+        {
+            // PatientsJournal.ActiveForm.Text = "Patient Journal för :" + "Janne Zandstra 19601015-1234";
+
+            DataSet ds = new DataSet();
+            ds = DBAccess.GetDoctorsNotes(Form1.myPatient.PersonNumber);
+
+            foreach (DataRow dr in ds.Tables[0].Rows)
+
+            {
+                textDoctorNotes.Text = textDoctorNotes.Text + Environment.NewLine + dr[0].ToString().Substring(0, 10)
+                + " " + dr[1].ToString().Substring(0, 5) + Environment.NewLine + dr[2].ToString() + Environment.NewLine;
+
+            }
+        }
+
+        private void PatientJournal_Activated(object sender, EventArgs e)
+        {
+            PatientJournal.ActiveForm.Text = "This journal is for: " + Form1.myPatient.FirstName + " " + Form1.myPatient.LastName + "By doctor: " + DBAccess.GetUserInformation(LoginTest.userID);
+        }
+
+        private void btnNewStmtCommnt_Click(object sender, EventArgs e)
+        {
+            DoctorNotes frmDoctorNotes = new DoctorNotes();
+            frmDoctorNotes.Show();
+        }
     }
 }
