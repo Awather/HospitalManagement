@@ -86,28 +86,25 @@ namespace HospitalManagement
             string choice = (cmbPermissions.Text);
             pnlEmpty.BringToFront();
             switch (choice)
-            {
-                case "Set visiting Hours":
+            {              
+                case "Set Visiting Hours":
                     pnlSetVisitingHours.BringToFront();
                     break;
-                case "Set appointment hours":
+                case "Set Appointment Hours":
                     pnlSetAppointHour.BringToFront();
                     break;
-                case "Update patient journal":
+                case "Update Patient Journal":
                     pnlUppPatJournal.BringToFront();
                     break;
-                case "Register patients":
-                    RegisterPatients frmRegisterPatients = new RegisterPatients();
-                    frmRegisterPatients.Show();
+                case "Register Patients":
+                    pnlRegisPatient.BringToFront();
                     break;
-                case "Update patients":
-                    pnlUppdtPatient.BringToFront();
+                case "Update Patients Information":
+                    pnlUpptPatient.BringToFront();
                     break;
-                case "Create patient journal":
+                case "Create Patient Journal":
                     pnlCreatePatJournal.BringToFront();
                     break;
-
-
             }
 
 
@@ -120,7 +117,7 @@ namespace HospitalManagement
             //dsPatientInfo = dbAccess.GetPatientInfo(txtPersonnummer.Text);
             //string vcd = Convert.ToString(dsPatientInfo.Tables[0].Rows[0][0]);
 
-            myPatient = DBAccess.GetPatientInformation(txtPersNumber.Text);
+            myPatient = DBAccess.GetPatientInformation(txtPersN1UpdPat.Text);
 
             //
             if (myPatient.PersonNumber == null)
@@ -139,7 +136,7 @@ namespace HospitalManagement
 
         private void btnCreateJournal_Click(object sender, EventArgs e)
         {
-            myPatient = DBAccess.GetPatientInformation(txtPersNumber2.Text);
+            myPatient = DBAccess.GetPatientInformation(txtPersN2UpdJour.Text);
 
             if (myPatient.PersonNumber == null)
 
@@ -152,6 +149,13 @@ namespace HospitalManagement
                 PatientJournal frmPatienttJournal = new PatientJournal();
                 frmPatienttJournal.Show();
             }
+
+        }
+
+        private void btnRegisPatient_Click(object sender, EventArgs e)
+        {
+            RegisterPatients frmRegisterPatients = new RegisterPatients();
+            frmRegisterPatients.Show();
 
         }
 

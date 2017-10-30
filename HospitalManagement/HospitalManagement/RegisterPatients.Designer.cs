@@ -34,7 +34,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.btnAvbryt = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -74,6 +74,7 @@
             this.chkFemale.TabIndex = 21;
             this.chkFemale.Text = "Woman";
             this.chkFemale.UseVisualStyleBackColor = true;
+            this.chkFemale.Click += new System.EventHandler(this.chkFemale_Click);
             // 
             // chkMale
             // 
@@ -85,6 +86,7 @@
             this.chkMale.TabIndex = 19;
             this.chkMale.Text = "Man";
             this.chkMale.UseVisualStyleBackColor = true;
+            this.chkMale.Click += new System.EventHandler(this.chkMale_Click);
             // 
             // label10
             // 
@@ -117,20 +119,21 @@
             this.btnRegister.TabIndex = 61;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
-            //this.btnRegister.Click += new System.EventHandler(this.btnRegistrera_Click);
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // btnAvbryt
+            // btnCancel
             // 
-            this.btnAvbryt.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAvbryt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAvbryt.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAvbryt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAvbryt.Location = new System.Drawing.Point(301, 413);
-            this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(142, 23);
-            this.btnAvbryt.TabIndex = 60;
-            this.btnAvbryt.Text = "Cancel";
-            this.btnAvbryt.UseVisualStyleBackColor = false;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancel.Location = new System.Drawing.Point(301, 413);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(142, 23);
+            this.btnCancel.TabIndex = 60;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label8
             // 
@@ -286,7 +289,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.btnAvbryt);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label7);
@@ -322,7 +325,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Button btnAvbryt;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;

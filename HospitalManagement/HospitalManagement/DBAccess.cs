@@ -123,7 +123,7 @@ namespace HospitalManagement
         {
             SqlConnection myConnection = new SqlConnection();
 
-            myConnection.ConnectionString = "Integrated Security=true;database=dbHospital;User ID=DBO;Data Source=.\\SQLEXPRESS";
+            myConnection.ConnectionString = "Integrated Security=true;database=dblHospitalManagement;User ID=DBO;Data Source=.\\SQLEXPRESS";
 
             SqlCommand myCommand = new SqlCommand();
             myCommand.Connection = myConnection;

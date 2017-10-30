@@ -24,6 +24,12 @@ namespace HospitalManagement
             InitializeComponent();
         }
 
+        private void RegisterPatients_Load(object sender, EventArgs e)
+        {
+
+            //lblRubrik.Text = "Registrera patient";
+        }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             //kod här för att kolla indata
@@ -181,7 +187,7 @@ namespace HospitalManagement
 
 
 
-        private void btnAvbryt_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
 
 
@@ -205,7 +211,7 @@ namespace HospitalManagement
 
         }
 
-        private void chkFemail_Click(object sender, EventArgs e)
+        private void chkFemale_Click(object sender, EventArgs e)
         {
             if (chkFemale.Checked)
             {
@@ -218,6 +224,5 @@ namespace HospitalManagement
                 chkMale.Checked = false;
             }
         }
-
     }
 }
