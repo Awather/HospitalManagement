@@ -204,5 +204,22 @@ namespace HospitalManagement
             return wrongWritten;
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            UpdatePatient.ActiveForm.Close();
+        }
+
+        private void chkFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            chkFemale.Checked = true;
+            chkMale.Checked = false;
+        }
+
+        private void chkMale_CheckedChanged(object sender, EventArgs e)
+        {
+            chkMale.Checked = true;
+            chkFemale.Checked = false;
+        }
     }
 }
