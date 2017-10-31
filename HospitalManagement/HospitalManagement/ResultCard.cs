@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace HospitalManagement
 {
-    public partial class PatientGUI : Form
+    public partial class ResultCard : Form
     {
-        public PatientGUI()
+        public ResultCard()
         {
             InitializeComponent();
         }
 
-        private void PatientGUI_Load(object sender, EventArgs e)
+        private void ResultCard_Load(object sender, EventArgs e)
         {
 
             DataSet ds = new DataSet();
@@ -26,11 +26,10 @@ namespace HospitalManagement
             foreach (DataRow dr in ds.Tables[0].Rows)
 
             {
-                textDoctorNotesPatGUI.Text = textDoctorNotesPatGUI.Text + Environment.NewLine + dr[0].ToString().Substring(0, 10)
+                txtResultCardNotes.Text = txtResultCardNotes.Text + Environment.NewLine + dr[0].ToString().Substring(0, 10)
                 + " " + dr[1].ToString().Substring(0, 5) + Environment.NewLine + dr[2].ToString() + Environment.NewLine;
 
             }
         }
-
-    }   
+    }
 }

@@ -107,7 +107,7 @@ namespace HospitalManagement
             if (personnummer.Length != 13)
             {
                 wrongWritten = true;
-                errorMessage = "Person-number is wrongly typed! \nUse format: ÅÅÅÅMMDD-XXXX";
+                errorMessage = "Person-number is wrongly typed! \nUse format: YYYYMMDD-XXXX";
                 objct = txtPersnNumber;
                 return wrongWritten;
             }
@@ -120,7 +120,7 @@ namespace HospitalManagement
             if (dashedLine != "-")
             {
                 wrongWritten = true;
-                errorMessage = "Person-number is wrongly typed! \nUse format: ÅÅÅÅMMDD-XXXX";
+                errorMessage = "Person-number is wrongly typed! \nUse format: YYYYMMDD-XXXX";
                 objct = txtPersnNumber;
                 return wrongWritten;
             }
@@ -133,7 +133,7 @@ namespace HospitalManagement
             else
             {
                 wrongWritten = true;
-                errorMessage = "Person-number is wrongly typed! \nUse format: ÅÅÅÅMMDD-XXXX";
+                errorMessage = "Person-number is wrongly typed! \nUse format: YYYYMMDD-XXXX";
                 objct = txtPersnNumber;
                 return wrongWritten;
             }
@@ -147,7 +147,7 @@ namespace HospitalManagement
             else
             {
                 wrongWritten = true;
-                errorMessage = "Person-number is wrongly typed! \nUse format: ÅÅÅÅMMDD-XXXX";
+                errorMessage = "Person-number is wrongly typed! \nUse format: YYYYMMDD-XXXX";
                 objct = txtPersnNumber;
                 return wrongWritten;
             }

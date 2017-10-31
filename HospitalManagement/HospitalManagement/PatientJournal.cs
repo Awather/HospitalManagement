@@ -35,11 +35,18 @@ namespace HospitalManagement
 
         private void PatientJournal_Activated(object sender, EventArgs e)
         {
-            PatientJournal.ActiveForm.Text = "This journal is for: " + Form1.myPatient.FirstName + " " + Form1.myPatient.LastName + "By doctor: " + DBAccess.GetUserInformation(LoginTest.userID);
+            DataSet ds = new DataSet();
+            ds = DBAccess.GetUserInformation(LoginTest.userID);
+
+            PatientJournal.ActiveForm.Text = "This journal is for: " + Form1.myPatient.FirstName + " " + Form1.myPatient.LastName + 
+            " By doctor: " + ds.Tables[0].Rows[0][0] + " " + ds.Tables[0].Rows[0][1];
+
         }
 
         private void btnNewStmtCommnt_Click(object sender, EventArgs e)
         {
+
+
             DoctorNotes frmDoctorNotes = new DoctorNotes();
             frmDoctorNotes.Show();
         }

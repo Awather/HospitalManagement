@@ -32,7 +32,7 @@
             this.chkFemale = new System.Windows.Forms.CheckBox();
             this.chkMale = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblUpdatePatient = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -97,15 +97,15 @@
             this.label10.TabIndex = 84;
             this.label10.Text = "Gender :";
             // 
-            // label9
+            // lblUpdatePatient
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(96, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(162, 25);
-            this.label9.TabIndex = 83;
-            this.label9.Text = "Register Patient";
+            this.lblUpdatePatient.AutoSize = true;
+            this.lblUpdatePatient.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdatePatient.Location = new System.Drawing.Point(131, 22);
+            this.lblUpdatePatient.Name = "lblUpdatePatient";
+            this.lblUpdatePatient.Size = new System.Drawing.Size(152, 25);
+            this.lblUpdatePatient.TabIndex = 83;
+            this.lblUpdatePatient.Text = "Update Patient";
             // 
             // btnUpdate
             // 
@@ -287,7 +287,7 @@
             this.ClientSize = new System.Drawing.Size(480, 463);
             this.Controls.Add(this.grpGender);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblUpdatePatient);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label8);
@@ -321,7 +321,7 @@
         private System.Windows.Forms.CheckBox chkFemale;
         private System.Windows.Forms.CheckBox chkMale;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblUpdatePatient;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label8;

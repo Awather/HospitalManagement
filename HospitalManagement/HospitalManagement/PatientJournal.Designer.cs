@@ -38,10 +38,10 @@
             this.textDoctorNotes = new System.Windows.Forms.TextBox();
             this.lblMedStatCommnt = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblPlannedVisits = new System.Windows.Forms.Label();
-            this.btnNewStmtCommnt = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.btnNewStmtCommnt = new System.Windows.Forms.Button();
+            this.lblPlannedVisits = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -152,25 +152,14 @@
             this.panel2.Size = new System.Drawing.Size(1030, 442);
             this.panel2.TabIndex = 13;
             // 
-            // textBox1
+            // btnRemove
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Lavender;
-            this.textBox1.Location = new System.Drawing.Point(670, 39);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(308, 140);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TabStop = false;
-            // 
-            // lblPlannedVisits
-            // 
-            this.lblPlannedVisits.AutoSize = true;
-            this.lblPlannedVisits.Location = new System.Drawing.Point(667, 23);
-            this.lblPlannedVisits.Name = "lblPlannedVisits";
-            this.lblPlannedVisits.Size = new System.Drawing.Size(98, 13);
-            this.lblPlannedVisits.TabIndex = 4;
-            this.lblPlannedVisits.Text = "Planned visitations:";
+            this.btnRemove.Location = new System.Drawing.Point(670, 185);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(68, 23);
+            this.btnRemove.TabIndex = 6;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // btnNewStmtCommnt
             // 
@@ -182,14 +171,25 @@
             this.btnNewStmtCommnt.UseVisualStyleBackColor = true;
             this.btnNewStmtCommnt.Click += new System.EventHandler(this.btnNewStmtCommnt_Click);
             // 
-            // btnRemove
+            // lblPlannedVisits
             // 
-            this.btnRemove.Location = new System.Drawing.Point(670, 185);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(68, 23);
-            this.btnRemove.TabIndex = 6;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
+            this.lblPlannedVisits.AutoSize = true;
+            this.lblPlannedVisits.Location = new System.Drawing.Point(667, 23);
+            this.lblPlannedVisits.Name = "lblPlannedVisits";
+            this.lblPlannedVisits.Size = new System.Drawing.Size(98, 13);
+            this.lblPlannedVisits.TabIndex = 4;
+            this.lblPlannedVisits.Text = "Planned visitations:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Lavender;
+            this.textBox1.Location = new System.Drawing.Point(670, 39);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(308, 140);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TabStop = false;
             // 
             // PatientJournal
             // 
@@ -200,6 +200,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "PatientJournal";
             this.Text = "PatientJournal";
+            this.Activated += new System.EventHandler(this.PatientJournal_Activated);
             this.Load += new System.EventHandler(this.PatientJournal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

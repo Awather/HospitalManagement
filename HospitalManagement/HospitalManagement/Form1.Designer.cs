@@ -38,9 +38,9 @@
             this.lblNoPatient = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlEmpty = new System.Windows.Forms.Panel();
             this.btnChoose = new System.Windows.Forms.Button();
             this.pnlCreatePatJournal = new System.Windows.Forms.Panel();
+            this.pnlEmpty = new System.Windows.Forms.Panel();
             this.lblCreatPatJourn = new System.Windows.Forms.Label();
             this.txtPersN3CreatJour = new System.Windows.Forms.TextBox();
             this.btnCreateJournal = new System.Windows.Forms.Button();
@@ -151,27 +151,19 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel2.Controls.Add(this.pnlEmpty);
             this.panel2.Controls.Add(this.btnChoose);
             this.panel2.Controls.Add(this.cmbPermissions);
-            this.panel2.Controls.Add(this.pnlCreatePatJournal);
-            this.panel2.Controls.Add(this.pnlSetVisitingHours);
             this.panel2.Controls.Add(this.pnlUpptPatient);
             this.panel2.Controls.Add(this.pnlRegisPatient);
             this.panel2.Controls.Add(this.pnlUppPatJournal);
             this.panel2.Controls.Add(this.pnlSetAppointHour);
+            this.panel2.Controls.Add(this.pnlCreatePatJournal);
+            this.panel2.Controls.Add(this.pnlSetVisitingHours);
             this.panel2.Location = new System.Drawing.Point(33, 145);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1010, 380);
             this.panel2.TabIndex = 12;
-            // 
-            // pnlEmpty
-            // 
-            this.pnlEmpty.BackColor = System.Drawing.Color.Red;
-            this.pnlEmpty.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlEmpty.Location = new System.Drawing.Point(0, 86);
-            this.pnlEmpty.Name = "pnlEmpty";
-            this.pnlEmpty.Size = new System.Drawing.Size(611, 315);
-            this.pnlEmpty.TabIndex = 11;
             // 
             // btnChoose
             // 
@@ -181,11 +173,11 @@
             this.btnChoose.TabIndex = 21;
             this.btnChoose.Text = "Choose";
             this.btnChoose.UseVisualStyleBackColor = true;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
             // pnlCreatePatJournal
             // 
             this.pnlCreatePatJournal.BackColor = System.Drawing.Color.Olive;
-            this.pnlCreatePatJournal.Controls.Add(this.pnlEmpty);
             this.pnlCreatePatJournal.Controls.Add(this.lblCreatPatJourn);
             this.pnlCreatePatJournal.Controls.Add(this.txtPersN3CreatJour);
             this.pnlCreatePatJournal.Controls.Add(this.btnCreateJournal);
@@ -193,6 +185,16 @@
             this.pnlCreatePatJournal.Name = "pnlCreatePatJournal";
             this.pnlCreatePatJournal.Size = new System.Drawing.Size(611, 315);
             this.pnlCreatePatJournal.TabIndex = 15;
+            // 
+            // pnlEmpty
+            // 
+            this.pnlEmpty.BackColor = System.Drawing.Color.Red;
+            this.pnlEmpty.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlEmpty.Location = new System.Drawing.Point(230, 47);
+            this.pnlEmpty.Name = "pnlEmpty";
+            this.pnlEmpty.Size = new System.Drawing.Size(611, 315);
+            this.pnlEmpty.TabIndex = 11;
+            this.pnlEmpty.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlEmpty_Paint);
             // 
             // lblCreatPatJourn
             // 
@@ -224,7 +226,7 @@
             // 
             this.pnlSetVisitingHours.BackColor = System.Drawing.Color.Chocolate;
             this.pnlSetVisitingHours.Controls.Add(this.lblSetVisitHour);
-            this.pnlSetVisitingHours.Location = new System.Drawing.Point(235, 50);
+            this.pnlSetVisitingHours.Location = new System.Drawing.Point(234, 47);
             this.pnlSetVisitingHours.Name = "pnlSetVisitingHours";
             this.pnlSetVisitingHours.Size = new System.Drawing.Size(610, 312);
             this.pnlSetVisitingHours.TabIndex = 11;

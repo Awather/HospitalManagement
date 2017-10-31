@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompSaysNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompSaysNo.Designer.cs">
+      <DependentUpon>CompSaysNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBAccess.cs" />
     <Compile Include="DoctorNotes.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="InputUtility.cs" />
+    <Compile Include="LoginStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginStaff.Designer.cs">
+      <DependentUpon>LoginStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +124,27 @@
     <Compile Include="RegisterPatients.Designer.cs">
       <DependentUpon>RegisterPatients.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultCard.Designer.cs">
+      <DependentUpon>ResultCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdatePatient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpdatePatient.Designer.cs">
       <DependentUpon>UpdatePatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CompSaysNo.resx">
+      <DependentUpon>CompSaysNo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoctorNotes.resx">
       <DependentUpon>DoctorNotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginTest.resx">
       <DependentUpon>LoginTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientGUI.resx">
+      <DependentUpon>PatientGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientJournal.resx">
       <DependentUpon>PatientJournal.cs</DependentUpon>
@@ -137,8 +167,14 @@
     <EmbeddedResource Include="RegisterPatients.resx">
       <DependentUpon>RegisterPatients.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResultCard.resx">
+      <DependentUpon>ResultCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdatePatient.resx">
       <DependentUpon>UpdatePatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

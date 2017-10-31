@@ -35,7 +35,7 @@ namespace HospitalManagement
                                                                       //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
                                                                       //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
 
-            pnlEmpty.BringToFront(); //-- Create empty panel as front.
+            /*pnlEmpty.BringToFront();*/ //-- Create empty panel as front.
                                      //Comment in other panels aswell when GUI is set
 
             //Databasacccess här för att hämta info om inloggad
@@ -67,6 +67,19 @@ namespace HospitalManagement
 
         private void btnUppdPatJournal_Click(object sender, EventArgs e)
         {
+            myPatient = DBAccess.GetPatientInformation(txtPersN2UpdJour.Text); // txtPersN2UpdJour - For updating journals
+
+            if (myPatient.PersonNumber == null)
+
+            {
+                lblNoPatient.Text = "Patients does not exsist in the registry!";
+            }
+            else
+            {
+
+                PatientJournal frmPatientJournal = new PatientJournal();
+                frmPatientJournal.Show();
+            }
 
             //if (TestaIndata())
             //{
@@ -84,25 +97,31 @@ namespace HospitalManagement
         private void btnChoose_Click(object sender, EventArgs e)
         {
             string choice = (cmbPermissions.Text);
-            pnlEmpty.BringToFront();
+            //pnlEmpty.BringToFront();
             switch (choice)
             {
                 case "Set Visiting Hours":
+                    //pnlEmpty.SendToBack();
                     pnlSetVisitingHours.BringToFront();
                     break;
                 case "Set Appointment Hours":
+                    //pnlEmpty.SendToBack();
                     pnlSetAppointHour.BringToFront();
                     break;
-                case "Update Patient Journal":
+                case "Update Patients Journal":
+                    //pnlEmpty.SendToBack();
                     pnlUppPatJournal.BringToFront();
                     break;
                 case "Register Patients":
+                    //pnlEmpty.SendToBack();
                     pnlRegisPatient.BringToFront();
                     break;
                 case "Update Patients Information":
+                    //pnlEmpty.SendToBack();
                     pnlUpptPatient.BringToFront();
                     break;
                 case "Create Patient Journal":
+                    //pnlEmpty.SendToBack();
                     pnlCreatePatJournal.BringToFront();
                     break;
             }
@@ -136,19 +155,19 @@ namespace HospitalManagement
 
         private void btnCreateJournal_Click(object sender, EventArgs e)
         {
-            myPatient = DBAccess.GetPatientInformation(txtPersN3CreatJour.Text); // txtPersN2UpdJour - For updating journals
+            //myPatient = DBAccess.GetPatientInformation(txtPersN3CreatJour.Text); // txtPersN2UpdJour - For updating journals
 
-            if (myPatient.PersonNumber == null)
+            //if (myPatient.PersonNumber == null)
 
-            {
-                lblNoPatient.Text = "Patients does not exsist in the registry!";
-            }
-            else
-            {
+            //{
+            //    lblNoPatient.Text = "Patients does not exsist in the registry!";
+            //}
+            //else
+            //{
 
-                PatientJournal frmPatientJournal = new PatientJournal();
-                frmPatientJournal.Show();
-            }
+            //    PatientJournal frmPatientJournal = new PatientJournal();
+            //    frmPatientJournal.Show();
+            //}
 
         }
 
@@ -156,6 +175,11 @@ namespace HospitalManagement
         {
             RegisterPatients frmRegisterPatients = new RegisterPatients();
             frmRegisterPatients.Show();
+
+        }
+
+        private void pnlEmpty_Paint(object sender, PaintEventArgs e)
+        {
 
         }
 

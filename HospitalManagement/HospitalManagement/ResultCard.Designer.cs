@@ -1,6 +1,6 @@
 ﻿namespace HospitalManagement
 {
-    partial class PatientGUI
+    partial class ResultCard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textDoctorNotesPatGUI = new System.Windows.Forms.TextBox();
+            this.txtResultCardNotes = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textDoctorNotesPatGUI
+            // txtResultCardNotes
             // 
-            this.textDoctorNotesPatGUI.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.textDoctorNotesPatGUI.Location = new System.Drawing.Point(85, 62);
-            this.textDoctorNotesPatGUI.Multiline = true;
-            this.textDoctorNotesPatGUI.Name = "textDoctorNotesPatGUI";
-            this.textDoctorNotesPatGUI.ReadOnly = true;
-            this.textDoctorNotesPatGUI.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textDoctorNotesPatGUI.Size = new System.Drawing.Size(308, 140);
-            this.textDoctorNotesPatGUI.TabIndex = 2;
-            this.textDoctorNotesPatGUI.TabStop = false;
+            this.txtResultCardNotes.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.txtResultCardNotes.Location = new System.Drawing.Point(186, 127);
+            this.txtResultCardNotes.Multiline = true;
+            this.txtResultCardNotes.Name = "txtResultCardNotes";
+            this.txtResultCardNotes.ReadOnly = true;
+            this.txtResultCardNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtResultCardNotes.Size = new System.Drawing.Size(308, 140);
+            this.txtResultCardNotes.TabIndex = 3;
+            this.txtResultCardNotes.TabStop = false;
             // 
-            // PatientGUI
+            // ResultCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 456);
-            this.Controls.Add(this.textDoctorNotesPatGUI);
-            this.Name = "PatientGUI";
-            this.Text = "PatientGUI";
-            this.Load += new System.EventHandler(this.PatientGUI_Load);
+            this.ClientSize = new System.Drawing.Size(681, 394);
+            this.Controls.Add(this.txtResultCardNotes);
+            this.Name = "ResultCard";
+            this.Text = "ResultCard";
+            this.Load += new System.EventHandler(this.ResultCard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -59,6 +59,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textDoctorNotesPatGUI;
+        private System.Windows.Forms.TextBox txtResultCardNotes;
     }
 }

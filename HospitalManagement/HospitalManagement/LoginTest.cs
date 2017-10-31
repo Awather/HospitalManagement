@@ -80,7 +80,19 @@ namespace HospitalManagement
 
                 }
 
-                else
+
+            else
+            {
+                CompSaysNo frmCompSaysNo = new CompSaysNo();
+                frmCompSaysNo.ShowDialog();
+
+                //MessageBox.Show("Incorrect User Identification / Password!");
+
+                //Application.Exit();
+            }
+
+
+                
 
                 {
 
@@ -90,14 +102,20 @@ namespace HospitalManagement
                     Patient = txtUsername.Text; // Värdet som ska skickas
 
 
-                    PatientGUI frmPatientGUI = new PatientGUI();
-                    frmPatientGUI.Show();
+                    ResultCard frmResultCard = new ResultCard();
+                    frmResultCard.Show();
+
+                    //PatientJournal frmPatientGUI = new PatientJournal();
+                    //frmPatientGUI.Show();
                 }
 
                 else
 
+
                 {
-                    Application.Exit();
+                    MessageBox.Show("Incorrect User Identification / Password!");
+
+                    //Application.Exit();
                 }
 
 
