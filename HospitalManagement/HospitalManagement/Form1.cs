@@ -33,7 +33,11 @@ namespace HospitalManagement
                                                                       //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
                                                                       //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
 
+<<<<<<< HEAD
             pnlEmpty.BringToFront(); //-- Create empty panel as front.
+=======
+            /*pnlEmpty.BringToFront();*/ //-- Create empty panel as front.
+>>>>>>> parent of 9d84984... Fixed Procedur for patient-login
                                      //Comment in other panels aswell when GUI is set
 
             //Databasacccess här för att hämta info om inloggad
@@ -100,6 +104,7 @@ namespace HospitalManagement
             }
         }
 
+<<<<<<< HEAD
         //private void btnChoose_Click(object sender, EventArgs e)
         //{
         //    string choice = (cmbPermissions.Text);
@@ -135,6 +140,113 @@ namespace HospitalManagement
 
         }
     }
+=======
+        private void pnlEmpty_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+
+        // FAILED ATTEMPTS
+
+
+        //MenuStrip menuStrpRolePermission = new MenuStrip();
+
+        //toolStripMenuItem1 = toolStripMenuItem1;
+        //Controls.Add(menuStrpRolePermission);
+
+        //MainMenuStrip.Name = "menuStrip2";
+
+        //ToolStripMenuItem FileMenu = new ToolStripMenuItem("File");
+
+
+
+
+        //menuStrpRolePermission.
+
+        //List<string> menuItems = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
+        //ContextMenuStrip menuStrpRolePermission = new ContextMenuStrip();
+
+        //foreach (var menuItem in menuItems)
+        //{
+        //    MenuItem item = new MenuItem(menuItem);
+        //    item.Text = menuItem;
+        //    item.Click += new EventHandler(item_Click);// item_click is event handler name
+        //                                                item.MenuItems.Add(); you could use this to add sub items
+        //}
+
+        //panel1.Controls.Add(menu);
+
+
+        //Gör en Person-patient-personal klass
+
+
+
+    }
+
+    //private void BtnChoose_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //        string choice = Convert.ToString(cmbPermissions.SelectedValue);
+
+    //private void btnChoose_Click(object sender, EventArgs e)
+    //{
+    //    string choice = (cmbPermissions.Text);
+
+    //    if (choice == "Set Appointment Hours") //"Set Visiting Hours" Ändra till korrekt om rätt
+    //        {
+    //            PnlDoc1.BringToFront();
+    //            //pnlDoc01.Visible = false;s
+    //            //pnlDoc02.Visible = true;
+    //        }
+    //        if (choice == "Register Patients")
+    //        {
+    //            PnlDoc2.BringToFront();
+    //            //pnlDoc02.Visible = false;
+    //            //pnlDoc01.Visible = true;
+    //        }
+    //        if (choice == "Create Patients Journal") // "Update patients journal" Ändra till korrekt om rätt
+    //    {
+    //            PnlDoc3.BringToFront();
+    //            //pnlDoc02.Visible = false;
+    //            //pnlDoc01.Visible = true;
+    //        }
+    //    }
+
+    // AWE - Different View panelt. - ALTER and put into current design
+
+    //// Test for Receptionist
+    //private void btnChoose_Click(object sender, EventArgs e)
+    //{
+    //    string choice = (cmbPermissions.Text);
+
+    //    if ((choice == "Register Patients") || (choice == "Create Patients Journal") || (choice == "Release Patients"))
+    //    {
+    //        PnlDoc1.BringToFront();
+    //        //pnlDoc01.Visible = false;s
+    //        //pnlDoc02.Visible = true;
+    //    }
+    //    if ((choice == "Set Patient’s Appointments With Doctors") || (choice == "Search All The Doctors") || (choice == "Search All The Patients And Their Status"))
+    //    {
+    //        PnlDoc2.BringToFront();
+    //        //pnlDoc02.Visible = false;
+    //        //pnlDoc01.Visible = true;
+    //    }
+    //    if ((choice == "View The Prescriptions") || (choice == "View The Duty Schedule") || (choice == "View Patients Room"))
+    //    {
+    //        PnlDoc3.BringToFront();
+    //        //pnlDoc02.Visible = false;
+    //        //pnlDoc01.Visible = true;
+    //    }
+    //    if ((choice == "Register Patients"))
+    //    {
+    //        PnlDoc4.BringToFront();
+    //        //pnlDoc02.Visible = false;
+    //        //pnlDoc01.Visible = true;
+    //    }
+    //}
+>>>>>>> parent of 9d84984... Fixed Procedur for patient-login
 }
 
 

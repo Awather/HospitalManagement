@@ -76,6 +76,39 @@ namespace HospitalManagement
                 //frmMainMenuTest.Show();
 
                 this.Hide();
+<<<<<<< HEAD
+=======
+
+                }
+
+
+            else
+            {
+                CompSaysNo frmCompSaysNo = new CompSaysNo();
+                frmCompSaysNo.ShowDialog();
+
+                //MessageBox.Show("Incorrect User Identification / Password!");
+
+                //Application.Exit();
+            }
+
+
+                
+
+                {
+
+                if (DBAccess.PatientLogin(txtUsername.Text, txtPassword.Text))
+
+                {
+                    Patient = txtUsername.Text; // Värdet som ska skickas
+
+
+                    ResultCard frmResultCard = new ResultCard();
+                    frmResultCard.Show();
+
+                    //PatientJournal frmPatientGUI = new PatientJournal();
+                    //frmPatientGUI.Show();
+>>>>>>> parent of 9d84984... Fixed Procedur for patient-login
                 }
                 else
                 {

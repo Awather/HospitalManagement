@@ -17,7 +17,7 @@ namespace HospitalManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginTest());
+            Application.Run(new Welcome());
         }
     }
 }
