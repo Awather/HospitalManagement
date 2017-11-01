@@ -126,7 +126,7 @@ namespace HospitalManagement
                     //pnlEmpty.SendToBack();
                     pnlUpptPatient.BringToFront();
                     break;
-                case "Create Patient Journal":
+                case "Create Patients Journal":
                     //pnlEmpty.SendToBack();
                     pnlCreatePatJournal.BringToFront();
                     break;
@@ -161,19 +161,7 @@ namespace HospitalManagement
 
         private void btnCreateJournal_Click(object sender, EventArgs e)
         {
-            //myPatient = DBAccess.GetPatientInformation(txtPersN3CreatJour.Text); // txtPersN2UpdJour - For updating journals
 
-            //if (myPatient.PersonNumber == null)
-
-            //{
-            //    lblNoPatient.Text = "Patients does not exsist in the registry!";
-            //}
-            //else
-            //{
-
-            //    PatientJournal frmPatientJournal = new PatientJournal();
-            //    frmPatientJournal.Show();
-            //}
 
         }
 
@@ -262,26 +250,26 @@ namespace HospitalManagement
 
         //}
 
-        //public void PrintPermissions(DataSet dsPermissions)
-        //{
-        //    string menStrpPermissions = "Permission";
+        public void PrintPermissions(DataSet dsPermissions)
+        {
+            string menStrpPermissions = "Permission";
 
-        //    DataTable dsUserInfo = new DataTable();
-        //    dsUserInfo.Columns.Add(dsPermissions,(String));
+            
+            
 
-        //    // For each table in the DataSet, print the values of each row.
-        //    foreach (tsi As ToolStripItem.ToolStripItemAccessibleObject.DropDownI)
-        //    {
-        //        // For each row, print the values of each column.
-        //        foreach (DataRow toolStripComboBox in menStrpPermissions.Rows)
-        //        {
-        //            foreach (DataColumn column in menStrpPermissions.Columns)
-        //            {
-        //                Console.WriteLine(toolStripComboBox[column]);
-        //            }
-        //        }
-        //    }
-        //}
+            // For each table in the DataSet, print the values of each row.
+            foreach (string p in dsPermissions.Tables[0].Rows) /*ToolStripItem.ToolStripItemAccessibleObject.DropDownI)*/
+            {
+                // For each row, print the values of each column.
+                //foreach (DataRow toolStripComboBox in menStrpPermissions.Rows)
+                //{
+                //    //foreach (DataColumn column in menStrpPermissions.Columns)
+                //    //{
+                //    //    Console.WriteLine(toolStripComboBox[column]);
+                //    //}
+                //}
+            }
+        }
 
 
         //private void BtnChoose_SelectedIndexChanged(object sender, EventArgs e)

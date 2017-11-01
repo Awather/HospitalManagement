@@ -123,7 +123,7 @@ namespace HospitalManagement
         {
             SqlConnection myConnection = new SqlConnection();
 
-            myConnection.ConnectionString = "Integrated Security=true;database=dbHospital;User ID=DBO;Data Source=.\\SQLEXPRESS";
+            myConnection.ConnectionString = "Integrated Security=true;database=dblHospitalManagement;User ID=DBO;Data Source=.\\SQLEXPRESS";
 
             SqlCommand myCommand = new SqlCommand();
             myCommand.Connection = myConnection;
@@ -175,7 +175,7 @@ namespace HospitalManagement
             else
             {
 
-                myCommand.CommandText = "spUpdatePatient";
+                myCommand.CommandText = "spUpdatePatients";
 
                 myCommand.CommandType = CommandType.StoredProcedure;
 
@@ -340,7 +340,7 @@ namespace HospitalManagement
 
             SqlConnection myConnection = new SqlConnection();
 
-            myConnection.ConnectionString = "Integrated Security=true;database=dbHospital;User ID=DBO;Data Source=.\\SQLEXPRESS";
+            myConnection.ConnectionString = "Integrated Security=true;database=dblHospitalManagement;User ID=DBO;Data Source=.\\SQLEXPRESS";
 
             SqlDataAdapter adapter = new SqlDataAdapter();
 
@@ -365,6 +365,82 @@ namespace HospitalManagement
 
 
         }
+		
+    
+
+    public static bool InsertDoctorsNotes(string notes, string userID, string personNumber) // , char updNote
+    {
+        DataSet ds = new DataSet();
+
+        SqlConnection myConnection = new SqlConnection();
+
+        myConnection.ConnectionString = "Integrated Security=true;database=dblHospitalManagement;User ID=DBO;Data Source=.\\SQLEXPRESS";
+
+        SqlCommand myCommand = new SqlCommand();
+        myCommand.Connection = myConnection;
+
+        SqlParameter workparameter4 = new SqlParameter();
+
+
+        myCommand.Connection = myConnection;
+        myCommand.CommandText = "spInsertDoctorsNotes";
+        myCommand.CommandType = CommandType.StoredProcedure;
+
+        //if (updNote == 'U')
+
+
+
+        SqlParameter workparameter1 = new SqlParameter();
+        SqlParameter workparameter2 = new SqlParameter();
+        SqlParameter workparameter3 = new SqlParameter();
+
+
+        workparameter1 = myCommand.Parameters.Add("@PrsnNumber", SqlDbType.Char);
+        workparameter1.Value = personNumber;
+        workparameter2 = myCommand.Parameters.Add("@UserID", SqlDbType.VarChar);
+        workparameter2.Value = userID;
+        workparameter3 = myCommand.Parameters.Add("@DoctorsNotes", SqlDbType.VarChar);
+        workparameter3.Value = notes;
+
+        workparameter4 = myCommand.Parameters.Add("@AntalRader", SqlDbType.Int);
+        workparameter4.Direction = ParameterDirection.Output;
+
+
+        myConnection.Open();
+
+
+
+        myCommand.ExecuteNonQuery();
+
+        int svar = Convert.ToInt32(workparameter4.SqlValue.ToString());
+
+        myConnection.Close();
+
+        if (svar == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+
+
+        //adapter.SelectCommand = myCommand;
+
+        //adapter.Fill(ds);
+
+        //return ds;
+
+
+        }
+
     }
 }
+
+
+
+    
+
 

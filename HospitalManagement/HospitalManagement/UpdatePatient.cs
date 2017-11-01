@@ -92,7 +92,7 @@ namespace HospitalManagement
                 }
                 else
                 {
-                    MessageBox.Show("Computer says No..."); // -- Failed to update patient.
+                    MessageBox.Show("Failed to update patient"); // -- Failed to update patient.
                 }
             }
 
@@ -107,7 +107,7 @@ namespace HospitalManagement
             if (personnummer.Length != 13)
             {
                 wrongWritten = true;
-                errorMessage = "Person-number is wrongly typed! \nUse format: YYYYMMDD-XXXX";
+                errorMessage = "Person-number is wrong typed! \nUse format: YYYYMMDD-XXXX";
                 objct = txtPersnNumber;
                 return wrongWritten;
             }
@@ -120,7 +120,7 @@ namespace HospitalManagement
             if (dashedLine != "-")
             {
                 wrongWritten = true;
-                errorMessage = "Person-number is wrongly typed! \nUse format: YYYYMMDD-XXXX";
+                errorMessage = "Person-number is wrong typed! \nUse format: YYYYMMDD-XXXX";
                 objct = txtPersnNumber;
                 return wrongWritten;
             }
@@ -133,7 +133,7 @@ namespace HospitalManagement
             else
             {
                 wrongWritten = true;
-                errorMessage = "Person-number is wrongly typed! \nUse format: YYYYMMDD-XXXX";
+                errorMessage = "Person-number is wrong typed! \nUse format: YYYYMMDD-XXXX";
                 objct = txtPersnNumber;
                 return wrongWritten;
             }
@@ -147,7 +147,7 @@ namespace HospitalManagement
             else
             {
                 wrongWritten = true;
-                errorMessage = "Person-number is wrongly typed! \nUse format: YYYYMMDD-XXXX";
+                errorMessage = "Person-number is wrong typed! \nUse format: YYYYMMDD-XXXX";
                 objct = txtPersnNumber;
                 return wrongWritten;
             }
@@ -196,7 +196,7 @@ namespace HospitalManagement
             if (txtPhoneNumer.Text == "")
             {
                 wrongWritten = true;
-                errorMessage = "txtPhonenumer not filled in!";
+                errorMessage = "Phonenumer not filled in!";
                 objct = txtPhoneNumer;
                 return wrongWritten;
             }

@@ -17,6 +17,9 @@ namespace HospitalManagement
             InitializeComponent();
         }
 
-
+        private void pnlOk_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

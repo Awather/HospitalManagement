@@ -38,8 +38,8 @@
             this.lblNoPatient = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlEmpty = new System.Windows.Forms.Panel();
             this.btnChoose = new System.Windows.Forms.Button();
+            this.pnlEmpty = new System.Windows.Forms.Panel();
             this.pnlUpptPatient = new System.Windows.Forms.Panel();
             this.lblUpptPatient = new System.Windows.Forms.Label();
             this.txtPersN1UpdPat = new System.Windows.Forms.TextBox();
@@ -59,6 +59,7 @@
             this.btnCreateJournal = new System.Windows.Forms.Button();
             this.pnlSetVisitingHours = new System.Windows.Forms.Panel();
             this.lblSetVisitHour = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menStrpPermissions = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,7 +113,7 @@
             // cmbPermissions
             // 
             this.cmbPermissions.FormattingEnabled = true;
-            this.cmbPermissions.Location = new System.Drawing.Point(97, 0);
+            this.cmbPermissions.Location = new System.Drawing.Point(855, 37);
             this.cmbPermissions.Name = "cmbPermissions";
             this.cmbPermissions.Size = new System.Drawing.Size(150, 21);
             this.cmbPermissions.TabIndex = 10;
@@ -126,7 +127,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblLoggedInAs);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(33, 100);
+            this.panel1.Location = new System.Drawing.Point(25, 103);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1010, 47);
             this.panel1.TabIndex = 11;
@@ -152,39 +153,39 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel2.Controls.Add(this.menStrpPermissions);
-            this.panel2.Controls.Add(this.pnlEmpty);
             this.panel2.Controls.Add(this.btnChoose);
             this.panel2.Controls.Add(this.cmbPermissions);
+            this.panel2.Controls.Add(this.menStrpPermissions);
+            this.panel2.Controls.Add(this.pnlEmpty);
             this.panel2.Controls.Add(this.pnlUpptPatient);
             this.panel2.Controls.Add(this.pnlRegisPatient);
             this.panel2.Controls.Add(this.pnlUppPatJournal);
             this.panel2.Controls.Add(this.pnlSetAppointHour);
             this.panel2.Controls.Add(this.pnlCreatePatJournal);
             this.panel2.Controls.Add(this.pnlSetVisitingHours);
-            this.panel2.Location = new System.Drawing.Point(33, 145);
+            this.panel2.Controls.Add(this.menuStrip1);
+            this.panel2.Location = new System.Drawing.Point(25, 148);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1010, 380);
             this.panel2.TabIndex = 12;
             // 
-            // pnlEmpty
-            // 
-            this.pnlEmpty.BackColor = System.Drawing.Color.LavenderBlush;
-            this.pnlEmpty.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlEmpty.Location = new System.Drawing.Point(230, 47);
-            this.pnlEmpty.Name = "pnlEmpty";
-            this.pnlEmpty.Size = new System.Drawing.Size(611, 315);
-            this.pnlEmpty.TabIndex = 11;
-            // 
             // btnChoose
             // 
-            this.btnChoose.Location = new System.Drawing.Point(270, 0);
+            this.btnChoose.Location = new System.Drawing.Point(855, 8);
             this.btnChoose.Name = "btnChoose";
             this.btnChoose.Size = new System.Drawing.Size(115, 23);
             this.btnChoose.TabIndex = 21;
             this.btnChoose.Text = "Choose";
             this.btnChoose.UseVisualStyleBackColor = true;
             this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
+            // 
+            // pnlEmpty
+            // 
+            this.pnlEmpty.BackColor = System.Drawing.Color.LavenderBlush;
+            this.pnlEmpty.Location = new System.Drawing.Point(230, 47);
+            this.pnlEmpty.Name = "pnlEmpty";
+            this.pnlEmpty.Size = new System.Drawing.Size(615, 318);
+            this.pnlEmpty.TabIndex = 11;
             // 
             // pnlUpptPatient
             // 
@@ -362,14 +363,23 @@
             this.lblSetVisitHour.TabIndex = 0;
             this.lblSetVisitHour.Text = "Set Visiting Hours";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Location = new System.Drawing.Point(26, 50);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(202, 24);
+            this.menuStrip1.TabIndex = 22;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // menStrpPermissions
             // 
             this.menStrpPermissions.Dock = System.Windows.Forms.DockStyle.None;
-            this.menStrpPermissions.Location = new System.Drawing.Point(6, 38);
+            this.menStrpPermissions.Location = new System.Drawing.Point(51, 106);
             this.menStrpPermissions.Name = "menStrpPermissions";
             this.menStrpPermissions.Size = new System.Drawing.Size(100, 24);
             this.menStrpPermissions.TabIndex = 13;
-            this.menStrpPermissions.Text = "menuStrip1";
+            this.menStrpPermissions.Text = "menuStrip2";
             // 
             // Form1
             // 
@@ -377,10 +387,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1047, 547);
+            this.ClientSize = new System.Drawing.Size(1047, 568);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menStrpPermissions;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -436,6 +449,7 @@
         private System.Windows.Forms.Label lblRegisPatient;
         private System.Windows.Forms.Label lblUpptPatient;
         private System.Windows.Forms.Label lblCreatPatJourn;
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.MenuStrip menStrpPermissions;
     }
 }

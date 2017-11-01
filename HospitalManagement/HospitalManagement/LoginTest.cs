@@ -54,7 +54,7 @@ namespace HospitalManagement
 
         private void txtForgotPass_Click(object sender, EventArgs e)
         {
-            txtForgotPass.Text = "You're Fired!";
+            txtForgotPass.Text = "";
 
 
         }
@@ -109,14 +109,14 @@ namespace HospitalManagement
                     //frmPatientGUI.Show();
                 }
 
-                else
+                //else
 
 
-                {
-                    MessageBox.Show("Incorrect User Identification / Password!");
+                //{
+                //MessageBox.Show("Incorrect User Identification / Password!");
 
-                    //Application.Exit();
-                }
+                //Application.Exit();
+                //}
 
 
 

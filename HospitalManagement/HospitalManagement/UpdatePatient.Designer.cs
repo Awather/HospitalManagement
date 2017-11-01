@@ -276,6 +276,7 @@
             this.txtPersnNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPersnNumber.Location = new System.Drawing.Point(181, 77);
             this.txtPersnNumber.Name = "txtPersnNumber";
+            this.txtPersnNumber.ReadOnly = true;
             this.txtPersnNumber.Size = new System.Drawing.Size(136, 20);
             this.txtPersnNumber.TabIndex = 65;
             // 
@@ -308,6 +309,7 @@
             this.Controls.Add(this.txtPersnNumber);
             this.Name = "UpdatePatient";
             this.Text = "UpdatePatient";
+            this.Load += new System.EventHandler(this.UpdatePatient_Load);
             this.grpGender.ResumeLayout(false);
             this.grpGender.PerformLayout();
             this.ResumeLayout(false);
