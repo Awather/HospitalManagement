@@ -92,9 +92,9 @@ namespace HospitalManagement
             }
 
 
-                
 
-                {
+
+            {
 
                 if (DBAccess.PatientLogin(txtUsername.Text, txtPassword.Text))
 

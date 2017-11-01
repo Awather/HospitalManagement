@@ -30,13 +30,13 @@ namespace HospitalManagement
 
         private void Form1_Load(object sender, EventArgs e)
 
-            {
-                lblEmpty.Text = Convert.ToString(LoginTest.userID);   // Data placeras i labelxx
-                                                                      //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
-                                                                      //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
+        {
+            lblEmpty.Text = Convert.ToString(LoginTest.userID);   // Data placeras i labelxx
+                                                                  //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
+                                                                  //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
 
             /*pnlEmpty.BringToFront();*/ //-- Create empty panel as front.
-                                     //Comment in other panels aswell when GUI is set
+                                         //Comment in other panels aswell when GUI is set
 
             //Databasacccess här för att hämta info om inloggad
             DataSet dsUserInfo = new DataSet();
@@ -47,11 +47,17 @@ namespace HospitalManagement
 
             //Databasaccess här för att hämta permissions för denna user och lägga i en dropdown eller i annat
             //Här fylls en dropdown med permissions för denna user
+
+
             cmbPermissions.Items.Clear();
 
             dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
             cmbPermissions.DataSource = dsPermissions.Tables[0];
             cmbPermissions.DisplayMember = "Permission";
+
+
+
+
 
             //vill ha blankrad som första rad
             DataRow row = dsPermissions.Tables[0].NewRow();
@@ -178,11 +184,6 @@ namespace HospitalManagement
 
         }
 
-        private void pnlEmpty_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
 
 
 
@@ -221,68 +222,131 @@ namespace HospitalManagement
 
 
 
+        //cmbPermissions.Items.Clear();
+
+        //dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
+        //cmbPermissions.DataSource = dsPermissions.Tables[0];
+        //cmbPermissions.DisplayMember = "Permission";
+
+        //    public void PrintPermissions(DataSet dsPermissions)
+        //    {
+        //        // For each table in the DataSet, print the values of each row.
+        //        foreach (DataTable menStrpPermissions in dsPermissions.Tables)
+        //        {
+        //            // For each row, print the values of each column.
+        //            foreach (DataRow toolStripComboBox in menStrpPermissions.Rows)
+        //            {
+        //                foreach (DataColumn column in menStrpPermissions.Columns)
+        //                {
+        //                    Console.WriteLine(toolStripComboBox[column]);
+        //                }
+        //            }
+        //        }
+        //    }
+
+        //    public void AddARow(DataSet dsPermissions)
+        //    {
+        //        DataTable table;
+        //        table = dsPermissions.Tables["Permissions"];
+        //        // Use the NewRow method to create a DataRow with 
+        //        // the table's schema.
+        //        DataRow newRow = table.NewRow();
+
+        //        // Set values in the columns:
+        //        newRow["Permission"] = DBAccess.GetRolesPermission(Convert.ToString(dsPermissions.Tables[0].Rows[0][2])); 
+        //        newRow["CompanyName"] = "NewCompanyName";
+
+        //        // Add the row to the rows collection.
+        //        table.Rows.Add(newRow);
+        //    }
+
+        //}
+
+        //public void PrintPermissions(DataSet dsPermissions)
+        //{
+        //    string menStrpPermissions = "Permission";
+
+        //    DataTable dsUserInfo = new DataTable();
+        //    dsUserInfo.Columns.Add(dsPermissions,(String));
+
+        //    // For each table in the DataSet, print the values of each row.
+        //    foreach (tsi As ToolStripItem.ToolStripItemAccessibleObject.DropDownI)
+        //    {
+        //        // For each row, print the values of each column.
+        //        foreach (DataRow toolStripComboBox in menStrpPermissions.Rows)
+        //        {
+        //            foreach (DataColumn column in menStrpPermissions.Columns)
+        //            {
+        //                Console.WriteLine(toolStripComboBox[column]);
+        //            }
+        //        }
+        //    }
+        //}
+
+
+        //private void BtnChoose_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //        string choice = Convert.ToString(cmbPermissions.SelectedValue);
+
+        //private void btnChoose_Click(object sender, EventArgs e)
+        //{
+        //    string choice = (cmbPermissions.Text);
+
+        //    if (choice == "Set Appointment Hours") //"Set Visiting Hours" Ändra till korrekt om rätt
+        //        {
+        //            PnlDoc1.BringToFront();
+        //            //pnlDoc01.Visible = false;s
+        //            //pnlDoc02.Visible = true;
+        //        }
+        //        if (choice == "Register Patients")
+        //        {
+        //            PnlDoc2.BringToFront();
+        //            //pnlDoc02.Visible = false;
+        //            //pnlDoc01.Visible = true;
+        //        }
+        //        if (choice == "Create Patients Journal") // "Update patients journal" Ändra till korrekt om rätt
+        //    {
+        //            PnlDoc3.BringToFront();
+        //            //pnlDoc02.Visible = false;
+        //            //pnlDoc01.Visible = true;
+        //        }
+        //    }
+
+        // AWE - Different View panelt. - ALTER and put into current design
+
+        //// Test for Receptionist
+        //private void btnChoose_Click(object sender, EventArgs e)
+        //{
+        //    string choice = (cmbPermissions.Text);
+
+        //    if ((choice == "Register Patients") || (choice == "Create Patients Journal") || (choice == "Release Patients"))
+        //    {
+        //        PnlDoc1.BringToFront();
+        //        //pnlDoc01.Visible = false;s
+        //        //pnlDoc02.Visible = true;
+        //    }
+        //    if ((choice == "Set Patient’s Appointments With Doctors") || (choice == "Search All The Doctors") || (choice == "Search All The Patients And Their Status"))
+        //    {
+        //        PnlDoc2.BringToFront();
+        //        //pnlDoc02.Visible = false;
+        //        //pnlDoc01.Visible = true;
+        //    }
+        //    if ((choice == "View The Prescriptions") || (choice == "View The Duty Schedule") || (choice == "View Patients Room"))
+        //    {
+        //        PnlDoc3.BringToFront();
+        //        //pnlDoc02.Visible = false;
+        //        //pnlDoc01.Visible = true;
+        //    }
+        //    if ((choice == "Register Patients"))
+        //    {
+        //        PnlDoc4.BringToFront();
+        //        //pnlDoc02.Visible = false;
+        //        //pnlDoc01.Visible = true;
+        //    }
+        //}
+
     }
 
-    //private void BtnChoose_SelectedIndexChanged(object sender, EventArgs e)
-    //{
-    //        string choice = Convert.ToString(cmbPermissions.SelectedValue);
-
-    //private void btnChoose_Click(object sender, EventArgs e)
-    //{
-    //    string choice = (cmbPermissions.Text);
-
-    //    if (choice == "Set Appointment Hours") //"Set Visiting Hours" Ändra till korrekt om rätt
-    //        {
-    //            PnlDoc1.BringToFront();
-    //            //pnlDoc01.Visible = false;s
-    //            //pnlDoc02.Visible = true;
-    //        }
-    //        if (choice == "Register Patients")
-    //        {
-    //            PnlDoc2.BringToFront();
-    //            //pnlDoc02.Visible = false;
-    //            //pnlDoc01.Visible = true;
-    //        }
-    //        if (choice == "Create Patients Journal") // "Update patients journal" Ändra till korrekt om rätt
-    //    {
-    //            PnlDoc3.BringToFront();
-    //            //pnlDoc02.Visible = false;
-    //            //pnlDoc01.Visible = true;
-    //        }
-    //    }
-
-    // AWE - Different View panelt. - ALTER and put into current design
-
-    //// Test for Receptionist
-    //private void btnChoose_Click(object sender, EventArgs e)
-    //{
-    //    string choice = (cmbPermissions.Text);
-
-    //    if ((choice == "Register Patients") || (choice == "Create Patients Journal") || (choice == "Release Patients"))
-    //    {
-    //        PnlDoc1.BringToFront();
-    //        //pnlDoc01.Visible = false;s
-    //        //pnlDoc02.Visible = true;
-    //    }
-    //    if ((choice == "Set Patient’s Appointments With Doctors") || (choice == "Search All The Doctors") || (choice == "Search All The Patients And Their Status"))
-    //    {
-    //        PnlDoc2.BringToFront();
-    //        //pnlDoc02.Visible = false;
-    //        //pnlDoc01.Visible = true;
-    //    }
-    //    if ((choice == "View The Prescriptions") || (choice == "View The Duty Schedule") || (choice == "View Patients Room"))
-    //    {
-    //        PnlDoc3.BringToFront();
-    //        //pnlDoc02.Visible = false;
-    //        //pnlDoc01.Visible = true;
-    //    }
-    //    if ((choice == "Register Patients"))
-    //    {
-    //        PnlDoc4.BringToFront();
-    //        //pnlDoc02.Visible = false;
-    //        //pnlDoc01.Visible = true;
-    //    }
-    //}
 }
 
 

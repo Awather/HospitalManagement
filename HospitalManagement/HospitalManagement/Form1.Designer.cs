@@ -38,14 +38,8 @@
             this.lblNoPatient = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnChoose = new System.Windows.Forms.Button();
-            this.pnlCreatePatJournal = new System.Windows.Forms.Panel();
             this.pnlEmpty = new System.Windows.Forms.Panel();
-            this.lblCreatPatJourn = new System.Windows.Forms.Label();
-            this.txtPersN3CreatJour = new System.Windows.Forms.TextBox();
-            this.btnCreateJournal = new System.Windows.Forms.Button();
-            this.pnlSetVisitingHours = new System.Windows.Forms.Panel();
-            this.lblSetVisitHour = new System.Windows.Forms.Label();
+            this.btnChoose = new System.Windows.Forms.Button();
             this.pnlUpptPatient = new System.Windows.Forms.Panel();
             this.lblUpptPatient = new System.Windows.Forms.Label();
             this.txtPersN1UpdPat = new System.Windows.Forms.TextBox();
@@ -59,14 +53,21 @@
             this.btnUppdPatJournal = new System.Windows.Forms.Button();
             this.pnlSetAppointHour = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.pnlCreatePatJournal = new System.Windows.Forms.Panel();
+            this.lblCreatPatJourn = new System.Windows.Forms.Label();
+            this.txtPersN3CreatJour = new System.Windows.Forms.TextBox();
+            this.btnCreateJournal = new System.Windows.Forms.Button();
+            this.pnlSetVisitingHours = new System.Windows.Forms.Panel();
+            this.lblSetVisitHour = new System.Windows.Forms.Label();
+            this.menStrpPermissions = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pnlCreatePatJournal.SuspendLayout();
-            this.pnlSetVisitingHours.SuspendLayout();
             this.pnlUpptPatient.SuspendLayout();
             this.pnlRegisPatient.SuspendLayout();
             this.pnlUppPatJournal.SuspendLayout();
             this.pnlSetAppointHour.SuspendLayout();
+            this.pnlCreatePatJournal.SuspendLayout();
+            this.pnlSetVisitingHours.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -151,6 +152,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel2.Controls.Add(this.menStrpPermissions);
             this.panel2.Controls.Add(this.pnlEmpty);
             this.panel2.Controls.Add(this.btnChoose);
             this.panel2.Controls.Add(this.cmbPermissions);
@@ -165,6 +167,15 @@
             this.panel2.Size = new System.Drawing.Size(1010, 380);
             this.panel2.TabIndex = 12;
             // 
+            // pnlEmpty
+            // 
+            this.pnlEmpty.BackColor = System.Drawing.Color.LavenderBlush;
+            this.pnlEmpty.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlEmpty.Location = new System.Drawing.Point(230, 47);
+            this.pnlEmpty.Name = "pnlEmpty";
+            this.pnlEmpty.Size = new System.Drawing.Size(611, 315);
+            this.pnlEmpty.TabIndex = 11;
+            // 
             // btnChoose
             // 
             this.btnChoose.Location = new System.Drawing.Point(270, 0);
@@ -175,74 +186,9 @@
             this.btnChoose.UseVisualStyleBackColor = true;
             this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
-            // pnlCreatePatJournal
-            // 
-            this.pnlCreatePatJournal.BackColor = System.Drawing.Color.Olive;
-            this.pnlCreatePatJournal.Controls.Add(this.lblCreatPatJourn);
-            this.pnlCreatePatJournal.Controls.Add(this.txtPersN3CreatJour);
-            this.pnlCreatePatJournal.Controls.Add(this.btnCreateJournal);
-            this.pnlCreatePatJournal.Location = new System.Drawing.Point(234, 50);
-            this.pnlCreatePatJournal.Name = "pnlCreatePatJournal";
-            this.pnlCreatePatJournal.Size = new System.Drawing.Size(611, 315);
-            this.pnlCreatePatJournal.TabIndex = 15;
-            // 
-            // pnlEmpty
-            // 
-            this.pnlEmpty.BackColor = System.Drawing.Color.Red;
-            this.pnlEmpty.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlEmpty.Location = new System.Drawing.Point(230, 47);
-            this.pnlEmpty.Name = "pnlEmpty";
-            this.pnlEmpty.Size = new System.Drawing.Size(611, 315);
-            this.pnlEmpty.TabIndex = 11;
-            this.pnlEmpty.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlEmpty_Paint);
-            // 
-            // lblCreatPatJourn
-            // 
-            this.lblCreatPatJourn.AutoSize = true;
-            this.lblCreatPatJourn.Location = new System.Drawing.Point(20, 15);
-            this.lblCreatPatJourn.Name = "lblCreatPatJourn";
-            this.lblCreatPatJourn.Size = new System.Drawing.Size(111, 13);
-            this.lblCreatPatJourn.TabIndex = 26;
-            this.lblCreatPatJourn.Text = "Create Patient Journal";
-            // 
-            // txtPersN3CreatJour
-            // 
-            this.txtPersN3CreatJour.Location = new System.Drawing.Point(23, 47);
-            this.txtPersN3CreatJour.Name = "txtPersN3CreatJour";
-            this.txtPersN3CreatJour.Size = new System.Drawing.Size(100, 20);
-            this.txtPersN3CreatJour.TabIndex = 24;
-            // 
-            // btnCreateJournal
-            // 
-            this.btnCreateJournal.Location = new System.Drawing.Point(147, 45);
-            this.btnCreateJournal.Name = "btnCreateJournal";
-            this.btnCreateJournal.Size = new System.Drawing.Size(115, 23);
-            this.btnCreateJournal.TabIndex = 19;
-            this.btnCreateJournal.Text = "Create Journal";
-            this.btnCreateJournal.UseVisualStyleBackColor = true;
-            this.btnCreateJournal.Click += new System.EventHandler(this.btnCreateJournal_Click);
-            // 
-            // pnlSetVisitingHours
-            // 
-            this.pnlSetVisitingHours.BackColor = System.Drawing.Color.Chocolate;
-            this.pnlSetVisitingHours.Controls.Add(this.lblSetVisitHour);
-            this.pnlSetVisitingHours.Location = new System.Drawing.Point(234, 47);
-            this.pnlSetVisitingHours.Name = "pnlSetVisitingHours";
-            this.pnlSetVisitingHours.Size = new System.Drawing.Size(610, 312);
-            this.pnlSetVisitingHours.TabIndex = 11;
-            // 
-            // lblSetVisitHour
-            // 
-            this.lblSetVisitHour.AutoSize = true;
-            this.lblSetVisitHour.Location = new System.Drawing.Point(30, 14);
-            this.lblSetVisitHour.Name = "lblSetVisitHour";
-            this.lblSetVisitHour.Size = new System.Drawing.Size(90, 13);
-            this.lblSetVisitHour.TabIndex = 0;
-            this.lblSetVisitHour.Text = "Set Visiting Hours";
-            // 
             // pnlUpptPatient
             // 
-            this.pnlUpptPatient.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.pnlUpptPatient.BackColor = System.Drawing.Color.LavenderBlush;
             this.pnlUpptPatient.Controls.Add(this.lblUpptPatient);
             this.pnlUpptPatient.Controls.Add(this.txtPersN1UpdPat);
             this.pnlUpptPatient.Controls.Add(this.btnGetPatient);
@@ -279,7 +225,7 @@
             // 
             // pnlRegisPatient
             // 
-            this.pnlRegisPatient.BackColor = System.Drawing.Color.SeaGreen;
+            this.pnlRegisPatient.BackColor = System.Drawing.Color.LavenderBlush;
             this.pnlRegisPatient.Controls.Add(this.lblRegisPatient);
             this.pnlRegisPatient.Controls.Add(this.btnRegisPatient);
             this.pnlRegisPatient.Location = new System.Drawing.Point(234, 50);
@@ -308,7 +254,7 @@
             // 
             // pnlUppPatJournal
             // 
-            this.pnlUppPatJournal.BackColor = System.Drawing.Color.DarkGreen;
+            this.pnlUppPatJournal.BackColor = System.Drawing.Color.LavenderBlush;
             this.pnlUppPatJournal.Controls.Add(this.lblUppdPatJournal);
             this.pnlUppPatJournal.Controls.Add(this.txtPersN2UpdJour);
             this.pnlUppPatJournal.Controls.Add(this.btnUppdPatJournal);
@@ -345,7 +291,7 @@
             // 
             // pnlSetAppointHour
             // 
-            this.pnlSetAppointHour.BackColor = System.Drawing.Color.Orange;
+            this.pnlSetAppointHour.BackColor = System.Drawing.Color.LavenderBlush;
             this.pnlSetAppointHour.Controls.Add(this.label4);
             this.pnlSetAppointHour.Location = new System.Drawing.Point(235, 50);
             this.pnlSetAppointHour.Name = "pnlSetAppointHour";
@@ -361,6 +307,70 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Set Appointement Hours";
             // 
+            // pnlCreatePatJournal
+            // 
+            this.pnlCreatePatJournal.BackColor = System.Drawing.Color.LavenderBlush;
+            this.pnlCreatePatJournal.Controls.Add(this.lblCreatPatJourn);
+            this.pnlCreatePatJournal.Controls.Add(this.txtPersN3CreatJour);
+            this.pnlCreatePatJournal.Controls.Add(this.btnCreateJournal);
+            this.pnlCreatePatJournal.Location = new System.Drawing.Point(234, 50);
+            this.pnlCreatePatJournal.Name = "pnlCreatePatJournal";
+            this.pnlCreatePatJournal.Size = new System.Drawing.Size(611, 315);
+            this.pnlCreatePatJournal.TabIndex = 15;
+            // 
+            // lblCreatPatJourn
+            // 
+            this.lblCreatPatJourn.AutoSize = true;
+            this.lblCreatPatJourn.Location = new System.Drawing.Point(20, 15);
+            this.lblCreatPatJourn.Name = "lblCreatPatJourn";
+            this.lblCreatPatJourn.Size = new System.Drawing.Size(111, 13);
+            this.lblCreatPatJourn.TabIndex = 26;
+            this.lblCreatPatJourn.Text = "Create Patient Journal";
+            // 
+            // txtPersN3CreatJour
+            // 
+            this.txtPersN3CreatJour.Location = new System.Drawing.Point(23, 47);
+            this.txtPersN3CreatJour.Name = "txtPersN3CreatJour";
+            this.txtPersN3CreatJour.Size = new System.Drawing.Size(100, 20);
+            this.txtPersN3CreatJour.TabIndex = 24;
+            // 
+            // btnCreateJournal
+            // 
+            this.btnCreateJournal.Location = new System.Drawing.Point(147, 45);
+            this.btnCreateJournal.Name = "btnCreateJournal";
+            this.btnCreateJournal.Size = new System.Drawing.Size(115, 23);
+            this.btnCreateJournal.TabIndex = 19;
+            this.btnCreateJournal.Text = "Create Journal";
+            this.btnCreateJournal.UseVisualStyleBackColor = true;
+            this.btnCreateJournal.Click += new System.EventHandler(this.btnCreateJournal_Click);
+            // 
+            // pnlSetVisitingHours
+            // 
+            this.pnlSetVisitingHours.BackColor = System.Drawing.Color.LavenderBlush;
+            this.pnlSetVisitingHours.Controls.Add(this.lblSetVisitHour);
+            this.pnlSetVisitingHours.Location = new System.Drawing.Point(234, 47);
+            this.pnlSetVisitingHours.Name = "pnlSetVisitingHours";
+            this.pnlSetVisitingHours.Size = new System.Drawing.Size(610, 312);
+            this.pnlSetVisitingHours.TabIndex = 11;
+            // 
+            // lblSetVisitHour
+            // 
+            this.lblSetVisitHour.AutoSize = true;
+            this.lblSetVisitHour.Location = new System.Drawing.Point(30, 14);
+            this.lblSetVisitHour.Name = "lblSetVisitHour";
+            this.lblSetVisitHour.Size = new System.Drawing.Size(90, 13);
+            this.lblSetVisitHour.TabIndex = 0;
+            this.lblSetVisitHour.Text = "Set Visiting Hours";
+            // 
+            // menStrpPermissions
+            // 
+            this.menStrpPermissions.Dock = System.Windows.Forms.DockStyle.None;
+            this.menStrpPermissions.Location = new System.Drawing.Point(6, 38);
+            this.menStrpPermissions.Name = "menStrpPermissions";
+            this.menStrpPermissions.Size = new System.Drawing.Size(100, 24);
+            this.menStrpPermissions.TabIndex = 13;
+            this.menStrpPermissions.Text = "menuStrip1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,16 +380,14 @@
             this.ClientSize = new System.Drawing.Size(1047, 547);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MainMenuStrip = this.menStrpPermissions;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.pnlCreatePatJournal.ResumeLayout(false);
-            this.pnlCreatePatJournal.PerformLayout();
-            this.pnlSetVisitingHours.ResumeLayout(false);
-            this.pnlSetVisitingHours.PerformLayout();
+            this.panel2.PerformLayout();
             this.pnlUpptPatient.ResumeLayout(false);
             this.pnlUpptPatient.PerformLayout();
             this.pnlRegisPatient.ResumeLayout(false);
@@ -388,6 +396,10 @@
             this.pnlUppPatJournal.PerformLayout();
             this.pnlSetAppointHour.ResumeLayout(false);
             this.pnlSetAppointHour.PerformLayout();
+            this.pnlCreatePatJournal.ResumeLayout(false);
+            this.pnlCreatePatJournal.PerformLayout();
+            this.pnlSetVisitingHours.ResumeLayout(false);
+            this.pnlSetVisitingHours.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -424,5 +436,6 @@
         private System.Windows.Forms.Label lblRegisPatient;
         private System.Windows.Forms.Label lblUpptPatient;
         private System.Windows.Forms.Label lblCreatPatJourn;
+        private System.Windows.Forms.MenuStrip menStrpPermissions;
     }
 }

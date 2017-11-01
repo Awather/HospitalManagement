@@ -43,7 +43,7 @@
             this.chkEmployee.TabIndex = 0;
             this.chkEmployee.Text = "Employee";
             this.chkEmployee.UseVisualStyleBackColor = true;
-            this.chkEmployee.Click += new System.EventHandler(this.chkEmployee_Click);
+            this.chkEmployee.CheckedChanged += new System.EventHandler(this.chkEmployee_CheckedChanged);
             // 
             // chkPatient
             // 
@@ -54,7 +54,7 @@
             this.chkPatient.TabIndex = 1;
             this.chkPatient.Text = "Patient";
             this.chkPatient.UseVisualStyleBackColor = true;
-            this.chkPatient.Click += new System.EventHandler(this.chkPatient_Click);
+            this.chkPatient.CheckedChanged += new System.EventHandler(this.chkPatient_CheckedChanged);
             // 
             // lblWelcome
             // 
