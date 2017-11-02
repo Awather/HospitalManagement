@@ -12,25 +12,13 @@ namespace HospitalManagement
 {
     public partial class LoginTest : Form
     {
-        public static string userID; // Global variabel
-        public static string Patient;
+
+        public static string Patient; // Global variabel
 
         public LoginTest()
         {
             InitializeComponent();
         }
-
-        //private void LoginTest_Load(object sender, EventArgs e)
-        //{
-
-        //}
-
-        private void BtnCancel_Click(object sender, EventArgs e)
-        {
-            // Application is canceled
-            Application.Exit();
-        }
-
         //private void BtnLogin_Click(object sender, EventArgs e)
         //{
         //    // Database access here
@@ -54,73 +42,50 @@ namespace HospitalManagement
 
         private void txtForgotPass_Click(object sender, EventArgs e)
         {
-            txtForgotPass.Text = "";
+            txtForgotPassPatient.Text = "";
 
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+
+        private void btnLoginPatient_Click(object sender, EventArgs e)
         {
 
-            // Database access here
-
-            if (DBAccess.IsUserIdPassWdOK(txtUsername.Text, txtPassword.Text))
+            if (DBAccess.PatientLogin(txtUsernamePatient.Text, txtPasswordPatient.Text))
 
             {
-                userID = txtUsername.Text; // Värdet som ska skickas
+                Patient = txtUsernamePatient.Text; // Värdet som ska skickas
 
 
-                Form1 frmForm1 = new Form1();
-                frmForm1.Show();
+                ResultCard frmResultCard = new ResultCard();
+                frmResultCard.Show();
 
-                //MainMenuTest frmMainMenuTest = new MainMenuTest();
-                //frmMainMenuTest.Show();
-
-                this.Hide();
-
-                }
-
-
-            else
-            {
-                CompSaysNo frmCompSaysNo = new CompSaysNo();
-                frmCompSaysNo.ShowDialog();
-
-                //MessageBox.Show("Incorrect User Identification / Password!");
-
-                //Application.Exit();
+                //PatientJournal frmPatientGUI = new PatientJournal();
+                //frmPatientGUI.Show();
             }
 
+        }
+
+        private void btnCancelPatient_Click(object sender, EventArgs e)
+        {
+
+            // Application is canceled
+            Application.Exit();
+
+        }
+
+        private void txtForgotPassPatient_Click(object sender, EventArgs e)
+        {
+            txtForgotPassPatient.Text = "";
+        }
+
+        private void btnBackPatient_Click(object sender, EventArgs e)
+        {
+            Welcome frmWelcome = new Welcome();
+            frmWelcome.Show();
 
 
-
-            {
-
-                if (DBAccess.PatientLogin(txtUsername.Text, txtPassword.Text))
-
-                {
-                    Patient = txtUsername.Text; // Värdet som ska skickas
-
-
-                    ResultCard frmResultCard = new ResultCard();
-                    frmResultCard.Show();
-
-                    //PatientJournal frmPatientGUI = new PatientJournal();
-                    //frmPatientGUI.Show();
-                }
-
-                //else
-
-
-                //{
-                //MessageBox.Show("Incorrect User Identification / Password!");
-
-                //Application.Exit();
-                //}
-
-
-
-            }
+            this.Hide();
         }
     }
 }

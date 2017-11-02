@@ -37,7 +37,7 @@ namespace HospitalManagement
 
             //DoctorNotes newNotes = new DoctorNotes(txtPersnNumber.Text, txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtPostalNumber.Text, txtCity.Text, txtPhoneNumer.Text, txtEmail.Text, gender);
             //DoctorNotes newDoctorNotes = new DoctorNotes();
-            if (DBAccess.InsertDoctorsNotes(txtDoctorComments.Text, LoginTest.userID, Form1.myPatient.PersonNumber))
+            if (DBAccess.InsertDoctorsNotes(txtDoctorComments.Text, LoginStaff.userID, Form1.myPatient.PersonNumber))
             //(DBAccess.InsertDoctorsNotes(txtDoctorComments.Text))
             {
                 MessageBox.Show("Comment saved successfully!");

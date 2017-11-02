@@ -151,6 +151,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginStaff.resx">
+      <DependentUpon>LoginStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginTest.resx">
       <DependentUpon>LoginTest.cs</DependentUpon>
     </EmbeddedResource>

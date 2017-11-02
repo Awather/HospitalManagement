@@ -25,11 +25,15 @@ namespace HospitalManagement
             {
                 LoginStaff frmLoginStaff = new LoginStaff();
                 frmLoginStaff.Show();
+
+                this.Hide();
             }
             else if (chkPatient.Checked == true)
             {
                 LoginTest frmLoginTest = new LoginTest();
                 frmLoginTest.Show();
+
+                this.Hide();
             }
 
         }

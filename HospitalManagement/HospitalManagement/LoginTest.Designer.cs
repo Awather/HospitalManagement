@@ -29,43 +29,45 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginTest));
-            this.txtForgotPass = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.txtForgotPassPatient = new System.Windows.Forms.Label();
+            this.btnLoginPatient = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPasswordPatient = new System.Windows.Forms.TextBox();
+            this.txtUsernamePatient = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancelPatient = new System.Windows.Forms.Button();
+            this.btnBackPatient = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtForgotPass
+            // txtForgotPassPatient
             // 
-            this.txtForgotPass.AutoSize = true;
-            this.txtForgotPass.Font = new System.Drawing.Font("Franklin Gothic Book", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtForgotPass.ForeColor = System.Drawing.Color.Blue;
-            this.txtForgotPass.Location = new System.Drawing.Point(105, 171);
-            this.txtForgotPass.Name = "txtForgotPass";
-            this.txtForgotPass.Size = new System.Drawing.Size(91, 15);
-            this.txtForgotPass.TabIndex = 15;
-            this.txtForgotPass.Text = "Forgot Password?";
-            this.txtForgotPass.Click += new System.EventHandler(this.txtForgotPass_Click);
+            this.txtForgotPassPatient.AutoSize = true;
+            this.txtForgotPassPatient.Font = new System.Drawing.Font("Franklin Gothic Book", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtForgotPassPatient.ForeColor = System.Drawing.Color.Blue;
+            this.txtForgotPassPatient.Location = new System.Drawing.Point(105, 225);
+            this.txtForgotPassPatient.Name = "txtForgotPassPatient";
+            this.txtForgotPassPatient.Size = new System.Drawing.Size(91, 15);
+            this.txtForgotPassPatient.TabIndex = 15;
+            this.txtForgotPassPatient.Text = "Forgot Password?";
+            this.txtForgotPassPatient.Click += new System.EventHandler(this.txtForgotPassPatient_Click);
             // 
-            // btnLogin
+            // btnLoginPatient
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(57, 134);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(195, 34);
-            this.btnLogin.TabIndex = 14;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLoginPatient.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLoginPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoginPatient.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLoginPatient.Location = new System.Drawing.Point(57, 134);
+            this.btnLoginPatient.Name = "btnLoginPatient";
+            this.btnLoginPatient.Size = new System.Drawing.Size(195, 34);
+            this.btnLoginPatient.TabIndex = 14;
+            this.btnLoginPatient.Text = "Login";
+            this.btnLoginPatient.UseVisualStyleBackColor = false;
+            this.btnLoginPatient.Click += new System.EventHandler(this.btnLoginPatient_Click);
             // 
             // label3
             // 
@@ -97,23 +99,23 @@
             this.txtLogin.TabIndex = 10;
             this.txtLogin.Text = "Username";
             // 
-            // txtPassword
+            // txtPasswordPatient
             // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtPassword.Location = new System.Drawing.Point(142, 94);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(110, 20);
-            this.txtPassword.TabIndex = 9;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPasswordPatient.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPasswordPatient.Location = new System.Drawing.Point(142, 94);
+            this.txtPasswordPatient.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPasswordPatient.Name = "txtPasswordPatient";
+            this.txtPasswordPatient.Size = new System.Drawing.Size(110, 20);
+            this.txtPasswordPatient.TabIndex = 9;
+            this.txtPasswordPatient.UseSystemPasswordChar = true;
             // 
-            // txtUsername
+            // txtUsernamePatient
             // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtUsername.Location = new System.Drawing.Point(142, 62);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(110, 20);
-            this.txtUsername.TabIndex = 8;
+            this.txtUsernamePatient.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtUsernamePatient.Location = new System.Drawing.Point(142, 62);
+            this.txtUsernamePatient.Name = "txtUsernamePatient";
+            this.txtUsernamePatient.Size = new System.Drawing.Size(110, 20);
+            this.txtUsernamePatient.TabIndex = 8;
             // 
             // label1
             // 
@@ -138,17 +140,43 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Pink;
+            this.panel1.Controls.Add(this.btnCancelPatient);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Controls.Add(this.txtPassword);
-            this.panel1.Controls.Add(this.txtForgotPass);
+            this.panel1.Controls.Add(this.txtUsernamePatient);
+            this.panel1.Controls.Add(this.txtPasswordPatient);
+            this.panel1.Controls.Add(this.txtForgotPassPatient);
             this.panel1.Controls.Add(this.txtLogin);
-            this.panel1.Controls.Add(this.btnLogin);
+            this.panel1.Controls.Add(this.btnLoginPatient);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(39, 166);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(294, 216);
+            this.panel1.Size = new System.Drawing.Size(301, 255);
             this.panel1.TabIndex = 19;
+            // 
+            // btnCancelPatient
+            // 
+            this.btnCancelPatient.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCancelPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelPatient.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancelPatient.Location = new System.Drawing.Point(57, 174);
+            this.btnCancelPatient.Name = "btnCancelPatient";
+            this.btnCancelPatient.Size = new System.Drawing.Size(195, 34);
+            this.btnCancelPatient.TabIndex = 17;
+            this.btnCancelPatient.Text = "Cancel";
+            this.btnCancelPatient.UseVisualStyleBackColor = false;
+            this.btnCancelPatient.Click += new System.EventHandler(this.btnCancelPatient_Click);
+            // 
+            // btnBackPatient
+            // 
+            this.btnBackPatient.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnBackPatient.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBackPatient.Location = new System.Drawing.Point(12, 137);
+            this.btnBackPatient.Name = "btnBackPatient";
+            this.btnBackPatient.Size = new System.Drawing.Size(75, 23);
+            this.btnBackPatient.TabIndex = 20;
+            this.btnBackPatient.Text = "Back";
+            this.btnBackPatient.UseVisualStyleBackColor = false;
+            this.btnBackPatient.Click += new System.EventHandler(this.btnBackPatient_Click);
             // 
             // LoginTest
             // 
@@ -157,6 +185,7 @@
             this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(781, 433);
+            this.Controls.Add(this.btnBackPatient);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -171,15 +200,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label txtForgotPass;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label txtForgotPassPatient;
+        private System.Windows.Forms.Button btnLoginPatient;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label txtLogin;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPasswordPatient;
+        private System.Windows.Forms.TextBox txtUsernamePatient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnCancelPatient;
+        private System.Windows.Forms.Button btnBackPatient;
     }
 }
