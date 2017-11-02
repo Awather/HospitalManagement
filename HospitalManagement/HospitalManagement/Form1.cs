@@ -26,7 +26,25 @@ namespace HospitalManagement
         public Form1()
         {
             InitializeComponent();
+            dsPermissions = DBAccess.GetRolesPermission("Doctor");
+            int posts = dsPermissions.Tables[0].Rows.Count;
+
+            for (int i = 0; i < posts; i++)
+            {
+                Button btnPermissionBtn = new Button();
+                btnPermissionBtn.Size = new Size(130, 23);
+                btnPermissionBtn.Location = new Point(160, 30 * i + 10);
+                btnPermissionBtn.Click += new EventHandler(ButtonClickOneEvent); // Ask jan about this
+                btnPermissionBtn.Tag = i; // Ask Jan about this
+                btnPermissionBtn.Text = dsPermissions.Tables[0].Rows[i][0].ToString(); // MORE QUESTIONS!
+                this.Controls.Add(btnPermissionBtn);
+
+            }
+
+
         }
+
+
 
         private void Form1_Load(object sender, EventArgs e)
 
@@ -172,6 +190,74 @@ namespace HospitalManagement
 
         }
 
+        void ButtonClickOneEvent(object sender, EventArgs e)
+        {
+            Button btnPermissionBtn = sender as Button;
+            if (btnPermissionBtn != null)
+            {
+                //switch ((int)btnPermissionBtn.Tag) // ??
+                //{
+                //    case 0:
+                //        //pnlEmpty.SendToBack();
+                //        pnlSetVisitingHours.BringToFront();
+                //        break;
+                //    case 1:
+                //        //pnlEmpty.SendToBack();
+                //        pnlSetAppointHour.BringToFront();
+                //        break;
+                //    case 2:
+                //        //pnlEmpty.SendToBack();
+                //        pnlUppPatJournal.BringToFront();
+                //        break;
+                //    case 3:
+                //        //pnlEmpty.SendToBack();
+                //        pnlRegisPatient.BringToFront();
+                //        break;
+                //    case 4:
+                //        //pnlEmpty.SendToBack();
+                //        pnlUpptPatient.BringToFront();
+                //        break;
+                //    case 5:
+                //        //pnlEmpty.SendToBack();
+                //        pnlCreatePatJournal.BringToFront();
+                //        break;
+
+
+                //}
+
+                switch ((int)btnPermissionBtn.Tag) // ??
+                {
+                    case 1:
+                        //pnlEmpty.SendToBack();
+                        panel3.BringToFront();
+                        break;
+                    case 2:
+                        //pnlEmpty.SendToBack();
+                        panel9.BringToFront();
+                        break;
+                    case 3:
+                        //pnlEmpty.SendToBack();
+                        panel7.BringToFront();
+                        break;
+                    case 4:
+                        //pnlEmpty.SendToBack();
+                        panel4.BringToFront();
+                        break;
+                    //case "Patient":
+                    //    //pnlEmpty.SendToBack();
+                    //    pnlUpptPatient.BringToFront();
+                    //    break;
+                    //case 5:
+                    //    //pnlEmpty.SendToBack();
+                    //    pnlCreatePatJournal.BringToFront();
+                    //    break;
+
+
+                }
+            }
+        }
+
+
 
 
 
@@ -250,26 +336,26 @@ namespace HospitalManagement
 
         //}
 
-        public void PrintPermissions(DataSet dsPermissions)
-        {
-            string menStrpPermissions = "Permission";
+        //public void PrintPermissions(DataSet dsPermissions)
+        //{
+        //    string menStrpPermissions = "Permission";
 
-            
-            
 
-            // For each table in the DataSet, print the values of each row.
-            foreach (string p in dsPermissions.Tables[0].Rows) /*ToolStripItem.ToolStripItemAccessibleObject.DropDownI)*/
-            {
-                // For each row, print the values of each column.
-                //foreach (DataRow toolStripComboBox in menStrpPermissions.Rows)
-                //{
-                //    //foreach (DataColumn column in menStrpPermissions.Columns)
-                //    //{
-                //    //    Console.WriteLine(toolStripComboBox[column]);
-                //    //}
-                //}
-            }
-        }
+
+
+        //    // For each table in the DataSet, print the values of each row.
+        //    foreach (string p in dsPermissions.Tables[0].Rows) /*ToolStripItem.ToolStripItemAccessibleObject.DropDownI)*/
+        //    {
+        //        // For each row, print the values of each column.
+        //        //foreach (DataRow toolStripComboBox in menStrpPermissions.Rows)
+        //        //{
+        //        //    //foreach (DataColumn column in menStrpPermissions.Columns)
+        //        //    //{
+        //        //    //    Console.WriteLine(toolStripComboBox[column]);
+        //        //    //}
+        //        //}
+        //    }
+        //}
 
 
         //private void BtnChoose_SelectedIndexChanged(object sender, EventArgs e)
