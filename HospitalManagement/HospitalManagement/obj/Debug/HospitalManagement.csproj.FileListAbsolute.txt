@@ -31,3 +31,4 @@ C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Deb
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.ResultCard.resources
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.Welcome.resources
 C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.LoginStaff.resources
+C:\Users\Awater\HospitalManagement\HospitalManagement\HospitalManagement\obj\Debug\HospitalManagement.csprojResolveAssemblyReference.cache

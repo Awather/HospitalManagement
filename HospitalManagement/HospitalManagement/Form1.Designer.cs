@@ -76,6 +76,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlSetVisitingHours.SuspendLayout();
@@ -184,6 +186,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1010, 380);
             this.panel2.TabIndex = 12;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnChoose
             // 
@@ -382,7 +385,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel3.Location = new System.Drawing.Point(274, 546);
+            this.panel3.Location = new System.Drawing.Point(269, 549);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(615, 356);
             this.panel3.TabIndex = 17;
@@ -416,7 +419,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel7.Controls.Add(this.label8);
-            this.panel7.Location = new System.Drawing.Point(274, 549);
+            this.panel7.Location = new System.Drawing.Point(274, 552);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(610, 312);
             this.panel7.TabIndex = 19;
@@ -487,7 +490,7 @@
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.button1);
-            this.panel4.Location = new System.Drawing.Point(274, 549);
+            this.panel4.Location = new System.Drawing.Point(274, 552);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(610, 353);
             this.panel4.TabIndex = 21;
@@ -535,13 +538,31 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Register Patient";
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DarkMagenta;
+            this.panel5.Location = new System.Drawing.Point(31, 577);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 100);
+            this.panel5.TabIndex = 22;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.MediumBlue;
+            this.panel6.Location = new System.Drawing.Point(31, 580);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 100);
+            this.panel6.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1430, 903);
+            this.ClientSize = new System.Drawing.Size(1073, 903);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel7);
@@ -628,5 +649,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
     }
 }

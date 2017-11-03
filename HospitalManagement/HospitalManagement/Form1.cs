@@ -26,18 +26,18 @@ namespace HospitalManagement
         public Form1()
         {
             InitializeComponent();
-            dsPermissions = DBAccess.GetRolesPermission("Doctor");
-            int posts = dsPermissions.Tables[0].Rows.Count;
+            //dsPermissions = DBAccess.GetRolesPermission("Doctor");
+            //int posts = dsPermissions.Tables[0].Rows.Count;
 
-            for (int i = 0; i < posts; i++)
+            //for (int i = 0; i < posts; i++)
             {
-                Button btnPermissionBtn = new Button();
-                btnPermissionBtn.Size = new Size(130, 23);
-                btnPermissionBtn.Location = new Point(160, 30 * i + 10);
-                btnPermissionBtn.Click += new EventHandler(ButtonClickOneEvent); // Ask jan about this
-                btnPermissionBtn.Tag = i; // Ask Jan about this
-                btnPermissionBtn.Text = dsPermissions.Tables[0].Rows[i][0].ToString(); // MORE QUESTIONS!
-                this.Controls.Add(btnPermissionBtn);
+                //Button btnPermissionBtn = new Button();
+                //btnPermissionBtn.Size = new Size(130, 23);
+                //btnPermissionBtn.Location = new Point(250, 25 * i + 100);     //(160, 30 * i + 10);
+                //btnPermissionBtn.Click += new EventHandler(ButtonClickOneEvent); // Ask jan about this
+                //btnPermissionBtn.Tag = i; // Ask Jan about this
+                //btnPermissionBtn.Text = dsPermissions.Tables[0].Rows[i][0].ToString(); // MORE QUESTIONS!
+                //this.Controls.Add(btnPermissionBtn);
 
             }
 
@@ -61,6 +61,23 @@ namespace HospitalManagement
             dsUserInfo = DBAccess.GetUserInformation(LoginStaff.userID);
             label2.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][0]) + " " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][1]);
             label3.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]) + " at " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][3]);
+
+            // Testing buttons on the Load-placement
+            dsPermissions = DBAccess.GetRolesPermission("Doctor");
+            int posts = dsPermissions.Tables[0].Rows.Count;
+
+            for (int i = 0; i < posts; i++)
+            {
+                Button btnPermissionBtn = new Button();
+                btnPermissionBtn.Size = new Size(130, 23);
+                btnPermissionBtn.Location = new Point(40, 25 * i + 170);   //(160 = y, 30 * i + 10 = x); 
+                // btnPermissionBtn.Parent.Controls.GetChildIndex(btnPermissionBtn);                
+                btnPermissionBtn.Click += new EventHandler(ButtonClickOneEvent); // Ask jan about this
+                btnPermissionBtn.Tag = i; // Ask Jan about this
+                btnPermissionBtn.Text = dsPermissions.Tables[0].Rows[i][0].ToString(); // MORE QUESTIONS!
+                this.Controls.Add(btnPermissionBtn);
+
+            }
 
 
             //Databasaccess här för att hämta permissions för denna user och lägga i en dropdown eller i annat
@@ -154,6 +171,8 @@ namespace HospitalManagement
 
         }
 
+
+
         private void btnGetPatient_Click(object sender, EventArgs e)
         {
             //DataSet dsPatientInfo = new DataSet();
@@ -193,6 +212,7 @@ namespace HospitalManagement
         void ButtonClickOneEvent(object sender, EventArgs e)
         {
             Button btnPermissionBtn = sender as Button;
+           // btnPermissionBtn.BringToFront();
             if (btnPermissionBtn != null)
             {
                 //switch ((int)btnPermissionBtn.Tag) // ??
@@ -227,19 +247,19 @@ namespace HospitalManagement
 
                 switch ((int)btnPermissionBtn.Tag) // ??
                 {
-                    case 1:
+                    case 0:
                         //pnlEmpty.SendToBack();
                         panel3.BringToFront();
                         break;
-                    case 2:
+                    case 1:
                         //pnlEmpty.SendToBack();
                         panel9.BringToFront();
                         break;
-                    case 3:
+                    case 2:
                         //pnlEmpty.SendToBack();
                         panel7.BringToFront();
                         break;
-                    case 4:
+                    case 3:
                         //pnlEmpty.SendToBack();
                         panel4.BringToFront();
                         break;
@@ -256,6 +276,25 @@ namespace HospitalManagement
                 }
             }
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e) // Background panel-colour must be SendToBack here, or else it does not work. 
+        {
+            panel2.SendToBack();
+        }
+
+
+        // Activate the Paint for funny glitch / animation. xD
+
+        //private void panel6_Paint(object sender, PaintEventArgs e)
+        //{
+        //    panel6.SendToBack();
+        //}
+
+        //private void panel5_Paint(object sender, PaintEventArgs e)
+        //{
+        //    panel5.SendToBack();
+        //}
+
 
 
 
