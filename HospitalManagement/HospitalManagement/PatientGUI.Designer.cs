@@ -28,37 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textDoctorNotesPatGUI = new System.Windows.Forms.TextBox();
+            this.pnlResultCard = new System.Windows.Forms.Panel();
+            this.pnlTesting = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // textDoctorNotesPatGUI
+            // pnlResultCard
             // 
-            this.textDoctorNotesPatGUI.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.textDoctorNotesPatGUI.Location = new System.Drawing.Point(85, 62);
-            this.textDoctorNotesPatGUI.Multiline = true;
-            this.textDoctorNotesPatGUI.Name = "textDoctorNotesPatGUI";
-            this.textDoctorNotesPatGUI.ReadOnly = true;
-            this.textDoctorNotesPatGUI.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textDoctorNotesPatGUI.Size = new System.Drawing.Size(308, 140);
-            this.textDoctorNotesPatGUI.TabIndex = 2;
-            this.textDoctorNotesPatGUI.TabStop = false;
+            this.pnlResultCard.BackColor = System.Drawing.Color.Transparent;
+            this.pnlResultCard.Location = new System.Drawing.Point(146, 12);
+            this.pnlResultCard.Name = "pnlResultCard";
+            this.pnlResultCard.Size = new System.Drawing.Size(573, 347);
+            this.pnlResultCard.TabIndex = 0;
+            // 
+            // pnlTesting
+            // 
+            this.pnlTesting.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTesting.Location = new System.Drawing.Point(146, 12);
+            this.pnlTesting.Name = "pnlTesting";
+            this.pnlTesting.Size = new System.Drawing.Size(573, 347);
+            this.pnlTesting.TabIndex = 1;
             // 
             // PatientGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 456);
-            this.Controls.Add(this.textDoctorNotesPatGUI);
+            this.Controls.Add(this.pnlTesting);
+            this.Controls.Add(this.pnlResultCard);
             this.Name = "PatientGUI";
             this.Text = "PatientGUI";
             this.Load += new System.EventHandler(this.PatientGUI_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textDoctorNotesPatGUI;
+        private System.Windows.Forms.Panel pnlResultCard;
+        private System.Windows.Forms.Panel pnlTesting;
     }
 }

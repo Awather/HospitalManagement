@@ -20,16 +20,20 @@ namespace HospitalManagement
         private void ResultCard_Load(object sender, EventArgs e)
         {
 
-            DataSet ds = new DataSet();
-            ds = DBAccess.GetDoctorsNotes(Form1.myPatient.PersonNumber);
+            //DataSet ds = new DataSet();
+            //ds = DBAccess.GetDoctorsNotes(Form1.myPatient.PersonNumber);
 
-            foreach (DataRow dr in ds.Tables[0].Rows)
+            //foreach (DataRow dr in ds.Tables[0].Rows)
 
-            {
-                txtResultCardNotes.Text = txtResultCardNotes.Text + Environment.NewLine + dr[0].ToString().Substring(0, 10)
-                + " " + dr[1].ToString().Substring(0, 5) + Environment.NewLine + dr[2].ToString() + Environment.NewLine;
+            //{
+            //    txtResultCardNotes.Text = txtResultCardNotes.Text + Environment.NewLine + dr[0].ToString().Substring(0, 10)
+            //    + " " + dr[1].ToString().Substring(0, 5) + Environment.NewLine + dr[2].ToString() + Environment.NewLine;
 
-            }
+            //}
+
+
+
+
         }
     }
 }

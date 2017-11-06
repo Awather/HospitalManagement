@@ -22,6 +22,7 @@ namespace HospitalManagement
         Control objct;
 
 
+
         //bool notRunFirstTime;
         public Form1()
         {
@@ -50,8 +51,8 @@ namespace HospitalManagement
 
         {
             lblEmpty.Text = Convert.ToString(LoginStaff.userID);   // Data placeras i labelxx
-                                                                  //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
-                                                                  //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
+                                                                   //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
+                                                                   //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
 
             /*pnlEmpty.BringToFront();*/ //-- Create empty panel as front.
                                          //Comment in other panels aswell when GUI is set
@@ -59,19 +60,28 @@ namespace HospitalManagement
             //Databasacccess här för att hämta info om inloggad
             DataSet dsUserInfo = new DataSet();
             dsUserInfo = DBAccess.GetUserInformation(LoginStaff.userID);
-            label2.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][0]) + " " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][1]);
-            label3.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]) + " at " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][3]);
+            lblStaffName.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][0]) + " " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][1]);
+            lblStaffPosition.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]) + " at " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][3]);
+
+
+
 
             // Testing buttons on the Load-placement
-            dsPermissions = DBAccess.GetRolesPermission("Doctor");
+
+            DataSet dsPermissions = new DataSet();
+            dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2])); // ("Doctor")
+            //dsPermissions = DBAccess.GetRolesPermission(LoginStaff.userID);
+
+
             int posts = dsPermissions.Tables[0].Rows.Count;
 
             for (int i = 0; i < posts; i++)
             {
                 Button btnPermissionBtn = new Button();
-                btnPermissionBtn.Size = new Size(130, 23);
-                btnPermissionBtn.Location = new Point(40, 25 * i + 170);   //(160 = y, 30 * i + 10 = x); 
-                // btnPermissionBtn.Parent.Controls.GetChildIndex(btnPermissionBtn);                
+                btnPermissionBtn.Size = new Size(130, 30);
+                btnPermissionBtn.Location = new Point(40, 30 * i + 50);   //(160 = y, 30 * i + 10 = x); 
+                // btnPermissionBtn.Parent.Controls.GetChildIndex(btnPermissionBtn);
+                btnPermissionBtn.ForeColor = Color.Black;
                 btnPermissionBtn.Click += new EventHandler(ButtonClickOneEvent); // Ask jan about this
                 btnPermissionBtn.Tag = i; // Ask Jan about this
                 btnPermissionBtn.Text = dsPermissions.Tables[0].Rows[i][0].ToString(); // MORE QUESTIONS!
@@ -104,6 +114,11 @@ namespace HospitalManagement
             lblNoPatient.Text = "";  // --Comment in
 
             //Gör en Person-patient-personal klass
+        }
+
+        private void BtnPermissionBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void btnUppdPatJournal_Click(object sender, EventArgs e)
@@ -209,254 +224,249 @@ namespace HospitalManagement
 
         }
 
+
+
         void ButtonClickOneEvent(object sender, EventArgs e)
+
         {
             Button btnPermissionBtn = sender as Button;
-           // btnPermissionBtn.BringToFront();
-            if (btnPermissionBtn != null)
-            {
-                //switch ((int)btnPermissionBtn.Tag) // ??
-                //{
-                //    case 0:
-                //        //pnlEmpty.SendToBack();
-                //        pnlSetVisitingHours.BringToFront();
-                //        break;
-                //    case 1:
-                //        //pnlEmpty.SendToBack();
-                //        pnlSetAppointHour.BringToFront();
-                //        break;
-                //    case 2:
-                //        //pnlEmpty.SendToBack();
-                //        pnlUppPatJournal.BringToFront();
-                //        break;
-                //    case 3:
-                //        //pnlEmpty.SendToBack();
-                //        pnlRegisPatient.BringToFront();
-                //        break;
-                //    case 4:
-                //        //pnlEmpty.SendToBack();
-                //        pnlUpptPatient.BringToFront();
-                //        break;
-                //    case 5:
-                //        //pnlEmpty.SendToBack();
-                //        pnlCreatePatJournal.BringToFront();
-                //        break;
+
+            //int posts = dsPermissions.Tables[0].Rows.Count;
+
+            // DataSet dsPermissions = new DataSet();
+            //dsPermissions = DBAccess.GetRolesPermission("Receptionist");
+            //dsPermissions = DBAccess.GetRolesPermission("Doctor");
 
 
-                //}
+            string roleTitle = lblStaffPosition.Text;
+            //string roleTitle1 = "Doctor";
+            //string roleTitle2 = "Nurse";
 
-                switch ((int)btnPermissionBtn.Tag) // ??
+
+            //int posts = dsPermissions.Tables[0].Rows.Count;
+
+            //if (btnPermissionBtn != null)
+
+                switch (roleTitle)
                 {
-                    case 0:
-                        //pnlEmpty.SendToBack();
-                        panel3.BringToFront();
-                        break;
-                    case 1:
-                        //pnlEmpty.SendToBack();
-                        panel9.BringToFront();
-                        break;
-                    case 2:
-                        //pnlEmpty.SendToBack();
-                        panel7.BringToFront();
-                        break;
-                    case 3:
-                        //pnlEmpty.SendToBack();
-                        panel4.BringToFront();
-                        break;
-                    //case "Patient":
-                    //    //pnlEmpty.SendToBack();
-                    //    pnlUpptPatient.BringToFront();
-                    //    break;
-                    //case 5:
-                    //    //pnlEmpty.SendToBack();
-                    //    pnlCreatePatJournal.BringToFront();
-                    //    break;
+                case "Doctor":
+                    {
+                        dsPermissions = DBAccess.GetRolesPermission("Doctor");
+                        int posts = dsPermissions.Tables[0].Rows.Count;
+                        if (btnPermissionBtn != null) break;
 
+                        switch ((int)btnPermissionBtn.Tag) // ??
+                        {
+                            case 0:
+                                //pnlEmpty.SendToBack();
+                                panel3.BringToFront();
+                                break;
+                            case 1:
+                                //pnlEmpty.SendToBack();
+                                panel9.BringToFront();
+                                break;
+                            case 2:
+                                //pnlEmpty.SendToBack();
+                                panel7.BringToFront();
+                                break;
+                            case 3:
+                                //pnlEmpty.SendToBack();
+                                panel4.BringToFront();
+                                break;
+                        }
+                    }
+ // ***************************
+                    //switch (roleTitle1) {
 
-                }
+                    //    if (btnPermissionBtn != null)
+
+                    //    switch ((int)btnPermissionBtn.Tag)
+                    //    {
+                    //        case 0:
+                    //            //pnlEmpty.SendToBack();
+                    //            panel3.BringToFront();
+                    //            break;
+                    //        case 1:
+                    //            //pnlEmpty.SendToBack();
+                    //            panel9.BringToFront();
+                    //            break;
+                    //        case 2:
+                    //            //pnlEmpty.SendToBack();
+                    //            panel7.BringToFront();
+                    //            break;
+                    //        case 3:
+                    //            //pnlEmpty.SendToBack();
+                    //            panel4.BringToFront();
+                    //            break;
+                    //    }
+
+                    break;
             }
         }
+    
+                                    //switch (roleTitle2) { }
+
+                                    //if (btnPermissionBtn != null)
+
+                                    //    switch ((int)btnPermissionBtn.Tag) // ??
+                                    //    {
+                                    //        case 0:
+                                    //            //pnlEmpty.SendToBack();
+                                    //            panel3.BringToFront();
+                                    //            break;
+                                    //        case 1:
+                                    //            //pnlEmpty.SendToBack();
+                                    //            panel9.BringToFront();
+                                    //            break;
+                                    //        case 2:
+                                    //            //pnlEmpty.SendToBack();
+                                    //            panel7.BringToFront();
+                                    //            break;
+                                    //        case 3:
+                                    //            //pnlEmpty.SendToBack();
+                                    //            panel4.BringToFront();
+                                    //            break;
+
+                                        
+                            
+                
+
+       
+
+
+
+
+        //    if (dsPermissions == DBAccess.GetRolesPermission("Nurse"))
+        //    {
+        //        //int posts = dsPermissions.Tables[0].Rows.Count;
+
+        //        if (btnPermissionBtn != null)
+
+
+        //            switch ((int)btnPermissionBtn.Tag) // ??
+        //            {
+        //                case 0:
+        //                    //pnlEmpty.SendToBack();
+        //                    panel3.BringToFront();
+        //                    break;
+        //                case 1:
+        //                    //pnlEmpty.SendToBack();
+        //                    panel9.BringToFront();
+        //                    break;
+        //                case 2:
+        //                    //pnlEmpty.SendToBack();
+        //                    panel7.BringToFront();
+        //                    break;
+        //                case 3:
+        //                    //pnlEmpty.SendToBack();
+        //                    panel4.BringToFront();
+        //                    break;
+        //            }
+
+
+        //    }
+        //    else
+        //    if (dsPermissions == DBAccess.GetRolesPermission("Receptionist"))
+        //    {
+        //        //int posts = dsPermissions.Tables[0].Rows.Count;
+
+        //        if (btnPermissionBtn != null)
+
+
+        //            switch ((int)btnPermissionBtn.Tag) // ??
+        //            {
+        //                case 0:
+        //                    //pnlEmpty.SendToBack();
+        //                    panel3.BringToFront();
+        //                    break;
+        //                case 1:
+        //                    //pnlEmpty.SendToBack();
+        //                    panel9.BringToFront();
+        //                    break;
+        //                case 2:
+        //                    //pnlEmpty.SendToBack();
+        //                    panel7.BringToFront();
+        //                    break;
+        //                case 3:
+        //                    //pnlEmpty.SendToBack();
+        //                    panel4.BringToFront();
+        //                    break;
+        //            }
+        //    }
+
+        //*************************************************
+
+        // btnPermissionBtn.BringToFront();
+        //if (btnPermissionBtn != null)
+        //    {
+
+        //        switch ((int)btnPermissionBtn.Tag) // ??
+        //        {
+        //            case 0:
+        //                //pnlEmpty.SendToBack();
+        //                panel3.BringToFront();
+        //                break;
+        //            case 1:
+        //                //pnlEmpty.SendToBack();
+        //                panel9.BringToFront();
+        //                break;
+        //            case 2:
+        //                //pnlEmpty.SendToBack();
+        //                panel7.BringToFront();
+        //                break;
+        //            case 3:
+        //                //pnlEmpty.SendToBack();
+        //                panel4.BringToFront();
+        //                break;
+        //case "Patient":
+        //    //pnlEmpty.SendToBack();
+        //    pnlUpptPatient.BringToFront();
+        //    break;
+        //case 5:
+        //    //pnlEmpty.SendToBack();
+        //    pnlCreatePatJournal.BringToFront();
+        //    break;
+
+        //********************************************************
+
+        //switch ((int)btnPermissionBtn.Tag) // ??
+        //{
+        //    case 0:
+        //        //pnlEmpty.SendToBack();
+        //        pnlSetVisitingHours.BringToFront();
+        //        break;
+        //    case 1:
+        //        //pnlEmpty.SendToBack();
+        //        pnlSetAppointHour.BringToFront();
+        //        break;
+        //    case 2:
+        //        //pnlEmpty.SendToBack();
+        //        pnlUppPatJournal.BringToFront();
+        //        break;
+        //    case 3:
+        //        //pnlEmpty.SendToBack();
+        //        pnlRegisPatient.BringToFront();
+        //        break;
+        //    case 4:
+        //        //pnlEmpty.SendToBack();
+        //        pnlUpptPatient.BringToFront();
+        //        break;
+        //    case 5:
+        //        //pnlEmpty.SendToBack();
+        //        pnlCreatePatJournal.BringToFront();
+        //        break;
+
+
+        //}
+
+
+
+
 
         private void panel2_Paint(object sender, PaintEventArgs e) // Background panel-colour must be SendToBack here, or else it does not work. 
         {
             panel2.SendToBack();
         }
-
-
-        // Activate the Paint for funny glitch / animation. xD
-
-        //private void panel6_Paint(object sender, PaintEventArgs e)
-        //{
-        //    panel6.SendToBack();
-        //}
-
-        //private void panel5_Paint(object sender, PaintEventArgs e)
-        //{
-        //    panel5.SendToBack();
-        //}
-
-
-
-
-
-
-        // FAILED ATTEMPTS
-
-
-        //MenuStrip menuStrpRolePermission = new MenuStrip();
-
-        //toolStripMenuItem1 = toolStripMenuItem1;
-        //Controls.Add(menuStrpRolePermission);
-
-        //MainMenuStrip.Name = "menuStrip2";
-
-        //ToolStripMenuItem FileMenu = new ToolStripMenuItem("File");
-
-
-
-
-        //menuStrpRolePermission.
-
-        //List<string> menuItems = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
-        //ContextMenuStrip menuStrpRolePermission = new ContextMenuStrip();
-
-        //foreach (var menuItem in menuItems)
-        //{
-        //    MenuItem item = new MenuItem(menuItem);
-        //    item.Text = menuItem;
-        //    item.Click += new EventHandler(item_Click);// item_click is event handler name
-        //                                                item.MenuItems.Add(); you could use this to add sub items
-        //}
-
-        //panel1.Controls.Add(menu);
-
-
-        //Gör en Person-patient-personal klass
-
-
-
-        //cmbPermissions.Items.Clear();
-
-        //dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
-        //cmbPermissions.DataSource = dsPermissions.Tables[0];
-        //cmbPermissions.DisplayMember = "Permission";
-
-        //    public void PrintPermissions(DataSet dsPermissions)
-        //    {
-        //        // For each table in the DataSet, print the values of each row.
-        //        foreach (DataTable menStrpPermissions in dsPermissions.Tables)
-        //        {
-        //            // For each row, print the values of each column.
-        //            foreach (DataRow toolStripComboBox in menStrpPermissions.Rows)
-        //            {
-        //                foreach (DataColumn column in menStrpPermissions.Columns)
-        //                {
-        //                    Console.WriteLine(toolStripComboBox[column]);
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //    public void AddARow(DataSet dsPermissions)
-        //    {
-        //        DataTable table;
-        //        table = dsPermissions.Tables["Permissions"];
-        //        // Use the NewRow method to create a DataRow with 
-        //        // the table's schema.
-        //        DataRow newRow = table.NewRow();
-
-        //        // Set values in the columns:
-        //        newRow["Permission"] = DBAccess.GetRolesPermission(Convert.ToString(dsPermissions.Tables[0].Rows[0][2])); 
-        //        newRow["CompanyName"] = "NewCompanyName";
-
-        //        // Add the row to the rows collection.
-        //        table.Rows.Add(newRow);
-        //    }
-
-        //}
-
-        //public void PrintPermissions(DataSet dsPermissions)
-        //{
-        //    string menStrpPermissions = "Permission";
-
-
-
-
-        //    // For each table in the DataSet, print the values of each row.
-        //    foreach (string p in dsPermissions.Tables[0].Rows) /*ToolStripItem.ToolStripItemAccessibleObject.DropDownI)*/
-        //    {
-        //        // For each row, print the values of each column.
-        //        //foreach (DataRow toolStripComboBox in menStrpPermissions.Rows)
-        //        //{
-        //        //    //foreach (DataColumn column in menStrpPermissions.Columns)
-        //        //    //{
-        //        //    //    Console.WriteLine(toolStripComboBox[column]);
-        //        //    //}
-        //        //}
-        //    }
-        //}
-
-
-        //private void BtnChoose_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //        string choice = Convert.ToString(cmbPermissions.SelectedValue);
-
-        //private void btnChoose_Click(object sender, EventArgs e)
-        //{
-        //    string choice = (cmbPermissions.Text);
-
-        //    if (choice == "Set Appointment Hours") //"Set Visiting Hours" Ändra till korrekt om rätt
-        //        {
-        //            PnlDoc1.BringToFront();
-        //            //pnlDoc01.Visible = false;s
-        //            //pnlDoc02.Visible = true;
-        //        }
-        //        if (choice == "Register Patients")
-        //        {
-        //            PnlDoc2.BringToFront();
-        //            //pnlDoc02.Visible = false;
-        //            //pnlDoc01.Visible = true;
-        //        }
-        //        if (choice == "Create Patients Journal") // "Update patients journal" Ändra till korrekt om rätt
-        //    {
-        //            PnlDoc3.BringToFront();
-        //            //pnlDoc02.Visible = false;
-        //            //pnlDoc01.Visible = true;
-        //        }
-        //    }
-
-        // AWE - Different View panelt. - ALTER and put into current design
-
-        //// Test for Receptionist
-        //private void btnChoose_Click(object sender, EventArgs e)
-        //{
-        //    string choice = (cmbPermissions.Text);
-
-        //    if ((choice == "Register Patients") || (choice == "Create Patients Journal") || (choice == "Release Patients"))
-        //    {
-        //        PnlDoc1.BringToFront();
-        //        //pnlDoc01.Visible = false;s
-        //        //pnlDoc02.Visible = true;
-        //    }
-        //    if ((choice == "Set Patient’s Appointments With Doctors") || (choice == "Search All The Doctors") || (choice == "Search All The Patients And Their Status"))
-        //    {
-        //        PnlDoc2.BringToFront();
-        //        //pnlDoc02.Visible = false;
-        //        //pnlDoc01.Visible = true;
-        //    }
-        //    if ((choice == "View The Prescriptions") || (choice == "View The Duty Schedule") || (choice == "View Patients Room"))
-        //    {
-        //        PnlDoc3.BringToFront();
-        //        //pnlDoc02.Visible = false;
-        //        //pnlDoc01.Visible = true;
-        //    }
-        //    if ((choice == "Register Patients"))
-        //    {
-        //        PnlDoc4.BringToFront();
-        //        //pnlDoc02.Visible = false;
-        //        //pnlDoc01.Visible = true;
-        //    }
-        //}
 
     }
 

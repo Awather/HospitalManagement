@@ -57,11 +57,13 @@ namespace HospitalManagement
                 Patient = txtUsernamePatient.Text; // Värdet som ska skickas
 
 
-                ResultCard frmResultCard = new ResultCard();
-                frmResultCard.Show();
+                //ResultCard frmResultCard = new ResultCard();
+                //frmResultCard.Show();
 
-                //PatientJournal frmPatientGUI = new PatientJournal();
-                //frmPatientGUI.Show();
+                PatientGUI frmPatientGUI = new PatientGUI();
+                frmPatientGUI.Show();
+
+                this.Hide();
             }
 
         }

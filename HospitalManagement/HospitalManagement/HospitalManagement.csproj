@@ -157,6 +157,9 @@
     <EmbeddedResource Include="LoginTest.resx">
       <DependentUpon>LoginTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PatientGUI.resx">
+      <DependentUpon>PatientGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PatientJournal.resx">
       <DependentUpon>PatientJournal.cs</DependentUpon>
     </EmbeddedResource>
