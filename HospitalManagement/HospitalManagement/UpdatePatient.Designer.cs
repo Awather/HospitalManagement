@@ -74,7 +74,7 @@
             this.chkFemale.TabIndex = 21;
             this.chkFemale.Text = "Woman";
             this.chkFemale.UseVisualStyleBackColor = true;
-            this.chkFemale.CheckedChanged += new System.EventHandler(this.chkFemale_CheckedChanged);
+            this.chkFemale.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkFemale_MouseClick);
             // 
             // chkMale
             // 
@@ -86,7 +86,7 @@
             this.chkMale.TabIndex = 19;
             this.chkMale.Text = "Man";
             this.chkMale.UseVisualStyleBackColor = true;
-            this.chkMale.CheckedChanged += new System.EventHandler(this.chkMale_CheckedChanged);
+            this.chkMale.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkMale_MouseClick);
             // 
             // label10
             // 

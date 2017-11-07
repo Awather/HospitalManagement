@@ -49,43 +49,5 @@ namespace HospitalManagement
             chkPatient.Checked = true;
             chkEmployee.Checked = false;
         }
-
-        //private void chkEmployee_Click(object sender, EventArgs e)
-        //{
-        //    if (chkEmployee.Checked)
-        //    {
-        //        chkEmployee.Checked = false;
-        //        chkPatient.Checked = true;
-        //    }
-        //    else
-        //    {
-        //        chkEmployee.Checked = true;
-        //        chkPatient.Checked = false;
-        //    }
-
-
-        //}
-
-
-
-
-        //private void chkPatient_Click(object sender, EventArgs e)
-        //{
-        //    if (chkPatient.Checked)
-        //    {
-        //        chkPatient.Checked = false;
-        //        chkEmployee.Checked = true;
-        //    }
-        //    else
-        //    {
-        //        chkPatient.Checked = true;
-        //        chkEmployee.Checked = false;
-        //    }
-
-        //}
-
-
-
-
     }
 }

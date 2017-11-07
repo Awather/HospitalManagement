@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancelStaff = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUsernameStaff = new System.Windows.Forms.TextBox();
             this.txtPasswordStaff = new System.Windows.Forms.TextBox();
@@ -36,14 +37,13 @@
             this.txtLogin = new System.Windows.Forms.Label();
             this.btnLoginStaff = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCancelStaff = new System.Windows.Forms.Button();
             this.btnBackStaff = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Pink;
+            this.panel1.BackColor = System.Drawing.Color.FloralWhite;
             this.panel1.Controls.Add(this.btnCancelStaff);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtUsernameStaff);
@@ -56,6 +56,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(294, 250);
             this.panel1.TabIndex = 20;
+            // 
+            // btnCancelStaff
+            // 
+            this.btnCancelStaff.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCancelStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelStaff.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancelStaff.Location = new System.Drawing.Point(57, 174);
+            this.btnCancelStaff.Name = "btnCancelStaff";
+            this.btnCancelStaff.Size = new System.Drawing.Size(195, 34);
+            this.btnCancelStaff.TabIndex = 16;
+            this.btnCancelStaff.Text = "Cancel";
+            this.btnCancelStaff.UseVisualStyleBackColor = false;
+            this.btnCancelStaff.Click += new System.EventHandler(this.btnCancelStaff_Click);
             // 
             // label3
             // 
@@ -130,19 +143,6 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Password";
             // 
-            // btnCancelStaff
-            // 
-            this.btnCancelStaff.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCancelStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelStaff.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelStaff.Location = new System.Drawing.Point(57, 174);
-            this.btnCancelStaff.Name = "btnCancelStaff";
-            this.btnCancelStaff.Size = new System.Drawing.Size(195, 34);
-            this.btnCancelStaff.TabIndex = 16;
-            this.btnCancelStaff.Text = "Cancel";
-            this.btnCancelStaff.UseVisualStyleBackColor = false;
-            this.btnCancelStaff.Click += new System.EventHandler(this.btnCancelStaff_Click);
-            // 
             // btnBackStaff
             // 
             this.btnBackStaff.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -159,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lavender;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(821, 443);
             this.Controls.Add(this.btnBackStaff);
             this.Controls.Add(this.panel1);

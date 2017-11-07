@@ -210,16 +210,29 @@ namespace HospitalManagement
             UpdatePatient.ActiveForm.Close();
         }
 
-        private void chkFemale_CheckedChanged(object sender, EventArgs e)
+        private void chkMale_MouseClick(object sender, MouseEventArgs e)
+        {
+            chkMale.Checked = true;
+            chkFemale.Checked = false;
+        }
+
+        private void chkFemale_MouseClick(object sender, MouseEventArgs e)
         {
             chkFemale.Checked = true;
             chkMale.Checked = false;
         }
 
-        private void chkMale_CheckedChanged(object sender, EventArgs e)
-        {
-            chkMale.Checked = true;
-            chkFemale.Checked = false;
-        }
+
+        //private void chkFemale_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    chkFemale.Checked = true;
+        //    chkMale.Checked = false;
+        //}
+
+        //private void chkMale_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    chkMale.Checked = true;
+        //    chkFemale.Checked = false;
+        //}
     }
 }

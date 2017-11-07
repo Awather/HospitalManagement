@@ -27,25 +27,8 @@ namespace HospitalManagement
         public Form1()
         {
             InitializeComponent();
-            //dsPermissions = DBAccess.GetRolesPermission("Doctor");
-            //int posts = dsPermissions.Tables[0].Rows.Count;
-
-            //for (int i = 0; i < posts; i++)
-            {
-                //Button btnPermissionBtn = new Button();
-                //btnPermissionBtn.Size = new Size(130, 23);
-                //btnPermissionBtn.Location = new Point(250, 25 * i + 100);     //(160, 30 * i + 10);
-                //btnPermissionBtn.Click += new EventHandler(ButtonClickOneEvent); // Ask jan about this
-                //btnPermissionBtn.Tag = i; // Ask Jan about this
-                //btnPermissionBtn.Text = dsPermissions.Tables[0].Rows[i][0].ToString(); // MORE QUESTIONS!
-                //this.Controls.Add(btnPermissionBtn);
-
-            }
-
 
         }
-
-
 
         private void Form1_Load(object sender, EventArgs e)
 
@@ -54,8 +37,8 @@ namespace HospitalManagement
                                                                    //label2.Text = Login.skurk.FName;   //fångar upp data från LoginForm
                                                                    //label3.Text = Login.sjuk.bilen.Fabrikat;  //fångar upp data från LoginForm
 
-            /*pnlEmpty.BringToFront();*/ //-- Create empty panel as front.
-                                         //Comment in other panels aswell when GUI is set
+            pnlEmpty.BringToFront(); //-- Create empty panel as front.
+                                     //Comment in other panels aswell when GUI is set
 
             //Databasacccess här för att hämta info om inloggad
             DataSet dsUserInfo = new DataSet();
@@ -81,6 +64,9 @@ namespace HospitalManagement
                 btnPermissionBtn.Size = new Size(130, 30);
                 btnPermissionBtn.Location = new Point(40, 30 * i + 50);   //(160 = y, 30 * i + 10 = x); 
                 // btnPermissionBtn.Parent.Controls.GetChildIndex(btnPermissionBtn);
+                //btnPermissionBtn.FlatAppearance.BorderSize{ }
+                btnPermissionBtn.FlatStyle = FlatStyle.Popup;
+                btnPermissionBtn.ForeColor = Button.DefaultBackColor;
                 btnPermissionBtn.ForeColor = Color.Black;
                 btnPermissionBtn.Click += new EventHandler(ButtonClickOneEvent); // Ask jan about this
                 btnPermissionBtn.Tag = i; // Ask Jan about this
@@ -93,25 +79,29 @@ namespace HospitalManagement
             //Databasaccess här för att hämta permissions för denna user och lägga i en dropdown eller i annat
             //Här fylls en dropdown med permissions för denna user
 
+ // *********************************
+            // DROPDOWN BOX
 
-            cmbPermissions.Items.Clear();
+            //cmbPermissions.Items.Clear();
 
-            dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
-            cmbPermissions.DataSource = dsPermissions.Tables[0];
-            cmbPermissions.DisplayMember = "Permission";
-
-
-
-
-
-            //vill ha blankrad som första rad
-            DataRow row = dsPermissions.Tables[0].NewRow();
-            row["Permission"] = "";                     //insert a blank row - you can even write something like = "Please select bellow...";
-            dsPermissions.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
-            cmbPermissions.SelectedIndex = 0;
+            //dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
+            //cmbPermissions.DataSource = dsPermissions.Tables[0];
+            //cmbPermissions.DisplayMember = "Permission";
 
 
-            lblNoPatient.Text = "";  // --Comment in
+
+
+
+            ////vill ha blankrad som första rad
+            //DataRow row = dsPermissions.Tables[0].NewRow();
+            //row["Permission"] = "";                     //insert a blank row - you can even write something like = "Please select bellow...";
+            //dsPermissions.Tables[0].Rows.InsertAt(row, 0); //insert new row to index 0 (on top=0)
+            //cmbPermissions.SelectedIndex = 0;
+
+
+            //lblNoPatient.Text = "";  // --Comment in
+
+// *********************************
 
             //Gör en Person-patient-personal klass
         }
@@ -136,55 +126,45 @@ namespace HospitalManagement
                 PatientJournal frmPatientJournal = new PatientJournal();
                 frmPatientJournal.Show();
             }
-
-            //if (TestaIndata())
-            //{
-            //    MessageBox.Show(felMedd);
-            //    obj.Focus();
-            //}
-            //else
-            //{
-            //    //här kan jag gå till db och hämta upp data om en patient
-
-            //}
-
         }
 
-        private void btnChoose_Click(object sender, EventArgs e)
-        {
-            string choice = (cmbPermissions.Text);
-            //pnlEmpty.BringToFront();
-            switch (choice)
-            {
-                case "Set Visiting Hours":
-                    //pnlEmpty.SendToBack();
-                    pnlSetVisitingHours.BringToFront();
-                    break;
-                case "Set Appointment Hours":
-                    //pnlEmpty.SendToBack();
-                    pnlSetAppointHour.BringToFront();
-                    break;
-                case "Update Patients Journal":
-                    //pnlEmpty.SendToBack();
-                    pnlUppPatJournal.BringToFront();
-                    break;
-                case "Register Patients":
-                    //pnlEmpty.SendToBack();
-                    pnlRegisPatient.BringToFront();
-                    break;
-                case "Update Patients Information":
-                    //pnlEmpty.SendToBack();
-                    pnlUpptPatient.BringToFront();
-                    break;
-                case "Create Patients Journal":
-                    //pnlEmpty.SendToBack();
-                    pnlCreatePatJournal.BringToFront();
-                    break;
-            }
+    //***************************************************
+    // SWITCH - CASE  for  DROPDOWN BOX
 
-
-
-        }
+        // Choose button 
+        //private void btnChoose_Click(object sender, EventArgs e)
+        //{
+        //    string choice = (cmbPermissions.Text);
+        //    pnlEmpty.BringToFront();
+        //    switch (choice)
+        //    {
+        //        case "Set Visiting Hours":
+        //            pnlEmpty.SendToBack();
+        //            pnlSetVisitingHours.BringToFront();
+        //            break;
+        //        case "Set Appointment Hours":
+        //            pnlEmpty.SendToBack();
+        //            pnlSetAppointHour.BringToFront();
+        //            break;
+        //        case "Update Patients Journal":
+        //            pnlEmpty.SendToBack();
+        //            pnlUppPatJournal.BringToFront();
+        //            break;
+        //        case "Register Patients":
+        //            pnlEmpty.SendToBack();
+        //            pnlRegisPatient.BringToFront();
+        //            break;
+        //        case "Update Patients Information":
+        //            pnlEmpty.SendToBack();
+        //            pnlUpptPatient.BringToFront();
+        //            break;
+        //        case "Create Patients Journal":
+        //            pnlEmpty.SendToBack();
+        //            pnlCreatePatJournal.BringToFront();
+        //            break;
+        //    }
+        //}
+    //**************************************************
 
 
 
@@ -212,9 +192,25 @@ namespace HospitalManagement
         }
 
         private void btnCreateJournal_Click(object sender, EventArgs e)
+
         {
+            //DataSet dsPatientInfo = new DataSet();
+            //dsPatientInfo = dbAccess.GetPatientInfo(txtPersonnummer.Text);
+            //string vcd = Convert.ToString(dsPatientInfo.Tables[0].Rows[0][0]);
 
+            myPatient = DBAccess.GetPatientInformation(txtPersN1UpdPat.Text);
 
+            //
+            if (myPatient.PersonNumber == null)
+            {
+                lblNoPatient.Text = "Patients does not exsist in the registry!";
+            }
+            else
+            {
+                // if personnumber is in the database
+                PatientJournal frmPatientJournal = new PatientJournal();
+                frmPatientJournal.Show();
+            }
         }
 
         private void btnRegisPatient_Click(object sender, EventArgs e)
@@ -242,232 +238,55 @@ namespace HospitalManagement
             //string roleTitle1 = "Doctor";
             //string roleTitle2 = "Nurse";
 
+            // dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
 
             //int posts = dsPermissions.Tables[0].Rows.Count;
 
-            //if (btnPermissionBtn != null)
+            if (btnPermissionBtn != null)
 
-                switch (roleTitle)
-                {
-                case "Doctor":
-                    {
-                        dsPermissions = DBAccess.GetRolesPermission("Doctor");
-                        int posts = dsPermissions.Tables[0].Rows.Count;
-                        if (btnPermissionBtn != null) break;
+                //switch (roleTitle)
+                //{
+                //case "Doctor":
+                //    {
+                //        dsPermissions = DBAccess.GetRolesPermission("Doctor");
+                //        int posts = dsPermissions.Tables[0].Rows.Count;
+                //        if (btnPermissionBtn != null) break;
 
-                        switch ((int)btnPermissionBtn.Tag) // ??
+                switch ((int)btnPermissionBtn.Tag) // ??
                         {
                             case 0:
                                 //pnlEmpty.SendToBack();
-                                panel3.BringToFront();
+                                pnlSetVisitingHours.BringToFront();
                                 break;
                             case 1:
                                 //pnlEmpty.SendToBack();
-                                panel9.BringToFront();
+                                pnlSetAppointHour.BringToFront();
                                 break;
                             case 2:
                                 //pnlEmpty.SendToBack();
-                                panel7.BringToFront();
+                                pnlUppPatJournal.BringToFront();
                                 break;
                             case 3:
                                 //pnlEmpty.SendToBack();
-                                panel4.BringToFront();
+                                pnlRegisPatient.BringToFront();
                                 break;
+                            //case 4:
+                            //    //pnlEmpty.SendToBack();
+                            //    pnlUpptPatient.BringToFront();
+                            //    break;
+                            //case 5:
+                            //    //pnlEmpty.SendToBack();
+                            //    pnlCreatePatJournal.BringToFront();
+                            //    break;
+
+
                         }
                     }
- // ***************************
-                    //switch (roleTitle1) {
-
-                    //    if (btnPermissionBtn != null)
-
-                    //    switch ((int)btnPermissionBtn.Tag)
-                    //    {
-                    //        case 0:
-                    //            //pnlEmpty.SendToBack();
-                    //            panel3.BringToFront();
-                    //            break;
-                    //        case 1:
-                    //            //pnlEmpty.SendToBack();
-                    //            panel9.BringToFront();
-                    //            break;
-                    //        case 2:
-                    //            //pnlEmpty.SendToBack();
-                    //            panel7.BringToFront();
-                    //            break;
-                    //        case 3:
-                    //            //pnlEmpty.SendToBack();
-                    //            panel4.BringToFront();
-                    //            break;
-                    //    }
-
-                    break;
-            }
-        }
-    
-                                    //switch (roleTitle2) { }
-
-                                    //if (btnPermissionBtn != null)
-
-                                    //    switch ((int)btnPermissionBtn.Tag) // ??
-                                    //    {
-                                    //        case 0:
-                                    //            //pnlEmpty.SendToBack();
-                                    //            panel3.BringToFront();
-                                    //            break;
-                                    //        case 1:
-                                    //            //pnlEmpty.SendToBack();
-                                    //            panel9.BringToFront();
-                                    //            break;
-                                    //        case 2:
-                                    //            //pnlEmpty.SendToBack();
-                                    //            panel7.BringToFront();
-                                    //            break;
-                                    //        case 3:
-                                    //            //pnlEmpty.SendToBack();
-                                    //            panel4.BringToFront();
-                                    //            break;
-
-                                        
-                            
-                
-
-       
-
-
-
-
-        //    if (dsPermissions == DBAccess.GetRolesPermission("Nurse"))
-        //    {
-        //        //int posts = dsPermissions.Tables[0].Rows.Count;
-
-        //        if (btnPermissionBtn != null)
-
-
-        //            switch ((int)btnPermissionBtn.Tag) // ??
-        //            {
-        //                case 0:
-        //                    //pnlEmpty.SendToBack();
-        //                    panel3.BringToFront();
-        //                    break;
-        //                case 1:
-        //                    //pnlEmpty.SendToBack();
-        //                    panel9.BringToFront();
-        //                    break;
-        //                case 2:
-        //                    //pnlEmpty.SendToBack();
-        //                    panel7.BringToFront();
-        //                    break;
-        //                case 3:
-        //                    //pnlEmpty.SendToBack();
-        //                    panel4.BringToFront();
-        //                    break;
-        //            }
-
-
-        //    }
-        //    else
-        //    if (dsPermissions == DBAccess.GetRolesPermission("Receptionist"))
-        //    {
-        //        //int posts = dsPermissions.Tables[0].Rows.Count;
-
-        //        if (btnPermissionBtn != null)
-
-
-        //            switch ((int)btnPermissionBtn.Tag) // ??
-        //            {
-        //                case 0:
-        //                    //pnlEmpty.SendToBack();
-        //                    panel3.BringToFront();
-        //                    break;
-        //                case 1:
-        //                    //pnlEmpty.SendToBack();
-        //                    panel9.BringToFront();
-        //                    break;
-        //                case 2:
-        //                    //pnlEmpty.SendToBack();
-        //                    panel7.BringToFront();
-        //                    break;
-        //                case 3:
-        //                    //pnlEmpty.SendToBack();
-        //                    panel4.BringToFront();
-        //                    break;
-        //            }
-        //    }
-
-        //*************************************************
-
-        // btnPermissionBtn.BringToFront();
-        //if (btnPermissionBtn != null)
-        //    {
-
-        //        switch ((int)btnPermissionBtn.Tag) // ??
-        //        {
-        //            case 0:
-        //                //pnlEmpty.SendToBack();
-        //                panel3.BringToFront();
-        //                break;
-        //            case 1:
-        //                //pnlEmpty.SendToBack();
-        //                panel9.BringToFront();
-        //                break;
-        //            case 2:
-        //                //pnlEmpty.SendToBack();
-        //                panel7.BringToFront();
-        //                break;
-        //            case 3:
-        //                //pnlEmpty.SendToBack();
-        //                panel4.BringToFront();
-        //                break;
-        //case "Patient":
-        //    //pnlEmpty.SendToBack();
-        //    pnlUpptPatient.BringToFront();
-        //    break;
-        //case 5:
-        //    //pnlEmpty.SendToBack();
-        //    pnlCreatePatJournal.BringToFront();
-        //    break;
-
-        //********************************************************
-
-        //switch ((int)btnPermissionBtn.Tag) // ??
-        //{
-        //    case 0:
-        //        //pnlEmpty.SendToBack();
-        //        pnlSetVisitingHours.BringToFront();
-        //        break;
-        //    case 1:
-        //        //pnlEmpty.SendToBack();
-        //        pnlSetAppointHour.BringToFront();
-        //        break;
-        //    case 2:
-        //        //pnlEmpty.SendToBack();
-        //        pnlUppPatJournal.BringToFront();
-        //        break;
-        //    case 3:
-        //        //pnlEmpty.SendToBack();
-        //        pnlRegisPatient.BringToFront();
-        //        break;
-        //    case 4:
-        //        //pnlEmpty.SendToBack();
-        //        pnlUpptPatient.BringToFront();
-        //        break;
-        //    case 5:
-        //        //pnlEmpty.SendToBack();
-        //        pnlCreatePatJournal.BringToFront();
-        //        break;
-
-
-        //}
-
-
-
-
 
         private void panel2_Paint(object sender, PaintEventArgs e) // Background panel-colour must be SendToBack here, or else it does not work. 
         {
             panel2.SendToBack();
         }
-
     }
 
 }

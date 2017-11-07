@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpGender = new System.Windows.Forms.GroupBox();
             this.chkFemale = new System.Windows.Forms.CheckBox();
             this.chkMale = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -51,24 +50,13 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPersnNumber = new System.Windows.Forms.TextBox();
-            this.grpGender.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // grpGender
-            // 
-            this.grpGender.Controls.Add(this.chkFemale);
-            this.grpGender.Controls.Add(this.chkMale);
-            this.grpGender.Location = new System.Drawing.Point(137, 359);
-            this.grpGender.Name = "grpGender";
-            this.grpGender.Size = new System.Drawing.Size(80, 47);
-            this.grpGender.TabIndex = 64;
-            this.grpGender.TabStop = false;
             // 
             // chkFemale
             // 
             this.chkFemale.AutoCheck = false;
             this.chkFemale.AutoSize = true;
-            this.chkFemale.Location = new System.Drawing.Point(13, 24);
+            this.chkFemale.Location = new System.Drawing.Point(161, 380);
             this.chkFemale.Name = "chkFemale";
             this.chkFemale.Size = new System.Drawing.Size(66, 20);
             this.chkFemale.TabIndex = 21;
@@ -80,7 +68,7 @@
             // 
             this.chkMale.AutoCheck = false;
             this.chkMale.AutoSize = true;
-            this.chkMale.Location = new System.Drawing.Point(13, 1);
+            this.chkMale.Location = new System.Drawing.Point(161, 350);
             this.chkMale.Name = "chkMale";
             this.chkMale.Size = new System.Drawing.Size(50, 20);
             this.chkMale.TabIndex = 19;
@@ -285,7 +273,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(470, 444);
-            this.Controls.Add(this.grpGender);
+            this.Controls.Add(this.chkMale);
+            this.Controls.Add(this.chkFemale);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnRegister);
@@ -310,16 +299,12 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "RegisterPatients";
             this.Text = "RegisterPatients";
-            this.grpGender.ResumeLayout(false);
-            this.grpGender.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox grpGender;
         private System.Windows.Forms.CheckBox chkFemale;
         private System.Windows.Forms.CheckBox chkMale;
         private System.Windows.Forms.Label label10;
