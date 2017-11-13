@@ -127,7 +127,7 @@ namespace HospitalManagement
             else
             {
                 wrongWritten = true;
-                errorMessage = "Person-number is wrongly typed! \nUse format: YYYYMMDD-XXXX";
+                errorMessage = "Person-number is typed wrong! \nUse format: YYYYMMDD-XXXX";
                 objct = txtPersnNumber;
                 return wrongWritten;
             }

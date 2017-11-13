@@ -18,7 +18,7 @@ namespace HospitalManagement
         const int MaxPersNr = 20171231;
         public static Patient myPatient;
 
-        private string errorMessage = "";
+        // private string errorMessage = "";
         Control objct;
 
 
@@ -79,7 +79,7 @@ namespace HospitalManagement
             //Databasaccess här för att hämta permissions för denna user och lägga i en dropdown eller i annat
             //Här fylls en dropdown med permissions för denna user
 
- // *********************************
+            // *********************************
             // DROPDOWN BOX
 
             //cmbPermissions.Items.Clear();
@@ -101,15 +101,15 @@ namespace HospitalManagement
 
             //lblNoPatient.Text = "";  // --Comment in
 
-// *********************************
+            // *********************************
 
             //Gör en Person-patient-personal klass
         }
 
-        private void BtnPermissionBtn_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        //private void BtnPermissionBtn_Click(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private void btnUppdPatJournal_Click(object sender, EventArgs e)
         {
@@ -118,7 +118,8 @@ namespace HospitalManagement
             if (myPatient.PersonNumber == null)
 
             {
-                lblNoPatient.Text = "Patients does not exsist in the registry!";
+                MessageBox.Show("Patients does not exsist in the registry!");
+                objct = txtPersN2UpdJour;
             }
             else
             {
@@ -128,8 +129,8 @@ namespace HospitalManagement
             }
         }
 
-    //***************************************************
-    // SWITCH - CASE  for  DROPDOWN BOX
+        //***************************************************
+        // SWITCH - CASE  for  DROPDOWN BOX
 
         // Choose button 
         //private void btnChoose_Click(object sender, EventArgs e)
@@ -164,7 +165,7 @@ namespace HospitalManagement
         //            break;
         //    }
         //}
-    //**************************************************
+        //**************************************************
 
 
 
@@ -179,7 +180,8 @@ namespace HospitalManagement
             //
             if (myPatient.PersonNumber == null)
             {
-                lblNoPatient.Text = "Patients does not exsist in the registry!";
+                MessageBox.Show("Patients does not exsist in the registry!");
+                objct = txtPersN1UpdPat;
             }
             else
             {
@@ -190,28 +192,31 @@ namespace HospitalManagement
 
 
         }
+        //******************************************************
+        // CREATE PATIENT JOURNAL - Remove since Journal is automatically created when patient is registered.
 
-        private void btnCreateJournal_Click(object sender, EventArgs e)
+        //private void btnCreateJournal_Click(object sender, EventArgs e)
 
-        {
-            //DataSet dsPatientInfo = new DataSet();
-            //dsPatientInfo = dbAccess.GetPatientInfo(txtPersonnummer.Text);
-            //string vcd = Convert.ToString(dsPatientInfo.Tables[0].Rows[0][0]);
+        //{
+        //    //DataSet dsPatientInfo = new DataSet();
+        //    //dsPatientInfo = dbAccess.GetPatientInfo(txtPersonnummer.Text);
+        //    //string vcd = Convert.ToString(dsPatientInfo.Tables[0].Rows[0][0]);
 
-            myPatient = DBAccess.GetPatientInformation(txtPersN1UpdPat.Text);
+        //    myPatient = DBAccess.GetPatientInformation(txtPersN2UpdJour.Text);
 
-            //
-            if (myPatient.PersonNumber == null)
-            {
-                lblNoPatient.Text = "Patients does not exsist in the registry!";
-            }
-            else
-            {
-                // if personnumber is in the database
-                PatientJournal frmPatientJournal = new PatientJournal();
-                frmPatientJournal.Show();
-            }
-        }
+        //    //
+        //    if (myPatient.PersonNumber == null)
+        //    {
+        //        lblNoPatient.Text = "Patients does not exsist in the registry!";
+        //    }
+        //    else
+        //    {
+        //        // if personnumber is in the database
+        //        PatientJournal frmPatientJournal = new PatientJournal();
+        //        frmPatientJournal.Show();
+        //    }
+        //}
+        //*************************************************
 
         private void btnRegisPatient_Click(object sender, EventArgs e)
         {
@@ -221,67 +226,162 @@ namespace HospitalManagement
         }
 
 
+        //*********************************************************************************************
+        //void ButtonClickOneEvent(object sender, EventArgs e)
+
+        //{
+        //    Button btnPermissionBtn = sender as Button;
+
+        //    string roleTitle = lblStaffPosition.Text;
+
+        //    if (btnPermissionBtn != null)
+
+        //        switch ((int)btnPermissionBtn.Tag) // ??
+        //                {
+        //                    case 0:
+        //                        //pnlEmpty.SendToBack();
+        //                        pnlSetVisitingHours.BringToFront();
+        //                        break;
+        //                    case 1:
+        //                        //pnlEmpty.SendToBack();
+        //                        pnlSetAppointHour.BringToFront();
+        //                        break;
+        //                    case 2:
+        //                        //pnlEmpty.SendToBack();
+        //                        pnlUppPatJournal.BringToFront();
+        //                        break;
+        //                    case 3:
+        //                        //pnlEmpty.SendToBack();
+        //                        pnlRegisPatient.BringToFront();
+        //                        break;
+        //                    //case 4:
+        //                    //    //pnlEmpty.SendToBack();
+        //                    //    pnlUpptPatient.BringToFront();
+        //                    //    break;
+        //                    //case 5:
+        //                    //    //pnlEmpty.SendToBack();
+        //                    //    pnlCreatePatJournal.BringToFront();
+        //                    //    break;
+        //                }
+        //            }
+        //*******************************************************************
 
         void ButtonClickOneEvent(object sender, EventArgs e)
 
         {
+            DataSet dsUserInfo = new DataSet();
+            dsUserInfo = DBAccess.GetUserInformation(LoginStaff.userID);
+
             Button btnPermissionBtn = sender as Button;
 
-            //int posts = dsPermissions.Tables[0].Rows.Count;
-
-            // DataSet dsPermissions = new DataSet();
-            //dsPermissions = DBAccess.GetRolesPermission("Receptionist");
-            //dsPermissions = DBAccess.GetRolesPermission("Doctor");
+            dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
 
 
-            string roleTitle = lblStaffPosition.Text;
+
+            string roleTitle = "Doctor";
+            //btnPermissionBtn = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
             //string roleTitle1 = "Doctor";
             //string roleTitle2 = "Nurse";
 
-            // dsPermissions = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
+            int posts = dsPermissions.Tables[0].Rows.Count;
 
-            //int posts = dsPermissions.Tables[0].Rows.Count;
+            //string roleTitle = lblStaffPosition.Text;
+
+            //if (btnPermissionBtn != null)
+
+            //switch (roleTitle)
+            if (dsPermissions == DBAccess.GetRolesPermission("Doctor"))
+
+            //{
+
+            //case "Doctor":
+            {
+                dsPermissions = DBAccess.GetRolesPermission("Doctor");
+                //int posts = dsPermissions.Tables[0].Rows.Count;
+                if (btnPermissionBtn != null) ;
+                ;
+                //{
+            }
+
+            //***********************
+            //switch (roleTitle2)
+            //{
+            //    case "Nurse":
+            //        dsPermissions = DBAccess.GetRolesPermission("Nurse");
+            //        int posts1 = dsPermissions.Tables[0].Rows.Count;
+            //        if (btnPermissionBtn != null) break;
+            //        break;
+            //        {
 
             if (btnPermissionBtn != null)
 
-                //switch (roleTitle)
-                //{
-                //case "Doctor":
-                //    {
-                //        dsPermissions = DBAccess.GetRolesPermission("Doctor");
-                //        int posts = dsPermissions.Tables[0].Rows.Count;
-                //        if (btnPermissionBtn != null) break;
+                switch ((int)btnPermissionBtn.Tag) // ??
+                {
+                    case 0:
+                        //pnlEmpty.SendToBack();
+                        pnlUppPatJournal.BringToFront();
+                        break;
+                    case 1:
+                        pnlMedicalHistory.BringToFront();
+                        //pnlEmpty.SendToBack();
+                        //pnlSetVisitingHours.BringToFront();
+                        break;
+                    case 2:
+                        //pnlEmpty.SendToBack();
+                        pnlEmpty.BringToFront();
+                        break;
+                    case 3:
+                        //pnlEmpty.SendToBack();
+                        pnlRegisPatient.BringToFront();
+                        break;
+
+                }
+
+
+            else if (dsPermissions == DBAccess.GetRolesPermission("Receptionist")) ;
+
+
+            //switch (roleTitle2)
+            //{
+            // case "Receptionist":
+            {
+                dsPermissions = DBAccess.GetRolesPermission("Receptionist");
+                //int posts = dsPermissions.Tables[0].Rows.Count;
+                if (btnPermissionBtn != null) ;
+
+            }
+            if (btnPermissionBtn != null)
 
                 switch ((int)btnPermissionBtn.Tag) // ??
-                        {
-                            case 0:
-                                //pnlEmpty.SendToBack();
-                                pnlSetVisitingHours.BringToFront();
-                                break;
-                            case 1:
-                                //pnlEmpty.SendToBack();
-                                pnlSetAppointHour.BringToFront();
-                                break;
-                            case 2:
-                                //pnlEmpty.SendToBack();
-                                pnlUppPatJournal.BringToFront();
-                                break;
-                            case 3:
-                                //pnlEmpty.SendToBack();
-                                pnlRegisPatient.BringToFront();
-                                break;
-                            //case 4:
-                            //    //pnlEmpty.SendToBack();
-                            //    pnlUpptPatient.BringToFront();
-                            //    break;
-                            //case 5:
-                            //    //pnlEmpty.SendToBack();
-                            //    pnlCreatePatJournal.BringToFront();
-                            //    break;
+                {
+                    case 0:
+                        //pnlEmpty.SendToBack();
+                        pnlUppPatJournal.BringToFront();
+                        break;
+                    case 1:
+                        //pnlEmpty.SendToBack();
+                        pnlSetVisitingHours.BringToFront();
+                        break;
+                    case 2:
+                        //pnlEmpty.SendToBack();
+                        pnlEmpty.BringToFront();
+                        break;
+                    case 3:
+                        //pnlEmpty.SendToBack();                     
+                        pnlRegisPatient2.BringToFront();
+                        break;
+
+                }
+        }
 
 
-                        }
-                    }
+
+
+
+
+
+
+        //*******************************************************************
 
         private void panel2_Paint(object sender, PaintEventArgs e) // Background panel-colour must be SendToBack here, or else it does not work. 
         {
