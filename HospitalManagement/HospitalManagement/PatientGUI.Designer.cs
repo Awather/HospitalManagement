@@ -28,43 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlResultCard = new System.Windows.Forms.Panel();
+            this.lblEmptyPatient = new System.Windows.Forms.Label();
             this.pnlTesting = new System.Windows.Forms.Panel();
+            this.pnlResultCard = new System.Windows.Forms.Panel();
+            this.lblResultCard = new System.Windows.Forms.Label();
+            this.pnlResultCard.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblEmptyPatient
+            // 
+            this.lblEmptyPatient.AutoSize = true;
+            this.lblEmptyPatient.Location = new System.Drawing.Point(46, 12);
+            this.lblEmptyPatient.Name = "lblEmptyPatient";
+            this.lblEmptyPatient.Size = new System.Drawing.Size(0, 13);
+            this.lblEmptyPatient.TabIndex = 0;
+            // 
+            // pnlTesting
+            // 
+            this.pnlTesting.BackColor = System.Drawing.Color.DimGray;
+            this.pnlTesting.Location = new System.Drawing.Point(414, 12);
+            this.pnlTesting.Name = "pnlTesting";
+            this.pnlTesting.Size = new System.Drawing.Size(573, 347);
+            this.pnlTesting.TabIndex = 1;
             // 
             // pnlResultCard
             // 
             this.pnlResultCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlResultCard.Location = new System.Drawing.Point(146, 12);
+            this.pnlResultCard.Controls.Add(this.lblResultCard);
+            this.pnlResultCard.Location = new System.Drawing.Point(414, 12);
             this.pnlResultCard.Name = "pnlResultCard";
             this.pnlResultCard.Size = new System.Drawing.Size(573, 347);
             this.pnlResultCard.TabIndex = 0;
             // 
-            // pnlTesting
+            // lblResultCard
             // 
-            this.pnlTesting.BackColor = System.Drawing.Color.Transparent;
-            this.pnlTesting.Location = new System.Drawing.Point(146, 12);
-            this.pnlTesting.Name = "pnlTesting";
-            this.pnlTesting.Size = new System.Drawing.Size(573, 347);
-            this.pnlTesting.TabIndex = 1;
+            this.lblResultCard.AutoSize = true;
+            this.lblResultCard.Location = new System.Drawing.Point(41, 24);
+            this.lblResultCard.Name = "lblResultCard";
+            this.lblResultCard.Size = new System.Drawing.Size(62, 13);
+            this.lblResultCard.TabIndex = 0;
+            this.lblResultCard.Text = "Result Card";
             // 
             // PatientGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 456);
-            this.Controls.Add(this.pnlTesting);
+            this.ClientSize = new System.Drawing.Size(1034, 456);
+            this.Controls.Add(this.lblEmptyPatient);
             this.Controls.Add(this.pnlResultCard);
+            this.Controls.Add(this.pnlTesting);
             this.Name = "PatientGUI";
             this.Text = "PatientGUI";
             this.Load += new System.EventHandler(this.PatientGUI_Load);
+            this.pnlResultCard.ResumeLayout(false);
+            this.pnlResultCard.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlResultCard;
+        private System.Windows.Forms.Label lblEmptyPatient;
         private System.Windows.Forms.Panel pnlTesting;
+        private System.Windows.Forms.Panel pnlResultCard;
+        private System.Windows.Forms.Label lblResultCard;
     }
 }

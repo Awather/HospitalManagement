@@ -12,7 +12,7 @@ namespace HospitalManagement
 {
     public partial class PatientGUI : Form
     {
-        private DataSet dsPatientTabs = new DataSet();
+        private DataSet dsPatientPermission = new DataSet();
 
         public PatientGUI()
         {
@@ -21,7 +21,17 @@ namespace HospitalManagement
 
         private void PatientGUI_Load(object sender, EventArgs e)
         {
+            //*************************************************************************************************
 
+            //To get information of the patient logged on. 
+
+            DataSet dsPatientSignedInfo = new DataSet();
+            //dsPatientSignedInfo = DBAccess.PatientLogin(LoginTest.PatientID);
+            //lblStaffName.Text = Convert.ToString(dsPatientInfo.Tables[0].Rows[0][0]) + " " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][1]);
+            //lblStaffPosition.Text = Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]) + " at " + Convert.ToString(dsUserInfo.Tables[0].Rows[0][3]);
+
+
+            //*************************************************************************************
             //DataSet ds = new DataSet();
             //ds = DBAccess.GetDoctorsNotes(Form1.myPatient.PersonNumber);
 
@@ -34,8 +44,8 @@ namespace HospitalManagement
             //}
 
             //pnlResultCard.BringToFront();
-            // dsPatientTabs = DBAccess.GetPatientInformation("");  // DataSet dsPatientTabs = new DataSet();
-            int patientPosts = dsPatientTabs.Tables[0].Rows.Count;
+            dsPatientPermission = DBAccess.GetPatientPermission("");  // DataSet dsPatientTabs = new DataSet();
+            int patientPosts = dsPatientPermission.Tables[0].Rows.Count;
 
             for (int i = 0; i < patientPosts; i++)
             {
@@ -46,7 +56,7 @@ namespace HospitalManagement
                 btnPatientTabsBtn.ForeColor = Color.DarkRed;
                 btnPatientTabsBtn.Click += new EventHandler(ButtonClickOneEvent); // Ask jan about this
                 btnPatientTabsBtn.Tag = i; // Ask Jan about this
-                btnPatientTabsBtn.Text = dsPatientTabs.Tables[0].Rows[i][0].ToString(); // MORE QUESTIONS!
+                btnPatientTabsBtn.Text = dsPatientPermission.Tables[0].Rows[i][0].ToString(); // MORE QUESTIONS!
                 this.Controls.Add(btnPatientTabsBtn);
 
             }
@@ -55,24 +65,35 @@ namespace HospitalManagement
 
         void ButtonClickOneEvent(object sender, EventArgs e)
         {
-            Button btnPatientTabsBtn = sender as Button;
-           // btnPermissionBtn.BringToFront();
-            if (btnPatientTabsBtn != null)
+            //DataSet dsPatientSignInfo = new DataSet();
+            //dsPatientSignInfo = DBAccess.GetPatientPermission(LoginTest.PatientID);
+
+            //Button btnPatientTabsBtn = sender as Button;
+
+            //dsPatientPermission = DBAccess.GetRolesPermission(Convert.ToString(dsPatientSignInfo.Tables[0].Rows[1]));
+            //int posts = dsPatientPermission.Tables[0].Rows.Count;
+            //Button btnPatientTabsBtn = sender as Button;
+
+            //    string roleTitle = lblStaffPosition.Text;
+
+            // btnPermissionBtn.BringToFront();
+            //if (btnPatientTabsBtn != null)
+            if (sender is Button btnPatientTabsBtn)
             {
                 switch ((int)btnPatientTabsBtn.Tag) // ??
                 {
                     case 0:
                         //pnlEmpty.SendToBack();
-                        pnlResultCard.BringToFront();
-                        break;
+                        pnlTesting.BringToFront();
+                        break;                    
                     case 1:
                         //pnlEmpty.SendToBack();
-                        pnlTesting.BringToFront();
+                        pnlResultCard.BringToFront();
                         break;
-                    //case 2:
-                    //    //pnlEmpty.SendToBack();
-                    //    pnlUppPatJournal.BringToFront();
-                    //    break;
+                        //case 2:
+                        //    //pnlEmpty.SendToBack();
+                        //    pnlUppPatJournal.BringToFront();
+                        //    break;
 
                 }
             }

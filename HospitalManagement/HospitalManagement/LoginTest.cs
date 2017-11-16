@@ -13,7 +13,9 @@ namespace HospitalManagement
     public partial class LoginTest : Form
     {
 
-        public static string Patient; // Global variabel
+        public static string PatientID; //PatientName; // Global variabel
+        //public static string PatientPassword; // Global variabel
+       // public static string personNumber; // Global variabel
 
         public LoginTest()
         {
@@ -54,7 +56,7 @@ namespace HospitalManagement
             if (DBAccess.PatientLogin(txtUsernamePatient.Text, txtPasswordPatient.Text))
 
             {
-                Patient = txtUsernamePatient.Text; // Värdet som ska skickas
+                PatientID = txtUsernamePatient.Text; // Värdet som ska skickas // PatientID instead of PatientName
 
 
                 //ResultCard frmResultCard = new ResultCard();

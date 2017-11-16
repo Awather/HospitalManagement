@@ -288,7 +288,7 @@ namespace HospitalManagement
         }
 
 
-        public static bool PatientLogin(string Patient, string PatientPassword)
+        public static bool PatientLogin(string PatientName, string PatientPassword)
         {
             SqlConnection myConnection = new SqlConnection();
 
@@ -304,7 +304,7 @@ namespace HospitalManagement
             SqlParameter workparameter3 = new SqlParameter();
 
             workparameter1 = myCommand.Parameters.Add("@Patient", SqlDbType.Char);
-            workparameter1.Value = Patient;
+            workparameter1.Value = PatientName;
             workparameter2 = myCommand.Parameters.Add("@PatientPassword", SqlDbType.VarChar);
             workparameter2.Value = PatientPassword;
             workparameter3 = myCommand.Parameters.Add("@Answer", SqlDbType.Int);
@@ -436,7 +436,29 @@ namespace HospitalManagement
 
         }
 
+        public static DataSet GetPatientPermission(string patientPerm)
+        {
 
+            DataSet ds = new DataSet();
+
+            SqlConnection myConnection = new SqlConnection();
+
+            myConnection.ConnectionString = "Integrated Security=true;database=dblHospitalManagement;User ID=DBO;Data Source=.\\SQLEXPRESS";
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            SqlCommand myCommand = new SqlCommand();
+            myCommand.Connection = myConnection;
+            myCommand.CommandText = "spGetPatientPermission";
+            myCommand.CommandType = CommandType.StoredProcedure;
+
+
+            adapter.SelectCommand = myCommand;
+
+            adapter.Fill(ds);
+
+            return ds;
+        }
 
     }
 }

@@ -278,7 +278,7 @@ namespace HospitalManagement
 
 
 
-            string roleTitle = "Doctor";
+            //string roleTitle = "Doctor";
             //btnPermissionBtn = DBAccess.GetRolesPermission(Convert.ToString(dsUserInfo.Tables[0].Rows[0][2]));
             //string roleTitle1 = "Doctor";
             //string roleTitle2 = "Nurse";
@@ -298,7 +298,7 @@ namespace HospitalManagement
             {
                 dsPermissions = DBAccess.GetRolesPermission("Doctor");
                 //int posts = dsPermissions.Tables[0].Rows.Count;
-                if (btnPermissionBtn != null) ;
+                if (btnPermissionBtn != null) 
                 ;
                 //{
             }
@@ -338,7 +338,7 @@ namespace HospitalManagement
                 }
 
 
-            else if (dsPermissions == DBAccess.GetRolesPermission("Receptionist")) ;
+            else if (dsPermissions == DBAccess.GetRolesPermission("Receptionist")) 
 
 
             //switch (roleTitle2)
