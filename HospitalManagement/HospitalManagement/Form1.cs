@@ -62,7 +62,7 @@ namespace HospitalManagement
             {
                 Button btnPermissionBtn = new Button();
                 btnPermissionBtn.Size = new Size(130, 30);
-                btnPermissionBtn.Location = new Point(40, 30 * i + 50);   //(160 = y, 30 * i + 10 = x); 
+                btnPermissionBtn.Location = new Point(40, 30 * i + 50);   //(160 = x(hor), 30 * i + 10 = y(ver)); 
                 // btnPermissionBtn.Parent.Controls.GetChildIndex(btnPermissionBtn);
                 //btnPermissionBtn.FlatAppearance.BorderSize{ }
                 btnPermissionBtn.FlatStyle = FlatStyle.Popup;
@@ -223,6 +223,48 @@ namespace HospitalManagement
             RegisterPatients frmRegisterPatients = new RegisterPatients();
             frmRegisterPatients.Show();
 
+            ////frmMain.Panel2.Controls.Add(myForm);
+            ////myForm.Show();
+
+            //RegisterPatients frmRegisterPatients = new RegisterPatients();
+            //frmRegisterPatients..Controls.Add(Form1);
+            //RegisterPatients.Show();
+
+            //Form1 myForm = new Form1();
+            //myForm.TopLevel = false;
+            //myForm.AutoScroll = true;
+            //frmMain.Panel2.Controls.Add(myForm);
+            //myForm.Show();
+
+            //SubForm objForm = SubForm.InstanceForm();
+            //objForm.TopLevel = false;
+            //pnlSubSystem.Controls.Add(objForm);
+            //objForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //objForm.Dock = DockStyle.Fill;
+            //objForm.Show();
+
+            //RegisterPatients frmRegisterPatients = new RegisterPatients();
+            
+            frmRegisterPatients.TopLevel = false;
+            pnlRegisPatientRecep.Controls.Add(frmRegisterPatients);
+            frmRegisterPatients.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frmRegisterPatients.Dock = DockStyle.None;
+            frmRegisterPatients.Show();
+            pnlPatientsRecep.SendToBack();
+
+
+            //pnlRegisPatientRecep.BringToFront();
+
+            //RegisterPatients frmRegisterPatients = new RegisterPatients();
+            //frmRegisterPatients.TopLevel = false;
+            //frmRegisterPatients.AutoScroll = true;
+            //frmForm1.pnlRegisPatientRecep.Controls.Add(frmRegisterPatients);
+            //frmRegisterPatients.Show();
+
+            //RegisterPatients frmRegisterPatients = new RegisterPatients();
+            //pnlRegisPatientRecep.Controls.Add(frmRegisterPatients);
+            //frmRegisterPatients.Show();
+
         }
 
 
@@ -317,22 +359,22 @@ namespace HospitalManagement
 
                 switch ((int)btnPermissionBtn.Tag) // ??
                 {
-                    case 0:
-                        //pnlEmpty.SendToBack();
-                        pnlUppPatJournal.BringToFront();
-                        break;
-                    case 1:
-                        pnlMedicalHistory.BringToFront();
-                        //pnlEmpty.SendToBack();
-                        //pnlSetVisitingHours.BringToFront();
-                        break;
+                    //case 0:
+                    //    //pnlEmpty.SendToBack();
+                    //    pnlUppPatJournal.BringToFront();
+                    //    break;
+                    //case 1:
+                    //    pnlMedicalHistory.BringToFront();
+                    //    //pnlEmpty.SendToBack();
+                    //    //pnlSetVisitingHours.BringToFront();
+                    //    break;
                     case 2:
                         //pnlEmpty.SendToBack();
                         pnlEmpty.BringToFront();
                         break;
                     case 3:
                         //pnlEmpty.SendToBack();
-                        pnlRegisPatient.BringToFront();
+                        pnlPatientsDoctor.BringToFront();
                         break;
 
                 }
@@ -356,7 +398,7 @@ namespace HospitalManagement
                 {
                     case 0:
                         //pnlEmpty.SendToBack();
-                        pnlUppPatJournal.BringToFront();
+                        pnlPatientsRecep.BringToFront();
                         break;
                     case 1:
                         //pnlEmpty.SendToBack();
@@ -368,10 +410,44 @@ namespace HospitalManagement
                         break;
                     case 3:
                         //pnlEmpty.SendToBack();                     
-                        pnlRegisPatient2.BringToFront();
+                        pnlPatientsRecep.BringToFront();
                         break;
-
                 }
+
+                        else if (dsPermissions == DBAccess.GetRolesPermission("Nurse"))
+
+
+                        //switch (roleTitle2)
+                        //{
+                        // case "Receptionist":
+                        {
+                            dsPermissions = DBAccess.GetRolesPermission("Nurse");
+                            //int posts = dsPermissions.Tables[0].Rows.Count;
+                            if (btnPermissionBtn != null) ;
+
+                        }
+                        if (btnPermissionBtn != null)
+
+                            switch ((int)btnPermissionBtn.Tag) // ??
+                            {
+                                //case 0:
+                                //    //pnlEmpty.SendToBack();
+                                //    pnlUppPatJournal.BringToFront();
+                                //    break;
+                                case 1:
+                                    //pnlEmpty.SendToBack();
+                                    pnlSetVisitingHours.BringToFront();
+                                    break;
+                                case 2:
+                                    //pnlEmpty.SendToBack();
+                                    pnlEmpty.BringToFront();
+                                    break;
+                                case 3:
+                                    //pnlEmpty.SendToBack();                     
+                                    pnlPatientsRecep.BringToFront();
+                                    break;
+
+                            }
         }
 
 

@@ -186,42 +186,11 @@ namespace HospitalManagement
         }
 
 
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             RegisterPatients.ActiveForm.Close();
         }
 
-
-        //private void chkMale_Click(object sender, EventArgs e)
-        //{
-
-        //    if (chkMale.Checked)
-        //    {
-        //        chkMale.Checked = false;
-        //        chkFemale.Checked = true;
-        //    }
-        //    else
-        //    {
-        //        chkMale.Checked = true;
-        //        chkFemale.Checked = false;
-        //    }
-
-        //}
-
-        //private void chkFemale_Click(object sender, EventArgs e)
-        //{
-        //    if (chkFemale.Checked)
-        //    {
-        //        chkFemale.Checked = false;
-        //        chkMale.Checked = true;
-        //    }
-        //    else
-        //    {
-        //        chkFemale.Checked = true;
-        //        chkMale.Checked = false;
-        //    }
-        //}
 
         private void chkMale_Click(object sender, EventArgs e)
         {

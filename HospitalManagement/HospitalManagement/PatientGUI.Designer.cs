@@ -38,10 +38,11 @@
             // lblEmptyPatient
             // 
             this.lblEmptyPatient.AutoSize = true;
-            this.lblEmptyPatient.Location = new System.Drawing.Point(46, 12);
+            this.lblEmptyPatient.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmptyPatient.Location = new System.Drawing.Point(31, 36);
             this.lblEmptyPatient.Name = "lblEmptyPatient";
             this.lblEmptyPatient.Size = new System.Drawing.Size(0, 13);
-            this.lblEmptyPatient.TabIndex = 0;
+            this.lblEmptyPatient.TabIndex = 5;
             // 
             // pnlTesting
             // 
@@ -55,7 +56,7 @@
             // 
             this.pnlResultCard.BackColor = System.Drawing.Color.Transparent;
             this.pnlResultCard.Controls.Add(this.lblResultCard);
-            this.pnlResultCard.Location = new System.Drawing.Point(414, 12);
+            this.pnlResultCard.Location = new System.Drawing.Point(284, 12);
             this.pnlResultCard.Name = "pnlResultCard";
             this.pnlResultCard.Size = new System.Drawing.Size(573, 347);
             this.pnlResultCard.TabIndex = 0;

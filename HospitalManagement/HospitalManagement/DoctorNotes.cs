@@ -25,7 +25,7 @@ namespace HospitalManagement
 
             DataSet ds = new DataSet();
             //ds = DBAccess.InsertDoctorsNotes(DBAccess.InsertDoctorsNotes(notes, 'U'));
-            /*DoctorNotes newNotes = new DoctorNotes(txtDoctorComments.Text)*/;
+            /*DoctorNotes newNotes = new DoctorNotes(txtDoctorComments.Text);*/
 
             //foreach (DataRow dr in ds.Tables[0].Rows)
 

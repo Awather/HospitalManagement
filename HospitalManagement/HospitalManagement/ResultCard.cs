@@ -31,7 +31,8 @@ namespace HospitalManagement
 
             //}
 
-
+            PatientJournal frmPatientJournal = new PatientJournal();
+            frmPatientJournal.Show();
 
 
         }

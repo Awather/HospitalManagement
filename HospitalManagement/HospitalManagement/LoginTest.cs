@@ -14,7 +14,8 @@ namespace HospitalManagement
     {
 
         public static string PatientID; //PatientName; // Global variabel
-        //public static string PatientPassword; // Global variabel
+        public static string PatientName; // Global variabel
+        public static string PatientPassword; // Global variabel
        // public static string personNumber; // Global variabel
 
         public LoginTest()
