@@ -207,7 +207,8 @@ namespace HospitalManagement
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            UpdatePatient.ActiveForm.Close();
+            this.Close();
+            //UpdatePatient.ActiveForm.Close();
         }
 
         private void chkMale_MouseClick(object sender, MouseEventArgs e)

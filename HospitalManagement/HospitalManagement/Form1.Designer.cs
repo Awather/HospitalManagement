@@ -34,9 +34,7 @@
             this.lblEmpty = new System.Windows.Forms.Label();
             this.cmbPermissions = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblNoPatient = new System.Windows.Forms.Label();
             this.btnChoose = new System.Windows.Forms.Button();
-            this.lblWelcomeStaff = new System.Windows.Forms.Label();
             this.pnlEmpty = new System.Windows.Forms.Panel();
             this.lblUpptPatient = new System.Windows.Forms.Label();
             this.txtPersN1UpdPat = new System.Windows.Forms.TextBox();
@@ -57,9 +55,9 @@
             this.lblPrescriptions = new System.Windows.Forms.Label();
             this.lblMedicalHistory = new System.Windows.Forms.Label();
             this.pnlPatientsDoctor = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.lblRegisPatTest = new System.Windows.Forms.Label();
             this.pnlRegisPatientRecep = new System.Windows.Forms.Panel();
+            this.btnLogoutStaff = new System.Windows.Forms.Button();
+            this.pnlUpdPatientRecep = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pnlEmpty.SuspendLayout();
             this.pnlSetVisitingHours.SuspendLayout();
@@ -69,14 +67,13 @@
             this.pnlMedicalHistory.SuspendLayout();
             this.pnlPrescriptions.SuspendLayout();
             this.pnlPatientsDoctor.SuspendLayout();
-            this.pnlRegisPatientRecep.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblStaffPosition
             // 
             this.lblStaffPosition.AutoSize = true;
             this.lblStaffPosition.Font = new System.Drawing.Font("Franklin Gothic Book", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffPosition.Location = new System.Drawing.Point(174, 8);
+            this.lblStaffPosition.Location = new System.Drawing.Point(21, 29);
             this.lblStaffPosition.Name = "lblStaffPosition";
             this.lblStaffPosition.Size = new System.Drawing.Size(0, 18);
             this.lblStaffPosition.TabIndex = 7;
@@ -86,7 +83,7 @@
             // 
             this.lblStaffName.AutoSize = true;
             this.lblStaffName.Font = new System.Drawing.Font("Franklin Gothic Book", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffName.Location = new System.Drawing.Point(71, 11);
+            this.lblStaffName.Location = new System.Drawing.Point(21, 8);
             this.lblStaffName.Name = "lblStaffName";
             this.lblStaffName.Size = new System.Drawing.Size(0, 15);
             this.lblStaffName.TabIndex = 6;
@@ -96,7 +93,7 @@
             this.lblLoggedInAs.AutoSize = true;
             this.lblLoggedInAs.BackColor = System.Drawing.Color.Transparent;
             this.lblLoggedInAs.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoggedInAs.Location = new System.Drawing.Point(789, 0);
+            this.lblLoggedInAs.Location = new System.Drawing.Point(736, 8);
             this.lblLoggedInAs.Name = "lblLoggedInAs";
             this.lblLoggedInAs.Size = new System.Drawing.Size(86, 17);
             this.lblLoggedInAs.TabIndex = 8;
@@ -105,10 +102,10 @@
             // lblEmpty
             // 
             this.lblEmpty.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmpty.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpty.Location = new System.Drawing.Point(881, -3);
+            this.lblEmpty.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpty.Location = new System.Drawing.Point(819, 7);
             this.lblEmpty.Name = "lblEmpty";
-            this.lblEmpty.Size = new System.Drawing.Size(98, 20);
+            this.lblEmpty.Size = new System.Drawing.Size(82, 20);
             this.lblEmpty.TabIndex = 9;
             // 
             // cmbPermissions
@@ -122,26 +119,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.lblNoPatient);
+            this.panel1.Controls.Add(this.btnLogoutStaff);
             this.panel1.Controls.Add(this.lblLoggedInAs);
+            this.panel1.Controls.Add(this.pnlRegisPatientRecep);
             this.panel1.Controls.Add(this.btnChoose);
-            this.panel1.Controls.Add(this.lblWelcomeStaff);
             this.panel1.Controls.Add(this.cmbPermissions);
             this.panel1.Controls.Add(this.lblEmpty);
             this.panel1.Controls.Add(this.lblStaffName);
             this.panel1.Controls.Add(this.lblStaffPosition);
             this.panel1.Location = new System.Drawing.Point(24, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1010, 47);
+            this.panel1.Size = new System.Drawing.Size(1072, 58);
             this.panel1.TabIndex = 11;
-            // 
-            // lblNoPatient
-            // 
-            this.lblNoPatient.AutoSize = true;
-            this.lblNoPatient.Location = new System.Drawing.Point(861, 122);
-            this.lblNoPatient.Name = "lblNoPatient";
-            this.lblNoPatient.Size = new System.Drawing.Size(0, 13);
-            this.lblNoPatient.TabIndex = 20;
             // 
             // btnChoose
             // 
@@ -151,16 +140,6 @@
             this.btnChoose.TabIndex = 21;
             this.btnChoose.Text = "Choose";
             this.btnChoose.UseVisualStyleBackColor = true;
-            // 
-            // lblWelcomeStaff
-            // 
-            this.lblWelcomeStaff.AutoSize = true;
-            this.lblWelcomeStaff.Font = new System.Drawing.Font("Franklin Gothic Book", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcomeStaff.Location = new System.Drawing.Point(3, 8);
-            this.lblWelcomeStaff.Name = "lblWelcomeStaff";
-            this.lblWelcomeStaff.Size = new System.Drawing.Size(62, 16);
-            this.lblWelcomeStaff.TabIndex = 10;
-            this.lblWelcomeStaff.Text = "Welcome";
             // 
             // pnlEmpty
             // 
@@ -218,15 +197,16 @@
             // 
             // pnlPatientsRecep
             // 
-            this.pnlPatientsRecep.BackColor = System.Drawing.Color.FloralWhite;
+            this.pnlPatientsRecep.BackColor = System.Drawing.Color.Bisque;
             this.pnlPatientsRecep.Controls.Add(this.lblUpptPatient);
             this.pnlPatientsRecep.Controls.Add(this.txtPersN1UpdPat);
             this.pnlPatientsRecep.Controls.Add(this.btnGetPatient);
             this.pnlPatientsRecep.Controls.Add(this.lblRegisPatient);
             this.pnlPatientsRecep.Controls.Add(this.btnRegisPatient);
-            this.pnlPatientsRecep.Location = new System.Drawing.Point(264, 21);
+            this.pnlPatientsRecep.Controls.Add(this.pnlUpdPatientRecep);
+            this.pnlPatientsRecep.Location = new System.Drawing.Point(141, 0);
             this.pnlPatientsRecep.Name = "pnlPatientsRecep";
-            this.pnlPatientsRecep.Size = new System.Drawing.Size(611, 313);
+            this.pnlPatientsRecep.Size = new System.Drawing.Size(838, 596);
             this.pnlPatientsRecep.TabIndex = 16;
             // 
             // lblRegisPatient
@@ -295,13 +275,12 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel2.Controls.Add(this.pnlPatientsRecep);
             this.panel2.Controls.Add(this.pnlPatientsDoctor);
-            this.panel2.Controls.Add(this.pnlRegisPatientRecep);
-            this.panel2.Location = new System.Drawing.Point(24, 46);
+            this.panel2.Location = new System.Drawing.Point(24, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1010, 436);
+            this.panel2.Size = new System.Drawing.Size(1072, 591);
             this.panel2.TabIndex = 12;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -348,28 +327,38 @@
             this.pnlPatientsDoctor.Controls.Add(this.lblUppdPatJournal);
             this.pnlPatientsDoctor.Controls.Add(this.txtPersN2UpdJour);
             this.pnlPatientsDoctor.Controls.Add(this.btnUppdPatJournal);
-            this.pnlPatientsDoctor.Location = new System.Drawing.Point(693, 355);
+            this.pnlPatientsDoctor.Location = new System.Drawing.Point(1016, 283);
             this.pnlPatientsDoctor.Name = "pnlPatientsDoctor";
             this.pnlPatientsDoctor.Size = new System.Drawing.Size(611, 313);
             this.pnlPatientsDoctor.TabIndex = 27;
             // 
-            // lblRegisPatTest
-            // 
-            this.lblRegisPatTest.AutoSize = true;
-            this.lblRegisPatTest.Location = new System.Drawing.Point(28, 16);
-            this.lblRegisPatTest.Name = "lblRegisPatTest";
-            this.lblRegisPatTest.Size = new System.Drawing.Size(248, 13);
-            this.lblRegisPatTest.TabIndex = 24;
-            this.lblRegisPatTest.Text = "Testing Register Patient in panel instead of window";
-            // 
             // pnlRegisPatientRecep
             // 
-            this.pnlRegisPatientRecep.BackColor = System.Drawing.Color.Tan;
-            this.pnlRegisPatientRecep.Controls.Add(this.lblRegisPatTest);
-            this.pnlRegisPatientRecep.Location = new System.Drawing.Point(335, 21);
+            this.pnlRegisPatientRecep.BackColor = System.Drawing.Color.Bisque;
+            this.pnlRegisPatientRecep.Location = new System.Drawing.Point(141, 55);
             this.pnlRegisPatientRecep.Name = "pnlRegisPatientRecep";
-            this.pnlRegisPatientRecep.Size = new System.Drawing.Size(611, 313);
+            this.pnlRegisPatientRecep.Size = new System.Drawing.Size(838, 588);
             this.pnlRegisPatientRecep.TabIndex = 26;
+            // 
+            // btnLogoutStaff
+            // 
+            this.btnLogoutStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogoutStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogoutStaff.Location = new System.Drawing.Point(904, 5);
+            this.btnLogoutStaff.Name = "btnLogoutStaff";
+            this.btnLogoutStaff.Size = new System.Drawing.Size(75, 23);
+            this.btnLogoutStaff.TabIndex = 0;
+            this.btnLogoutStaff.Text = "Log out";
+            this.btnLogoutStaff.UseVisualStyleBackColor = true;
+            this.btnLogoutStaff.Click += new System.EventHandler(this.btnLogoutStaff_Click);
+            // 
+            // pnlUpdPatientRecep
+            // 
+            this.pnlUpdPatientRecep.BackColor = System.Drawing.Color.Bisque;
+            this.pnlUpdPatientRecep.Location = new System.Drawing.Point(0, 0);
+            this.pnlUpdPatientRecep.Name = "pnlUpdPatientRecep";
+            this.pnlUpdPatientRecep.Size = new System.Drawing.Size(838, 588);
+            this.pnlUpdPatientRecep.TabIndex = 27;
             // 
             // Form1
             // 
@@ -402,8 +391,6 @@
             this.pnlPrescriptions.PerformLayout();
             this.pnlPatientsDoctor.ResumeLayout(false);
             this.pnlPatientsDoctor.PerformLayout();
-            this.pnlRegisPatientRecep.ResumeLayout(false);
-            this.pnlRegisPatientRecep.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -416,9 +403,7 @@
         private System.Windows.Forms.Label lblEmpty;
         private System.Windows.Forms.ComboBox cmbPermissions;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblWelcomeStaff;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblNoPatient;
         private System.Windows.Forms.Button btnChoose;
         private System.Windows.Forms.Panel pnlEmpty;
         private System.Windows.Forms.Label lblUpptPatient;
@@ -439,8 +424,8 @@
         private System.Windows.Forms.Label lblMedicalHistory;
         private System.Windows.Forms.Panel pnlPrescriptions;
         private System.Windows.Forms.Label lblPrescriptions;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Panel pnlRegisPatientRecep;
-        private System.Windows.Forms.Label lblRegisPatTest;
+        private System.Windows.Forms.Button btnLogoutStaff;
+        private System.Windows.Forms.Panel pnlUpdPatientRecep;
     }
 }

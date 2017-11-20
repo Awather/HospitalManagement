@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpGender = new System.Windows.Forms.GroupBox();
-            this.chkFemale = new System.Windows.Forms.CheckBox();
-            this.chkMale = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.lblUpdatePatient = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -51,42 +48,9 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPersnNumber = new System.Windows.Forms.TextBox();
-            this.grpGender.SuspendLayout();
+            this.chkMale = new System.Windows.Forms.CheckBox();
+            this.chkFemale = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
-            // 
-            // grpGender
-            // 
-            this.grpGender.Controls.Add(this.chkFemale);
-            this.grpGender.Controls.Add(this.chkMale);
-            this.grpGender.Location = new System.Drawing.Point(123, 361);
-            this.grpGender.Name = "grpGender";
-            this.grpGender.Size = new System.Drawing.Size(80, 47);
-            this.grpGender.TabIndex = 85;
-            this.grpGender.TabStop = false;
-            // 
-            // chkFemale
-            // 
-            this.chkFemale.AutoCheck = false;
-            this.chkFemale.AutoSize = true;
-            this.chkFemale.Location = new System.Drawing.Point(13, 24);
-            this.chkFemale.Name = "chkFemale";
-            this.chkFemale.Size = new System.Drawing.Size(63, 17);
-            this.chkFemale.TabIndex = 21;
-            this.chkFemale.Text = "Woman";
-            this.chkFemale.UseVisualStyleBackColor = true;
-            this.chkFemale.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkFemale_MouseClick);
-            // 
-            // chkMale
-            // 
-            this.chkMale.AutoCheck = false;
-            this.chkMale.AutoSize = true;
-            this.chkMale.Location = new System.Drawing.Point(13, 1);
-            this.chkMale.Name = "chkMale";
-            this.chkMale.Size = new System.Drawing.Size(47, 17);
-            this.chkMale.TabIndex = 19;
-            this.chkMale.Text = "Man";
-            this.chkMale.UseVisualStyleBackColor = true;
-            this.chkMale.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkMale_MouseClick);
             // 
             // label10
             // 
@@ -280,13 +244,38 @@
             this.txtPersnNumber.Size = new System.Drawing.Size(136, 20);
             this.txtPersnNumber.TabIndex = 65;
             // 
+            // chkMale
+            // 
+            this.chkMale.AutoCheck = false;
+            this.chkMale.AutoSize = true;
+            this.chkMale.Location = new System.Drawing.Point(128, 358);
+            this.chkMale.Name = "chkMale";
+            this.chkMale.Size = new System.Drawing.Size(47, 17);
+            this.chkMale.TabIndex = 19;
+            this.chkMale.Text = "Man";
+            this.chkMale.UseVisualStyleBackColor = true;
+            this.chkMale.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkMale_MouseClick);
+            // 
+            // chkFemale
+            // 
+            this.chkFemale.AutoCheck = false;
+            this.chkFemale.AutoSize = true;
+            this.chkFemale.Location = new System.Drawing.Point(128, 388);
+            this.chkFemale.Name = "chkFemale";
+            this.chkFemale.Size = new System.Drawing.Size(63, 17);
+            this.chkFemale.TabIndex = 21;
+            this.chkFemale.Text = "Woman";
+            this.chkFemale.UseVisualStyleBackColor = true;
+            this.chkFemale.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chkFemale_MouseClick);
+            // 
             // UpdatePatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(480, 463);
-            this.Controls.Add(this.grpGender);
+            this.Controls.Add(this.chkFemale);
+            this.Controls.Add(this.chkMale);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblUpdatePatient);
             this.Controls.Add(this.btnUpdate);
@@ -310,18 +299,12 @@
             this.Name = "UpdatePatient";
             this.Text = "UpdatePatient";
             this.Load += new System.EventHandler(this.UpdatePatient_Load);
-            this.grpGender.ResumeLayout(false);
-            this.grpGender.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox grpGender;
-        private System.Windows.Forms.CheckBox chkFemale;
-        private System.Windows.Forms.CheckBox chkMale;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblUpdatePatient;
         private System.Windows.Forms.Button btnUpdate;
@@ -342,5 +325,7 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPersnNumber;
+        private System.Windows.Forms.CheckBox chkMale;
+        private System.Windows.Forms.CheckBox chkFemale;
     }
 }

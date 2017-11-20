@@ -61,12 +61,14 @@ namespace HospitalManagement
             for (int i = 0; i < posts; i++)
             {
                 Button btnPermissionBtn = new Button();
-                btnPermissionBtn.Size = new Size(130, 30);
-                btnPermissionBtn.Location = new Point(40, 30 * i + 50);   //(160 = x(hor), 30 * i + 10 = y(ver)); 
+                btnPermissionBtn.Size = new Size(140, 40);
+                btnPermissionBtn.Location = new Point(24, 35 * i + 52);   //(160 = x(hor), 30 * i + 10 = y(ver)); 
                 // btnPermissionBtn.Parent.Controls.GetChildIndex(btnPermissionBtn);
-                //btnPermissionBtn.FlatAppearance.BorderSize{ }
-                btnPermissionBtn.FlatStyle = FlatStyle.Popup;
-                btnPermissionBtn.ForeColor = Button.DefaultBackColor;
+                btnPermissionBtn.FlatAppearance.BorderSize = 0;
+                btnPermissionBtn.FlatAppearance.BorderColor = Color.Empty;
+                btnPermissionBtn.BackColor = Color.Bisque; // PeachPuff
+                btnPermissionBtn.FlatStyle = FlatStyle.Popup; // Maybe keep. Or change to Flat
+                //btnPermissionBtn.ForeColor = Button.DefaultBackColor;
                 btnPermissionBtn.ForeColor = Color.Black;
                 btnPermissionBtn.Click += new EventHandler(ButtonClickOneEvent); // Ask jan about this
                 btnPermissionBtn.Tag = i; // Ask Jan about this
@@ -106,11 +108,7 @@ namespace HospitalManagement
             //Gör en Person-patient-personal klass
         }
 
-        //private void BtnPermissionBtn_Click(object sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
+        // FOR DOCTOR
         private void btnUppdPatJournal_Click(object sender, EventArgs e)
         {
             myPatient = DBAccess.GetPatientInformation(txtPersN2UpdJour.Text); // txtPersN2UpdJour - For updating journals
@@ -126,6 +124,7 @@ namespace HospitalManagement
 
                 PatientJournal frmPatientJournal = new PatientJournal();
                 frmPatientJournal.Show();
+
             }
         }
 
@@ -186,8 +185,16 @@ namespace HospitalManagement
             else
             {
                 // if personnumber is in the database
+                //UpdatePatient frmUpdatePatients = new UpdatePatient();
+                //frmUpdatePatients.Show();
                 UpdatePatient frmUpdatePatients = new UpdatePatient();
+                frmUpdatePatients.TopLevel = false;
+                pnlUpdPatientRecep.Controls.Add(frmUpdatePatients);
+                frmUpdatePatients.FormBorderStyle = FormBorderStyle.None;
+                frmUpdatePatients.Dock = DockStyle.Fill;
                 frmUpdatePatients.Show();
+                //pnlUpdPatientRecep.SendToBack();
+                pnlPatientsRecep.SendToBack();
             }
 
 
@@ -221,7 +228,13 @@ namespace HospitalManagement
         private void btnRegisPatient_Click(object sender, EventArgs e)
         {
             RegisterPatients frmRegisterPatients = new RegisterPatients();
+            frmRegisterPatients.TopLevel = false;
+            pnlRegisPatientRecep.Controls.Add(frmRegisterPatients);
+            frmRegisterPatients.FormBorderStyle = FormBorderStyle.None;
+            frmRegisterPatients.Dock = DockStyle.Fill;
             frmRegisterPatients.Show();
+            //pnlPatientsRecep.Show();
+            pnlPatientsRecep.SendToBack();
 
             ////frmMain.Panel2.Controls.Add(myForm);
             ////myForm.Show();
@@ -244,13 +257,7 @@ namespace HospitalManagement
             //objForm.Show();
 
             //RegisterPatients frmRegisterPatients = new RegisterPatients();
-            
-            frmRegisterPatients.TopLevel = false;
-            pnlRegisPatientRecep.Controls.Add(frmRegisterPatients);
-            frmRegisterPatients.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frmRegisterPatients.Dock = DockStyle.None;
-            frmRegisterPatients.Show();
-            pnlPatientsRecep.SendToBack();
+
 
 
             //pnlRegisPatientRecep.BringToFront();
@@ -264,6 +271,7 @@ namespace HospitalManagement
             //RegisterPatients frmRegisterPatients = new RegisterPatients();
             //pnlRegisPatientRecep.Controls.Add(frmRegisterPatients);
             //frmRegisterPatients.Show();
+
 
         }
 
@@ -462,6 +470,14 @@ namespace HospitalManagement
         private void panel2_Paint(object sender, PaintEventArgs e) // Background panel-colour must be SendToBack here, or else it does not work. 
         {
             panel2.SendToBack();
+        }
+
+        private void btnLogoutStaff_Click(object sender, EventArgs e)
+        {
+            Welcome frmWelcome = new Welcome();
+            frmWelcome.Show();
+
+            this.Hide();
         }
     }
 
