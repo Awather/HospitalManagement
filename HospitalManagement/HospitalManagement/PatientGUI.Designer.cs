@@ -46,19 +46,21 @@
             // 
             // pnlTesting
             // 
+            this.pnlTesting.AutoScroll = true;
+            this.pnlTesting.AutoSize = true;
             this.pnlTesting.BackColor = System.Drawing.Color.DimGray;
-            this.pnlTesting.Location = new System.Drawing.Point(414, 12);
+            this.pnlTesting.Location = new System.Drawing.Point(293, 12);
             this.pnlTesting.Name = "pnlTesting";
-            this.pnlTesting.Size = new System.Drawing.Size(573, 347);
+            this.pnlTesting.Size = new System.Drawing.Size(632, 504);
             this.pnlTesting.TabIndex = 1;
             // 
             // pnlResultCard
             // 
             this.pnlResultCard.BackColor = System.Drawing.Color.Transparent;
             this.pnlResultCard.Controls.Add(this.lblResultCard);
-            this.pnlResultCard.Location = new System.Drawing.Point(284, 12);
+            this.pnlResultCard.Location = new System.Drawing.Point(293, 12);
             this.pnlResultCard.Name = "pnlResultCard";
-            this.pnlResultCard.Size = new System.Drawing.Size(573, 347);
+            this.pnlResultCard.Size = new System.Drawing.Size(592, 392);
             this.pnlResultCard.TabIndex = 0;
             // 
             // lblResultCard
@@ -74,10 +76,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 456);
+            this.ClientSize = new System.Drawing.Size(1073, 528);
             this.Controls.Add(this.lblEmptyPatient);
-            this.Controls.Add(this.pnlResultCard);
             this.Controls.Add(this.pnlTesting);
+            this.Controls.Add(this.pnlResultCard);
             this.Name = "PatientGUI";
             this.Text = "PatientGUI";
             this.Load += new System.EventHandler(this.PatientGUI_Load);
@@ -90,8 +92,8 @@
 
         #endregion
         private System.Windows.Forms.Label lblEmptyPatient;
-        private System.Windows.Forms.Panel pnlTesting;
         private System.Windows.Forms.Panel pnlResultCard;
         private System.Windows.Forms.Label lblResultCard;
+        protected internal System.Windows.Forms.Panel pnlTesting;
     }
 }

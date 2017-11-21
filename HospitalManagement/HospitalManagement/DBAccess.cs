@@ -303,7 +303,7 @@ namespace HospitalManagement
             SqlParameter workparameter2 = new SqlParameter();
             SqlParameter workparameter3 = new SqlParameter();
 
-            workparameter1 = myCommand.Parameters.Add("@Patient", SqlDbType.Char);
+            workparameter1 = myCommand.Parameters.Add("@Patient", SqlDbType.Int);
             workparameter1.Value = PatientName;
             workparameter2 = myCommand.Parameters.Add("@PatientPassword", SqlDbType.VarChar);
             workparameter2.Value = PatientPassword;

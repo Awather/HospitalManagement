@@ -188,8 +188,9 @@ namespace HospitalManagement
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            
+            //pnlPatientsRecep.BringToFront();
             this.Close();
+            this.SendToBack();
             //RegisterPatients.ActiveForm.Close();
         }
 

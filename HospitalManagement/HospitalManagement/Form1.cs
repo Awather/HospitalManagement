@@ -174,6 +174,8 @@ namespace HospitalManagement
             //dsPatientInfo = dbAccess.GetPatientInfo(txtPersonnummer.Text);
             //string vcd = Convert.ToString(dsPatientInfo.Tables[0].Rows[0][0]);
 
+
+
             myPatient = DBAccess.GetPatientInformation(txtPersN1UpdPat.Text);
 
             //
@@ -231,8 +233,9 @@ namespace HospitalManagement
             frmRegisterPatients.TopLevel = false;
             pnlRegisPatientRecep.Controls.Add(frmRegisterPatients);
             frmRegisterPatients.FormBorderStyle = FormBorderStyle.None;
-            frmRegisterPatients.Dock = DockStyle.Fill;
+            frmRegisterPatients.Dock = DockStyle.None;
             frmRegisterPatients.Show();
+            pnlRegisPatientRecep.BringToFront();
             //pnlPatientsRecep.Show();
             pnlPatientsRecep.SendToBack();
 
@@ -478,6 +481,12 @@ namespace HospitalManagement
             frmWelcome.Show();
 
             this.Hide();
+        }
+
+        private void Time()
+        {
+               
+
         }
     }
 
